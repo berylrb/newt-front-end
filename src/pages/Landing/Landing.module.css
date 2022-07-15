@@ -41,8 +41,8 @@ h2 {
 
 
 .aotdBg {
-  height: 80%;
-  width: 50%;
+  min-height: 70%;
+  width: 40%;
   background-color: white;
   display: flex;
   flex-direction: column;
@@ -58,7 +58,6 @@ h2 {
   font-weight: 500;
   font-size: 1.3em;
   color: black;
-  text-align: center;
 }
 
 
@@ -69,7 +68,7 @@ h2 {
 
 .soloDiv, .groupDiv {
   width: 50%;
-  padding-top: 90px;
+  padding-top: 80px;
   padding-bottom: 40px;
   display: flex;
   flex-direction: column;
@@ -88,4 +87,12 @@ h2 {
   text-align: center;
 }
 
+.groupLinkDiv, .soloLinkDiv {
+  margin-top: 12px;
+  text-align: center;
+  font-size: .9em;
+}
 
+.groupDiv {
+  margin-top: -50px;
+}
