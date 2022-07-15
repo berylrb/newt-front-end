@@ -25,3 +25,11 @@ export async function getActivityDetails(key) {
   return data
 }
 
+
+
+export async function activitySearchType(formData) {
+  const res = await fetch(`${baseUrl}/activity?type=${formData.query}`)
+  const data = await res.json()
+  console.log(data)
+  return data
+}
