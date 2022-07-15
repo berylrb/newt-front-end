@@ -1,6 +1,6 @@
+import { searchParams } from "../../data/search-data";
 
-
-const SearchForm = () => {
+const SearchForm = (props) => {
   return (
     <form
       autoComplete="off"

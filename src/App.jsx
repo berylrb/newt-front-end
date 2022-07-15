@@ -13,6 +13,9 @@ import * as authService from './services/authService'
 import Search from './pages/Search/Search'
 import ActivityDetails from './components/ActivityDetails/ActivityDetails'
 
+
+
+
 const App = () => {
   const [user, setUser] = useState(authService.getUser())
   const [userActivity, setUserActivity] = useState([])
