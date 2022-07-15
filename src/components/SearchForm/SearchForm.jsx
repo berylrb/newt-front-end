@@ -1,28 +1,60 @@
-import { searchParams } from "../../data/search-data";
+// import { searchParams } from "../../data/search-data";
+
+import { useState } from "react";
 
 const SearchForm = (props) => {
+  // const [type, setSearchType] = useState(null)
+  // const selectedType = props.searchParams[type]
+  const [formData, setFormData] = useState({
+    type: '',
+    accessibility: '',
+    participants: '',
+    price: ''
+  })
+
+  const handleChange = evt => {
+    setFormData({...formData, [evt.target.name]: evt.target.value})
+  }
+
+  const handleSubmit = evt => {
+    evt.preventDefault()
+    console.log('handle submit')
+    props.handleTypeSearch(formData)
+  }
+
   return (
     <form
       autoComplete="off"
       className="search"
       method="GET"
+      onSubmit={handleSubmit}
     >
       <div>
           <label>Type:</label>
-        <select name="type" id="type">
-          <option value="education">Education</option>
-          <option value="recreational">Recreational</option>
-          <option value="social">Social</option>
-          <option value="diy">DIY</option>
-          <option value="charity">Charity</option>
-          <option value="cooking">Cooking</option>
-          <option value="relaxation">Relaxation</option>
-          <option value="music">Music</option>
-          <option value="busywork">BusyWork</option>
+          {/* <input
+            type="text"
+            name="type"
+            autoComplete="off"
+            value={formData.type ? formData.type : ''}
+            onChange={handleChange}
+          /> */}
+        <select name="type" id="type" onChange={handleChange}>
+          <option value=''>Please Select</option>
+          <option name="query" value="education">Education</option>
+          <option name="recreational" value="recreational">Recreational</option>
+          <option name="social" value="social">Social</option>
+          <option name="diy" value="diy">DIY</option>
+          <option name="charity" value="charity">Charity</option>
+          <option name="cooking" value="cooking">Cooking</option>
+          <option name="relaxation" value="relaxation">Relaxation</option>
+          <option name="music" value="music">Music</option>
+          <option name="busywork" value="busywork">BusyWork</option>
         </select>
-        <label>Accessability:</label>
-        <select name="accessibility" id="access">
-          <option value="0.0">0</option>
+        {/* <SearchType setSearchType={setSearchType} /> */}
+        <label>Accessibility:</label>
+        <select name="accessibility" id="access" onChange={handleChange}>
+          <option value=''>Please Select</option>
+          <option value='0.0'>0</option>
           <option value="0.1">1</option>
           <option value="0.2">2</option>
           <option value="0.3">3</option>
@@ -35,7 +67,8 @@ const SearchForm = (props) => {
           <option value="1.0">10</option>
         </select>
         <label>Participants:</label>
-        <select name="participants" id="participants">
+        <select name="participants" id="participants" onChange={handleChange}>
+          <option value=''>Please Select</option>
           <option value="1">1</option>
           <option value="2">2</option>
           <option value="3">3</option>
@@ -44,7 +77,8 @@ const SearchForm = (props) => {
           <option value="6+">6+</option>
         </select>
         <label>Price:</label>
-        <select name="price" id="price">
+        <select name="price" id="price"onChange={handleChange}>
+          <option value=''>Please Select</option>
           <option value="0">Free</option>
           <option value="1">$</option>
         </select>
