@@ -10,6 +10,7 @@ import Profiles from './pages/Profiles/Profiles'
 import Profile from './pages/Profile/Profile'
 import ChangePassword from './pages/ChangePassword/ChangePassword'
 import * as authService from './services/authService'
+import Search from './pages/Search/Search'
 
 const App = () => {
   const [user, setUser] = useState(authService.getUser())
@@ -37,6 +38,10 @@ const App = () => {
         <Route
           path="/login"
           element={<Login handleSignupOrLogin={handleSignupOrLogin} />}
+        />
+        <Route
+          path="/search"
+          element={<Search handleSignupOrLogin={handleSignupOrLogin} />}
         />
         <Route
           path="/profiles"
