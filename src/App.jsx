@@ -11,6 +11,7 @@ import Profile from './pages/Profile/Profile'
 import ChangePassword from './pages/ChangePassword/ChangePassword'
 import * as authService from './services/authService'
 import Search from './pages/Search/Search'
+import ActivityDetails from './components/ActivityDetails/ActivityDetails'
 
 const App = () => {
   const [user, setUser] = useState(authService.getUser())
@@ -60,6 +61,10 @@ const App = () => {
               <Navigate to="/login" />
             )
           }
+        />
+        <Route
+          path="/activity"
+          element={<ActivityDetails handleSignupOrLogin={handleSignupOrLogin} />}
         />
       </Routes>
     </>

@@ -2,9 +2,11 @@ import { useState, useEffect} from 'react'
 import { useLocation } from 'react-router-dom'
 import { Link } from 'react-router-dom'
 import { getActivityDetails } from '../../services/bored-api'
+import { useParams } from 'react-router-dom'
 
 const ActivityDetails = () => {
   const [activityDetails, setActivityDetails] = useState({})
+  const { activityName } = useParams()
   const location = useLocation()
 
 
