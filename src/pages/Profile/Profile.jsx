@@ -1,6 +1,6 @@
 import { useState, useRef, useEffect } from "react"
 
-const Profile = (props) => {
+const Profile = ({user}) => {
 
   // useEffect(() => {
   //   formElement.current.checkValidity() ? setValidForm(true) : setValidForm(false)
@@ -13,6 +13,7 @@ const Profile = (props) => {
   return ( 
     <>
       <h1>Profile Page</h1>
+      <h2>{user.name}</h2>
       <div>
         Add an Activity
         <form autoComplete="off" onSubmit={handleSubmit}>
