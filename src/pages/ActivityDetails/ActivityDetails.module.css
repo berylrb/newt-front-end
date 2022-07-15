@@ -16,16 +16,22 @@ p {
   height: 100vh;
   display: flex;
   justify-content: center;
+  background-color: #ff96ff;
 }
 
 .activityDetails {
   margin-top: 90px;
-  width: 40%;
-  height: 60%;
+  width: 50%;
+  height: 70%;
   background-color: white;
   border: 2px solid black;
   display: flex;
   flex-direction: column;
+  box-shadow: 12px 15px #90a3ff, 12px 15px 0 2px black;
+}
+
+.activityName {
+  margin-top: 50px;
 }
 
 .activityName, .activityPrice, .activityType, .activityAccessibility, .activityPartic, .returnContainer {
@@ -35,6 +41,8 @@ p {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  padding: 4px;
+  margin-bottom: 5px;
   
 }
 
