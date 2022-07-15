@@ -5,7 +5,8 @@ import GroupActivity from './GroupActivity'
 const AOTD = () => {
   return (
     <>
-      <main className={styles.container}>
+      <main className={styles.aotdContainer}>
+      <h1>Become an object in motion.</h1>
         <div className={styles.aotdBg}>
           <h2 className={styles.h2}>ACTIVITY OF THE DAY</h2>
           <div className={styles.soloDiv}>

@@ -1,14 +1,16 @@
 import styles from './Landing.module.css'
 import AOTD from './AOTD/AOTD'
+import Blob from '../../assets/corner-blob.png'
 
 const Landing = ({ user }) => {
   return (
     <>
-      <div className="landing-bg">
+      <div className={styles.landingBg}>
+        <img className={styles.bgTopBlob} src={Blob} alt="corner blob" />
         <main className={styles.container}>
-          <h1>Become an object in motion.</h1>
           <AOTD />
         </main>
+        <img className={styles.bgBottomBlob} src={Blob} alt="corner blob" />
       </div>
     </>
   )

@@ -9,7 +9,6 @@ body {
 }
 
 h1 {
-  padding-top: 90px;
   font-size: 1.7em;
   color: white;
   font-weight: 600;
@@ -28,10 +27,12 @@ h2 {
   padding: 10px;
 }
 
+.landingBg {
+  position: relative;
+}
 
 
-
-.container {
+.aotdContainer {
   display: flex;
   align-items: center;
   flex-direction: column;
@@ -41,7 +42,7 @@ h2 {
 
 
 .aotdBg {
-  min-height: 70%;
+  min-height: 50%;
   width: 50%;
   background-color: white;
   display: flex;
@@ -96,4 +97,19 @@ h2 {
 
 .groupDiv {
   margin-top: -50px;
+}
+
+.bgTopBlob {
+  width: 20%;
+  transform: rotate(180deg);
+  z-index: -1;
+}
+
+
+.bgBottomBlob {
+  width: 20%;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  z-index: -1;
 }
