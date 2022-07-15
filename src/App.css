@@ -12,5 +12,12 @@
   color: black;
   font-weight: 600;
   text-decoration: none;
-  padding: 50px;
+  padding: 15px 25px 15px 25px;
+  height: 90px;
+}
+
+.navLink:hover {
+  border: 2px solid black;
+  background-color: #ff96ff;
+  color: white;
 }
