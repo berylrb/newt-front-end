@@ -13,15 +13,13 @@ h4 {
 }
 
 .activityDetails {
-  margin-top: 50px;
-  padding-top: 40px;
-  width: 50%;
+  margin-top: 90px;
+  width: 40%;
   height: 60%;
   background-color: white;
   border: 2px solid black;
   display: flex;
   flex-direction: column;
-  justify-content: center;
 }
 
 .activityPrice, .activityType, .activityAccessibility, .activityPartic {
@@ -29,4 +27,5 @@ h4 {
   border: none;
   display: flex;
   justify-content: center;
+  
 }
