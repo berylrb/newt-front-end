@@ -1,4 +1,4 @@
-// import styles from '../Landing.module.css'
+import styles from '../Landing.module.css'
 
 import { useState, useEffect } from 'react'
 import { getGroupActivity } from '../../../services/bored-api'
@@ -26,7 +26,7 @@ const GroupActivity = () => {
               <div className="solo-div" key={soloActivityName.index}>{soloActivityName.activity}</div>
             </Link> */}
           {/* )} */}
-          <Link className="activity-link" to="/activity" state={{groupActivity}}>
+          <Link className={styles.activityLink} to="/activity" state={{groupActivity}}>
             {groupActivity?.activity}
           </Link>
         </div>
