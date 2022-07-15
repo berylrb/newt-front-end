@@ -2,6 +2,13 @@ import { useState, useRef, useEffect } from "react"
 
 const Profile = ({user}) => {
 
+  const [formData, setFormData] = useState({
+    activity: '',
+    type: '',
+    price: 0,
+    participants: 0
+  })
+
   // useEffect(() => {
   //   formElement.current.checkValidity() ? setValidForm(true) : setValidForm(false)
   // }, [formData])
@@ -24,6 +31,7 @@ const Profile = ({user}) => {
               className="activity-name"
               id="name-input"
               name="name"
+              value={formData.activity}
               />
             </div>
             <div>
@@ -33,24 +41,27 @@ const Profile = ({user}) => {
               className="activity-type"
               id="type-input"
               name="type"
+              value={formData.type}
               />
             </div>
             <div>
-            <label htmlFor="activity-name">Price</label>
+            <label htmlFor="activity-price">Price</label>
             <input 
               type="text"
               className="activity-price"
               id="price-input"
               name="price"
+              value={formData.price}
               />
             </div>
             <div>
-            <label htmlFor="activity-name">Participant #</label>
+            <label htmlFor="activity-participants">Participant #</label>
             <input 
               type="text"
-              className="activity-participant"
+              className="activity-participants"
               id="participant-input"
-              name="participant"
+              name="participants"
+              value={formData.participants}
               />
             </div>
           Add!</form>
