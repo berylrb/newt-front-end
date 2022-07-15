@@ -13,9 +13,13 @@ const Profile = ({user}) => {
   //   formElement.current.checkValidity() ? setValidForm(true) : setValidForm(false)
   // }, [formData])
 
-  const handleSubmit = evt => {
-    //handle submit function for add activity
-  }
+  const handleChange = evt => {
+		console.log(evt)
+	}
+
+  const handleChange = evt => {
+		setFormData({ ...formData, [evt.target.name]: evt.target.value })
+	}
 
   return ( 
     <>
@@ -32,6 +36,7 @@ const Profile = ({user}) => {
               id="name-input"
               name="name"
               value={formData.activity}
+              onChange={handleChange}
               />
             </div>
             <div>
@@ -42,6 +47,7 @@ const Profile = ({user}) => {
               id="type-input"
               name="type"
               value={formData.type}
+              onChange={handleChange}
               />
             </div>
             <div>
@@ -52,6 +58,7 @@ const Profile = ({user}) => {
               id="price-input"
               name="price"
               value={formData.price}
+              onChange={handleChange}
               />
             </div>
             <div>
@@ -62,6 +69,7 @@ const Profile = ({user}) => {
               id="participant-input"
               name="participants"
               value={formData.participants}
+              onChange={handleChange}
               />
             </div>
           Add!</form>
