@@ -1,6 +1,6 @@
 import './App.css'
 
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { Routes, Route, useNavigate, Navigate } from 'react-router-dom'
 import NavBar from './components/NavBar/NavBar'
 import Signup from './pages/Signup/Signup'
@@ -36,6 +36,14 @@ const App = () => {
     const newUserActivity = await userActivityService.create(newUserActivityData)
     setUserActivity([...userActivity, newUserActivity])
   }
+
+  useEffect(() => {
+    const fetchAllUserActivities = async () =>{
+      const userActivityData = await userActivityService.getAll()
+      setUserActivity(userActivityData)
+    }
+    fetchAllUserActivities()
+  }, [])
 
   return (
     <>
