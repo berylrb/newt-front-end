@@ -1,6 +1,6 @@
 import './App.css'
 
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { Routes, Route, useNavigate, Navigate } from 'react-router-dom'
 import NavBar from './components/NavBar/NavBar'
 import Signup from './pages/Signup/Signup'
@@ -12,6 +12,7 @@ import ChangePassword from './pages/ChangePassword/ChangePassword'
 import * as authService from './services/authService'
 import Search from './pages/Search/Search'
 import ActivityDetails from './components/ActivityDetails/ActivityDetails'
+import * as userActivityService from './services/userActivityService'
 
 
 
@@ -31,9 +32,18 @@ const App = () => {
     setUser(authService.getUser())
   }
 
-  const handleAddUserActivity = newUserActivityData => {
-    setUserActivity([...userActivity, newUserActivityData])
+  const handleAddUserActivity = async newUserActivityData => {
+    const newUserActivity = await userActivityService.create(newUserActivityData)
+    setUserActivity([...userActivity, newUserActivity])
   }
+
+  useEffect(() => {
+    const fetchAllUserActivities = async () =>{
+      const userActivityData = await userActivityService.getAll()
+      setUserActivity(userActivityData)
+    }
+    fetchAllUserActivities()
+  }, [])
 
   return (
     <>
