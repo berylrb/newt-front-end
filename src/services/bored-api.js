@@ -27,9 +27,17 @@ export async function getActivityDetails(key) {
 
 
 
-export async function activitySearchType(formData) {
-  const res = await fetch(`${baseUrl}/activity?type=${formData.query}`)
+export async function activitySearch(formData) {
+  console.log(formData)
+  
+  const options = `?type=${formData.type}&&accessibility=${formData.accessibility}&&participants=${formData.participants}&&price=${formData.price}`
+  const path = `${baseUrl}/activity${options}`
+  console.log(path)
+  const res = await fetch(path)
   const data = await res.json()
   console.log(data)
   return data
 }
+
+
+// http://www.boredapi.com/api/activity?price=0.3&&participants=3
