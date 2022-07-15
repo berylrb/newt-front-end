@@ -1,11 +1,13 @@
 import styles from './Landing.module.css'
+import AOTD from './AOTD/AOTD'
 
 const Landing = ({ user }) => {
   return (
     <>
       <div className="landing-bg">
         <main className={styles.container}>
-          <h1>hello, {user ? user.name : 'friend'}</h1>
+          <h1>Become an object in motion.</h1>
+          <AOTD />
         </main>
       </div>
     </>
