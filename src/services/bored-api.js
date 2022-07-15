@@ -17,7 +17,11 @@ export async function getGroupActivity() {
 }
 
 
-export async function getActivityDetails(apiUrl) {
-  const res = await fetch(`${apiUrl}`)
-  return res.json()
+export async function getActivityDetails(key) {
+  console.log(key)
+  const res = await fetch(`${baseUrl}/activity?key=${parseInt(key)}`)
+  const data = await res.json()
+  console.log(data)
+  return data
 }
+
