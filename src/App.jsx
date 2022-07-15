@@ -12,7 +12,6 @@ import ChangePassword from './pages/ChangePassword/ChangePassword'
 import * as authService from './services/authService'
 import Search from './pages/Search/Search'
 import ActivityDetails from './pages/ActivityDetails/ActivityDetails'
-import * as userActivityService from './services/userActivityService'
 import * as profileService from './services/profileService'
 
 
