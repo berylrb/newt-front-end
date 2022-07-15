@@ -16,11 +16,16 @@ h1 {
   padding-bottom: 50px;
 }
 
+h2 {
+  font-size: 1.6em;
+}
+
 .h2 {
   background-color: #ff96ff;
   width: 100%;
   border-bottom: 2px solid black;
   text-align: center;
+  padding: 10px;
 }
 
 
@@ -57,4 +62,6 @@ h4 {
 
 .soloDiv, .groupDiv {
   width: 20%;
+  padding-top: 90px;
+  padding-bottom: 40px;
 }
