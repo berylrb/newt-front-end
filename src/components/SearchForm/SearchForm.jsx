@@ -48,8 +48,8 @@ const SearchForm = () => {
           <option value="0">Free</option>
           <option value="1">$</option>
         </select>
-        <button type="submit">Search</button>
         <button type="submit">Random</button>
+        <button type="submit">Search</button>
       </div>
     </form>
   );
