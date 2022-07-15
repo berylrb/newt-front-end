@@ -40,7 +40,7 @@ const Profile = ({user, handleAddUserActivity}) => {
               type="text"
               className="activity-name"
               id="name-input"
-              name="name"
+              name="activity"
               value={formData.activity}
               onChange={handleChange}
               />

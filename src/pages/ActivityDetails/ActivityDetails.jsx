@@ -30,15 +30,32 @@ const ActivityDetails = () => {
         {activityDetails.activity ?
         <>
           <div className={styles.activityDetails}>
+            {/* <table>
+              <tr>
+                <th>Activity</th>
+                <th>Type</th>
+                <th>Participants</th>
+                <th>Price</th>
+                <th>Accessibility</th>
+              </tr>
+              <tr>
+                <td>{activityDetails.activity}</td>
+                <td>{activityDetails.type}</td>
+                <td>{activityDetails.participants}</td>
+                <td>{activityDetails.price}</td>
+                <td>{activityDetails.accessibility}</td>
+              </tr>
+
+            </table> */}
             <div className='activityName'>
               <h4>Activity:</h4>
               {activityDetails.activity}
             </div>
-            <div className='activityType'>
+            <div className={styles.activityType}>
               <h4>Type:</h4>
               {activityDetails.type}
             </div>
-            <div className='activityPartic'>
+            <div className={styles.activityPartic}>
               <h4>Participants:</h4>
               {activityDetails.participants}
             </div>
@@ -46,7 +63,7 @@ const ActivityDetails = () => {
               <h4>Price:</h4>
               {activityDetails.price}
             </div>
-            <div className='activityAccess'>
+            <div className={styles.activityAccess}>
               <h4>Accessibility:</h4>
               {activityDetails.accessibility}
             </div>
