@@ -6,6 +6,7 @@ const NavBar = ({ user, handleLogout }) => {
       <header className='App-header'>
         {user ?
           <nav>
+              <Link className="navLink" to="/">Home</Link>
               <Link className="navLink" to="/profiles">Community</Link>
               <Link className="navLink"  to="/profile">Profile</Link>
               <Link className="navLink"  to="" onClick={handleLogout}>Log Out</Link>
