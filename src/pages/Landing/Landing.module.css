@@ -76,3 +76,9 @@ h4 {
 }
 
 
+.activityLink:hover {
+  color:#ff96ff;
+  font-weight: 600;
+}
+
+
