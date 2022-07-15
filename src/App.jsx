@@ -13,6 +13,7 @@ import * as authService from './services/authService'
 import Search from './pages/Search/Search'
 import ActivityDetails from './pages/ActivityDetails/ActivityDetails'
 import * as userActivityService from './services/userActivityService'
+import * as profileService from './services/profileService'
 
 
 
@@ -33,13 +34,13 @@ const App = () => {
   }
 
   const handleAddUserActivity = async newUserActivityData => {
-    const newUserActivity = await userActivityService.create(newUserActivityData)
+    const newUserActivity = await profileService.create(newUserActivityData)
     setUserActivity([...userActivity, newUserActivity])
   }
 
   useEffect(() => {
     const fetchAllUserActivities = async () =>{
-      const userActivityData = await userActivityService.getAll()
+    const userActivityData = await profileService.getAll()
       setUserActivity(userActivityData)
     }
     fetchAllUserActivities()
