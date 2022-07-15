@@ -12,6 +12,7 @@ import ChangePassword from './pages/ChangePassword/ChangePassword'
 import * as authService from './services/authService'
 import Search from './pages/Search/Search'
 import ActivityDetails from './components/ActivityDetails/ActivityDetails'
+import * as userActivityService from './services/userActivityService'
 
 
 
@@ -31,8 +32,9 @@ const App = () => {
     setUser(authService.getUser())
   }
 
-  const handleAddUserActivity = newUserActivityData => {
-    setUserActivity([...userActivity, newUserActivityData])
+  const handleAddUserActivity = async newUserActivityData => {
+    const newUserActivity = await userActivityService.create(newUserActivityData)
+    setUserActivity([...userActivity, newUserActivity])
   }
 
   return (
