@@ -15,3 +15,9 @@ export async function getGroupActivity() {
   console.log(data)
   return data
 }
+
+
+export async function getActivityDetails(apiUrl) {
+  const res = await fetch(`${apiUrl}`)
+  return res.json()
+}
