@@ -2,6 +2,7 @@ import { useState, useEffect} from 'react'
 import { Link } from 'react-router-dom'
 import { getActivityDetails } from '../../services/bored-api'
 import { useLocation } from 'react-router-dom'
+import  styles from './ActivityDetails.module.css'
 
 const ActivityDetails = () => {
   const [activityDetails, setActivityDetails] = useState({})
@@ -25,24 +26,28 @@ const ActivityDetails = () => {
   console.log(key)
   return (
     <>
-      <div className='detailsPage'>
+      <div className={styles.detailsPage}>
         {activityDetails.activity ?
         <>
-          <div className='activityDetails'>
+          <div className={styles.activityDetails}>
             <div className='activityName'>
-              <h3>Activity:</h3>
+              <h4>Activity:</h4>
               {activityDetails.activity}
             </div>
             <div className='activityType'>
+              <h4>Type:</h4>
               {activityDetails.type}
             </div>
             <div className='activityPartic'>
+              <h4>Participants:</h4>
               {activityDetails.participants}
             </div>
-            <div className='activityPrice'>
+            <div className={styles.activityPrice}>
+              <h4>Price:</h4>
               {activityDetails.price}
             </div>
             <div className='activityAccess'>
+              <h4>Accessibility:</h4>
               {activityDetails.accessibility}
             </div>
             <div className='returnContainer'>
