@@ -20,7 +20,7 @@ const SoloActivity = () => {
   return (
     <>
       <div>
-        <div className="soloDiv">
+        <div className="soloLinkDiv">
           
           <Link className={styles.activityLink} to="/activity" state={{soloActivity}}>
             {soloActivity?.activity}

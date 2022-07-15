@@ -9,11 +9,11 @@ const AOTD = () => {
         <div className={styles.aotdBg}>
           <h2 className={styles.h2}>ACTIVITY OF THE DAY</h2>
           <div className={styles.soloDiv}>
-            <h4>Solo</h4>
+            <h4 className={styles.h4SoloGroup}>Solo</h4>
             <SoloActivity />
           </div>
           <div className={styles.groupDiv}>
-            <h4>Group</h4>
+            <h4 className={styles.h4SoloGroup}>Group</h4>
             <GroupActivity />
           </div>
         </div>
