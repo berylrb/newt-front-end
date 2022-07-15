@@ -1,23 +1,28 @@
 import { useState, useEffect} from 'react'
-import { useLocation } from 'react-router-dom'
 import { Link } from 'react-router-dom'
 import { getActivityDetails } from '../../services/bored-api'
-import { useParams } from 'react-router-dom'
+import { useLocation } from 'react-router-dom'
 
 const ActivityDetails = () => {
   const [activityDetails, setActivityDetails] = useState({})
-  const { activityName } = useParams()
+  // const { activityName } = useParams()
   const location = useLocation()
+  console.log(location)
+  const key = location.state.soloActivity 
+    ? location.state.soloActivity.key 
+    : location.state.groupActivity.key
+
+  console.log("this is the key", key)
 
 
   useEffect(() => {
-    const fetchDetails = async () => {
-      const activityDetails = await getActivityDetails(location.state.activityName.url)
-      setActivityDetails(activityDetails)
+    const fetchActivityDetails = async () => {
+      const activityData = await getActivityDetails(key)
+      setActivityDetails(activityData)
     }
-    fetchDetails()
-  }, [location.state.activityName.url])
-
+    fetchActivityDetails()
+  }, [key])
+  console.log(key)
   return (
     <>
       <div className='detailsPage'>
