@@ -21,7 +21,7 @@ const GroupActivity = () => {
   return (
     <>
       <div>
-        <div className="groupDiv">
+        <div className={styles.groupLinkDiv}>
           {/* {soloActivity.map(soloActivityName =>
             <Link className="activity-link" to="/activity" state={{soloActivityName}}>
               <div className="solo-div" key={soloActivityName.index}>{soloActivityName.activity}</div>
