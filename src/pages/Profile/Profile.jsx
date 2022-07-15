@@ -44,8 +44,8 @@ const Profile = ({user, handleAddUserActivity}) => {
               value={formData.activity}
               onChange={handleChange}
               />
-            </div>
-            <div>
+          </div>
+          <div>
             <label htmlFor="activity-type">Type</label>
             <input 
               type="text"
@@ -55,8 +55,8 @@ const Profile = ({user, handleAddUserActivity}) => {
               value={formData.type}
               onChange={handleChange}
               />
-            </div>
-            <div>
+          </div>
+          <div>
             <label htmlFor="activity-price">Price</label>
             <input 
               type="text"
@@ -66,8 +66,8 @@ const Profile = ({user, handleAddUserActivity}) => {
               value={formData.price}
               onChange={handleChange}
               />
-            </div>
-            <div>
+          </div>
+          <div>
             <label htmlFor="activity-participants">Participant #</label>
             <input 
               type="text"
@@ -77,7 +77,7 @@ const Profile = ({user, handleAddUserActivity}) => {
               value={formData.participants}
               onChange={handleChange}
               />
-            </div>
+          </div>
             <button 
               type="submit"
               disabled={!validForm}
@@ -85,7 +85,7 @@ const Profile = ({user, handleAddUserActivity}) => {
               Add Activity!
             </button>
           </form>
-      </div>
+        </div>
       <div>
         Saved Activities
       </div>
