@@ -5,7 +5,7 @@ const SearchForm = () => {
     <form
       autoComplete="off"
       className="search"
-      method="POST"
+      method="GET"
     >
       <div>
           <label>Type:</label>
@@ -48,6 +48,8 @@ const SearchForm = () => {
           <option value="0">Free</option>
           <option value="1">$</option>
         </select>
+        <button type="submit">Search</button>
+        <button type="submit">Random</button>
       </div>
     </form>
   );
