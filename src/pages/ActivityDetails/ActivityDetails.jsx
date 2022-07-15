@@ -30,45 +30,31 @@ const ActivityDetails = () => {
         {activityDetails.activity ?
         <>
           <div className={styles.activityDetails}>
-            {/* <table>
-              <tr>
-                <th>Activity</th>
-                <th>Type</th>
-                <th>Participants</th>
-                <th>Price</th>
-                <th>Accessibility</th>
-              </tr>
-              <tr>
-                <td>{activityDetails.activity}</td>
-                <td>{activityDetails.type}</td>
-                <td>{activityDetails.participants}</td>
-                <td>{activityDetails.price}</td>
-                <td>{activityDetails.accessibility}</td>
-              </tr>
-
-            </table> */}
-            <div className='activityName'>
-              <h4>Activity:</h4>
+            <div className={styles.activityName}>
+              <h4>ACTIVITY:</h4>
+              <p>
               {activityDetails.activity}
+              </p>
             </div>
             <div className={styles.activityType}>
-              <h4>Type:</h4>
+              <h4>TYPE:</h4>
               {activityDetails.type}
             </div>
             <div className={styles.activityPartic}>
-              <h4>Participants:</h4>
+              <h4>PARTICIPANTS:</h4>
               {activityDetails.participants}
             </div>
             <div className={styles.activityPrice}>
-              <h4>Price:</h4>
+              <h4>PRICE:</h4>
               {activityDetails.price}
             </div>
-            <div className={styles.activityAccess}>
-              <h4>Accessibility:</h4>
+            <div className={styles.activityAccessibility}>
+              <h4>ACCESSIBILITY:</h4>
               {activityDetails.accessibility}
             </div>
-            <div className='returnContainer'>
-              <Link className='returnLink' to="/">Return</Link>
+            <div className={styles.returnContainer}>
+              <br />
+              <Link className={styles.returnLink} to="/">Return</Link>
             </div>
           </div>
         </>
