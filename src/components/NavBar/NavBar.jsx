@@ -3,24 +3,21 @@ import { Link } from 'react-router-dom'
 const NavBar = ({ user, handleLogout }) => {
   return (
     <>
-      {user ?
-        <nav>
-          <ul>
-            <li>Welcome, {user.name}</li>
-            <li><Link to="/profiles">Profiles</Link></li>
-            <li><Link to="/profile">Profile</Link></li>
-            <li><Link to="" onClick={handleLogout}>LOG OUT</Link></li>
-            <li><Link to="/changePassword">Change Password</Link></li>
-          </ul>
-        </nav>
-      :
-        <nav>
-          <ul>
-            <li><Link to="/login">Log In</Link></li>
-            <li><Link to="/signup">Sign Up</Link></li>
-          </ul>
-        </nav>
-      }
+      <header className='App-header'>
+        {user ?
+          <nav>
+              <Link className="navLink" to="/profiles">Community</Link>
+              <Link className="navLink"  to="/profile">Profile</Link>
+              <Link className="navLink"  to="" onClick={handleLogout}>Log Out</Link>
+              <Link className="navLink"  to="/changePassword">Change Password</Link>
+          </nav>
+        :
+          <nav>
+              <Link className="navLink"  to="/login">Log In</Link>
+              <Link className="navLink"  to="/signup">Sign Up</Link>
+          </nav>
+        }
+      </header>
     </>
   )
 }
