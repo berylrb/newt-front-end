@@ -16,16 +16,12 @@ const SoloActivity = () => {
     }
     fetchSoloActivity()
   }, [])
-
+  console.log("solo activity component", soloActivity?.key)
   return (
     <>
       <div>
         <div className="soloDiv">
-          {/* {soloActivity.map(soloActivityName =>
-            <Link className="activity-link" to="/activity" state={{soloActivityName}}>
-              <div className="solo-div" key={soloActivityName.index}>{soloActivityName.activity}</div>
-            </Link> */}
-          {/* )} */}
+          
           <Link className={styles.activityLink} to="/activity" state={{soloActivity}}>
             {soloActivity?.activity}
           </Link>

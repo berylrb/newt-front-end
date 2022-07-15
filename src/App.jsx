@@ -15,6 +15,7 @@ import ActivityDetails from './components/ActivityDetails/ActivityDetails'
 
 const App = () => {
   const [user, setUser] = useState(authService.getUser())
+  const [userActivity, setUserActivity] = useState([])
   const navigate = useNavigate()
 
   const handleLogout = () => {
@@ -25,6 +26,10 @@ const App = () => {
 
   const handleSignupOrLogin = () => {
     setUser(authService.getUser())
+  }
+
+  const handleAddUserActivity = newUserActivityData => {
+    setUserActivity([...userActivity, newUserActivityData])
   }
 
   return (
@@ -50,7 +55,7 @@ const App = () => {
         />
         <Route
           path="/profile"
-          element={<Profile user={user}/>}
+          element={<Profile user={user} handleAddUserActivity={handleAddUserActivity}/>}
         />
         <Route
           path="/changePassword"

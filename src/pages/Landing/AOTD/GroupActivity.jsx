@@ -8,6 +8,7 @@ import { Link } from 'react-router-dom'
 const GroupActivity = () => {
   const [groupActivity, setGroupActivity] = useState()
 
+  console.log("group activity key", groupActivity?.key)
 
   useEffect(() => {
     const fetchGroupActivity = async () => {

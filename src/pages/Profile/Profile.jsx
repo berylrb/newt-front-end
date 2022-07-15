@@ -1,6 +1,8 @@
 import { useState, useRef, useEffect } from "react"
 
-const Profile = ({user}) => {
+const Profile = ({user, handleAddUserActivity}) => {
+  const [validForm, setValidForm] = useState(false)
+  const formElement = useRef()
 
   const [formData, setFormData] = useState({
     activity: '',
@@ -9,25 +11,29 @@ const Profile = ({user}) => {
     participants: 0
   })
 
-  // useEffect(() => {
-  //   formElement.current.checkValidity() ? setValidForm(true) : setValidForm(false)
-  // }, [formData])
-
-  const handleChange = evt => {
-		console.log(evt)
-	}
+  useEffect(() => {
+    formElement.current.checkValidity() ? setValidForm(true) : setValidForm(false)
+  }, [formData])
 
   const handleChange = evt => {
 		setFormData({ ...formData, [evt.target.name]: evt.target.value })
 	}
+
+  const handleSubmit = evt => {
+    evt.preventDefault()
+    handleAddUserActivity(formData)
+  }
 
   return ( 
     <>
       <h1>Profile Page</h1>
       <h2>{user.name}</h2>
       <div>
-        Add an Activity
-        <form autoComplete="off" onSubmit={handleSubmit}>
+        <form 
+        autoComplete="off" 
+        onSubmit={handleSubmit}
+        ref={formElement}
+        >
           <div>
             <label htmlFor="activity-name">Activity</label>
             <input 
@@ -72,7 +78,13 @@ const Profile = ({user}) => {
               onChange={handleChange}
               />
             </div>
-          Add!</form>
+            <button 
+              type="submit"
+              disabled={!validForm}
+              >
+              Add Activity!
+            </button>
+          </form>
       </div>
       <div>
         Saved Activities
