@@ -1,4 +1,6 @@
-import SearchForm from "../../components/SearchForm/SearchForm"
+import styles from './Search.module.css'
+
+import SearchForm from "./SearchForm/SearchForm"
 // import { useState } from "react"
 import { activitySearch } from "../../services/bored-api"
 
@@ -14,11 +16,11 @@ const Search = () => {
 
   return (
     <>
-      <div className="landing-bg">
-        <main className="search">
-          <h1>Search page</h1>
+      <div className={styles.searchBg}>
+          <div className={styles.searchHeader}>
+            <h1 className={styles.searchH1}>ACTIVITY SEARCH</h1>
+          </div>
           <SearchForm handleTypeSearch={handleTypeSearch} />
-        </main>
       </div>
     </>
   )
