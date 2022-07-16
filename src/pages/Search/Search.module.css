@@ -31,12 +31,12 @@
 .searchForm {
   min-height: 30%;
   width: 80%;
-  background-color: #ecff50;
+  background-color: #90a3ff;
   border: 2px solid black;
   display: flex;
   align-items: center;
   flex-wrap: wrap;
-  box-shadow: 12px 15px #90a3ff, 12px 15px 0 2px black;
+  box-shadow: 12px 15px #ecff50, 12px 15px 0 2px black;
 }
 
 .searchInputDiv {
@@ -79,7 +79,7 @@
   background-color: #ff96ff;
   border: 1.5px solid black;
   border-radius: .25rem;
-  box-shadow: rgba(0, 0, 0, 0.02) 0 1px 3px 0;
+  box-shadow: 2px 4px rgb(255, 255, 255), 2px 4px 0 1px black;
   box-sizing: border-box;
   color: rgba(0, 0, 0, 0.85);
   cursor: pointer;
@@ -104,19 +104,20 @@
 
 .button6:hover,
 .button6:focus {
-  border-color: rgba(0, 0, 0, 0.15);
-  box-shadow: rgba(0, 0, 0, 0.1) 0 4px 12px;
+  border-color: rgba(0, 0, 0, 0.186);
+  box-shadow: 2px 4px rgb(255, 255, 255), 2px 4px 0 1px black;
   color: rgba(0, 0, 0, 0.65);
 }
 
 .button6:hover {
   transform: translateY(-1px);
+  box-shadow: 2px 4px rgb(255, 255, 255), 2px 4px 0 1px rgba(0, 0, 0, 0.186);
 }
 
 .button6:active {
-  background-color: #F0F0F1;
-  border-color: rgba(0, 0, 0, 0.15);
-  box-shadow: rgba(0, 0, 0, 0.06) 0 2px 4px;
+  background-color: #ecff50;
+  border-color: rgba(0, 0, 0, 0.186);
+  box-shadow: 2px 2px rgb(176, 176, 176), 2px 2px 0 1px rgba(0, 0, 0, 0.186);
   color: rgba(0, 0, 0, 0.65);
   transform: translateY(0);
 }
