@@ -31,12 +31,12 @@
 .searchForm {
   min-height: 30%;
   width: 80%;
-  background-color: #ecff50;
+  background-color: #90a3ff;
   border: 2px solid black;
   display: flex;
   align-items: center;
   flex-wrap: wrap;
-  box-shadow: 12px 15px #90a3ff, 12px 15px 0 2px black;
+  box-shadow: 12px 15px #ecff50, 12px 15px 0 2px black;
 }
 
 .searchInputDiv {
