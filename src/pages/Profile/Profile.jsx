@@ -1,4 +1,5 @@
 import { useState, useRef, useEffect } from "react"
+import styles from './Profile.module.css'
 
 const Profile = ({user, handleAddUserActivity}) => {
   const [validForm, setValidForm] = useState(false)
@@ -26,14 +27,14 @@ const Profile = ({user, handleAddUserActivity}) => {
 
   return ( 
     <>
-      <h1>Profile Page</h1>
-      <h2>{user.name}</h2>
+      <div className={styles.profileBg}>
+        <h1>Profile Page</h1>
+        <h2>{user.name}</h2>
       <div>
         <form 
-        autoComplete="off" 
-        onSubmit={handleSubmit}
-        ref={formElement}
-        >
+          autoComplete="off" 
+          onSubmit={handleSubmit}
+          ref={formElement}>
           <div>
             <label htmlFor="activity-name">Activity</label>
             <input 
@@ -43,7 +44,7 @@ const Profile = ({user, handleAddUserActivity}) => {
               name="activity"
               value={formData.activity}
               onChange={handleChange}
-              />
+            />
           </div>
           <div>
             <label htmlFor="activity-type">Type</label>
@@ -54,7 +55,7 @@ const Profile = ({user, handleAddUserActivity}) => {
               name="type"
               value={formData.type}
               onChange={handleChange}
-              />
+            />
           </div>
           <div>
             <label htmlFor="activity-price">Price</label>
@@ -65,7 +66,7 @@ const Profile = ({user, handleAddUserActivity}) => {
               name="price"
               value={formData.price}
               onChange={handleChange}
-              />
+            />
           </div>
           <div>
             <label htmlFor="activity-participants">Participant #</label>
@@ -76,24 +77,24 @@ const Profile = ({user, handleAddUserActivity}) => {
               name="participants"
               value={formData.participants}
               onChange={handleChange}
-              />
+            />
           </div>
             <button 
-              type="submit"
-              disabled={!validForm}
-              >
-              Add Activity!
+            type="submit"
+            disabled={!validForm}>
+            Add Activity!
             </button>
           </form>
-        </div>
-      <div>
-        Saved Activities
       </div>
       <div>
-        Done Activities
+        <h4>Saved Activities</h4>
+      </div>
+      <div>
+        <h4>Done Activities</h4>
+      </div>
       </div>
     </>
-   );
+  );
 }
- 
+
 export default Profile;
