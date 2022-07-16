@@ -24,10 +24,10 @@ const Profiles = () => {
           <>
             <div className={styles.cardContainer}>
               {profiles.map(profile=>
-                <Link key={profile._id} to={`/profile/${profile._id}`}>
+                <Link key={profile._id} to={`/profile/${profile._id}` } className={styles.profileNameLink}>
                   <div className={styles.profileCard}>
                     <div className={styles.profileNameDiv}>
-                      <p className={styles.profileName} key={profile._id} profile={profile}>{profile.name}</p>
+                      <p key={profile._id} profile={profile}>{profile.name}</p>
                     </div>
                   </div>
                 </Link>
