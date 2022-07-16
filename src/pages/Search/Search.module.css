@@ -29,7 +29,7 @@
 }
 
 .searchForm {
-  height: 30%;
+  min-height: 30%;
   width: 80%;
   background-color: #ecff50;
   border: 2px solid black;
