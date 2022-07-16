@@ -76,7 +76,7 @@ const SearchForm = (props) => {
             <select className={styles.select} name="price" id="price"onChange={handleChange}>
               <option value=''>Price</option>
               <option value="0">Free</option>
-              <option value="1">$</option>
+              <option value="">$</option>
             </select>
             {/* <button type="submit">Random</button> */}
             <button className={styles.button6} type="submit">Search</button>
