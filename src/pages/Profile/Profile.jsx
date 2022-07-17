@@ -1,8 +1,9 @@
 import { useState, useRef, useEffect } from "react"
 import { useLocation } from "react-router-dom"
 import styles from './Profile.module.css'
+import UserActivity from "../../components/UserActivity/UserActivity"
 
-const Profile = ({handleAddUserActivity, user}) => {
+const Profile = ({handleAddUserActivity, user, userActivity}) => {
   const [validForm, setValidForm] = useState(false)
   const formElement = useRef()
   const {state} = useLocation()
@@ -96,6 +97,11 @@ const Profile = ({handleAddUserActivity, user}) => {
                 </button>
               </form>
             </div>
+        </div>
+        <div>
+          {userActivity?.map(activity =>
+            <UserActivity activity={activity}/>
+            )}  
         </div>
         <div>
           <h4>Saved Activities</h4>

@@ -16,8 +16,6 @@ import SearchDetails from './pages/Search/SearchDetails/SearchDetails'
 import * as profileService from './services/profileService'
 
 
-
-
 const App = () => {
   const [user, setUser] = useState(authService.getUser())
   const [userActivity, setUserActivity] = useState([])
@@ -40,11 +38,11 @@ const App = () => {
 
   useEffect(() => {
     const fetchAllUserActivities = async () =>{
-    const userActivityData = await profileService.getAll()
-      setUserActivity(userActivityData)
+      const profile = await profileService.show(user.profile)
+      setUserActivity(profile.userActivity)
     }
     fetchAllUserActivities()
-  }, [])
+  }, [user.profile])
 
   return (
     <>
@@ -68,8 +66,11 @@ const App = () => {
           element={user ? <Profiles /> : <Navigate to="/login" />}
         />
         <Route
-          path='/profiles/:id'
-          element={<Profile user={user} handleAddUserActivity={handleAddUserActivity}/>}
+          path="/profiles/:id"
+          element={<Profile 
+            profile={user.profile} 
+            user={user} 
+            userActivity={userActivity} handleAddUserActivity={handleAddUserActivity}/>}
         />
         <Route
           path="/changePassword"
