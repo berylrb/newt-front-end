@@ -7,10 +7,14 @@ const SearchCard = (props) => {
 
   return ( 
     <>
-      <Link className={styles.activityLink} to={`/activity/${props.search.key}`}>
-        {props.search.activity}
-      </Link>
-      <br/>
+      {/* <div className={styles.searchCard}> */}
+        <div className={styles.resultDiv}>
+          <Link className={styles.activityLink} to={`/activity/${props.search.key}`}>
+            {props.search.activity}
+          </Link>
+        </div>
+        <br/>
+      {/* </div> */}
     </>
   )
 }
