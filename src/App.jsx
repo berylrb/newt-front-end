@@ -43,7 +43,7 @@ const App = () => {
       setUserActivity(profile.userActivity)
     }
     fetchAllUserActivities()
-  }, [])
+  }, [user.profile])
 
   return (
     <>
