@@ -1,7 +1,7 @@
 import { useState, useRef, useEffect } from "react"
 import styles from './Profile.module.css'
 
-const Profile = ({user, handleAddUserActivity}) => {
+const Profile = ({profile, handleAddUserActivity, user}) => {
   const [validForm, setValidForm] = useState(false)
   const formElement = useRef()
 
@@ -30,7 +30,7 @@ const Profile = ({user, handleAddUserActivity}) => {
       <div className={styles.profileBg}>
         <div className={styles.profilePageContents}>
           <div className={styles.profileGreeting}>
-            <h4>Hi, {user.name}</h4>
+            <h4>Hi, {profile.name}</h4>
           </div>
           <div className={styles.addActivityForm}>
             <form 
