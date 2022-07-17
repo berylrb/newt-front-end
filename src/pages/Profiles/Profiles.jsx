@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import * as profileService from '../../services/profileService'
 import  styles from './Profiles.module.css'
+// import Profile from '../Profile/Profile'
 
 const Profiles = () => {
   const [profiles, setProfiles] = useState([])
