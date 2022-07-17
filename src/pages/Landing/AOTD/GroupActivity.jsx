@@ -5,7 +5,7 @@ import { getGroupActivity } from '../../../services/bored-api'
 import { Link } from 'react-router-dom'
 
 
-const GroupActivity = () => {
+const GroupActivity = ({user}) => {
   const [groupActivity, setGroupActivity] = useState()
 
   console.log("group activity key", groupActivity?.key)
@@ -20,18 +20,30 @@ const GroupActivity = () => {
 
   return (
     <>
+    {user ?
       <div>
         <div className={styles.groupLinkDiv}>
+          
           <Link className={styles.activityLink} to="/activity" state={{groupActivity}}>
             {groupActivity?.activity}
           </Link>
         </div>
       </div>
-    
+    :
+      <div>
+        <div className={styles.groupLinkDiv}>
+        
+          <Link className={styles.activityLink} to="/login">
+            {groupActivity?.activity}
+          </Link>
+        </div>
+      </div>
+    }
     
     </>
   )
 }
+
 
 
 export default GroupActivity

@@ -5,7 +5,7 @@ import { getSoloActivity } from '../../../services/bored-api'
 import { Link } from 'react-router-dom'
 
 
-const SoloActivity = () => {
+const SoloActivity = ({user}) => {
   const [soloActivity, setSoloActivity] = useState()
 
 
@@ -17,8 +17,10 @@ const SoloActivity = () => {
     fetchSoloActivity()
   }, [])
   console.log("solo activity component", soloActivity?.key)
+  
   return (
     <>
+    {user ?
       <div>
         <div className={styles.soloLinkDiv}>
           
@@ -27,7 +29,16 @@ const SoloActivity = () => {
           </Link>
         </div>
       </div>
-    
+    :
+      <div>
+        <div className={styles.soloLinkDiv}>
+        
+          <Link className={styles.activityLink} to="/login">
+            {soloActivity?.activity}
+          </Link>
+        </div>
+      </div>
+    }
     
     </>
   )
