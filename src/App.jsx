@@ -12,6 +12,7 @@ import ChangePassword from './pages/ChangePassword/ChangePassword'
 import * as authService from './services/authService'
 import Search from './pages/Search/Search'
 import ActivityDetails from './pages/ActivityDetails/ActivityDetails'
+import SearchDetails from './pages/Search/SearchDetails/SearchDetails'
 import * as profileService from './services/profileService'
 
 
@@ -84,6 +85,7 @@ const App = () => {
           path="/activity"
           element={<ActivityDetails handleSignupOrLogin={handleSignupOrLogin} />}
         />
+        <Route path="/activity/:activityName" element={<SearchDetails />} />
       </Routes>
     </>
   )

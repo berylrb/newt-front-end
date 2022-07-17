@@ -4,6 +4,7 @@ import styles from '../Search.module.css'
 import { useState } from "react";
 
 const SearchForm = (props) => {
+  
   // const [type, setSearchType] = useState(null)
   // const selectedType = props.searchParams[type]
   const [formData, setFormData] = useState({

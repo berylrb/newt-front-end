@@ -1,18 +1,25 @@
 import styles from './Search.module.css'
 
 import SearchForm from "./SearchForm/SearchForm"
-// import { useState } from "react"
+import SearchCard from './SearchCard/SearchCard'
+import { useState } from 'react'
+
 import { activitySearch } from "../../services/bored-api"
 
-const Search = () => {
-  // const [activityTypes, setActivityTypes] = useState([])
 
+const Search = () => {
+  const [searchDetails, setSearchDetails] = useState([])
+
+  console.log('search key', searchDetails.key)
 
   const handleTypeSearch = async formData => {
     const typeResults = await activitySearch(formData)
     console.log(typeResults)
-    // setActivityTypes(typeResults.results)
+    setSearchDetails(typeResults)
+    console.log('the search details', searchDetails)
+    console.log('this is the type', typeof searchDetails)
   }
+
 
   return (
     <>
@@ -22,6 +29,15 @@ const Search = () => {
           </div>
           <SearchForm handleTypeSearch={handleTypeSearch} />
       </div>
+        <SearchCard
+          search={searchDetails}
+          key={searchDetails.key}
+        />
+      {searchDetails.activity}
+      
+        
+      
+
     </>
   )
 }
