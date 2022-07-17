@@ -21,8 +21,12 @@ async function create(userActivity, id) {
   return res.json()
 }
 
-async function getAll() {
-  const res = await fetch(BASE_URL)
+async function show(id) {
+  const res = await fetch(`${BASE_URL}/${id}`, {
+    headers: {
+      'Authorization': `Bearer ${tokenService.getToken()}`
+    }
+  })
   return res.json()
 }
 
@@ -37,4 +41,4 @@ async function addPhoto(photoData, profileId) {
   return await res.json()
 }
 
-export { getAllProfiles, addPhoto, create, getAll }
+export { getAllProfiles, addPhoto, create, show }
