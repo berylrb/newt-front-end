@@ -1,10 +1,11 @@
 import { useState, useRef, useEffect } from "react"
 import styles from './Profile.module.css'
+import UserActivity from "../../components/UserActivity/UserActivity"
 
-const Profile = ({profile, handleAddUserActivity, user, activity}) => {
+const Profile = ({profile, handleAddUserActivity, user, userActivity}) => {
   const [validForm, setValidForm] = useState(false)
   const formElement = useRef()
-
+  console.log(userActivity)
   const [formData, setFormData] = useState({
     activity: '',
     type: '',
@@ -90,9 +91,9 @@ const Profile = ({profile, handleAddUserActivity, user, activity}) => {
             </div>
         </div>
         <div>
-          {activity.map(singleActivity => 
-            <h5>Test</h5>
-          )}
+          {userActivity.map(activity =>
+            <UserActivity activity={activity}/>
+            )}  
         </div>
         <div>
           <h4>Saved Activities</h4>

@@ -54,7 +54,7 @@ const LoginForm = props => {
           onChange={handleChange}
         />
       </div>
-      <div>
+      <div className={styles.buttonDiv}>
         <button className={styles.button6}>Log In</button>
       </div>
     </form>
