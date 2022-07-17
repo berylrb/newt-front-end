@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { getActivityDetails } from '../../../services/bored-api';
 // import { useLocation } from 'react-router-dom'
 import { useParams } from 'react-router-dom';
-import styles from '../Search.module.css'
+import styles from './SearchDetails.module.css'
 import { Link } from 'react-router-dom';
 
 const SearchDetails = () => {
