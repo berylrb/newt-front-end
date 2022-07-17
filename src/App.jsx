@@ -23,7 +23,7 @@ const App = () => {
   const [userActivity, setUserActivity] = useState([])
   const [profile, setProfile] = useState(user)
   const navigate = useNavigate()
-
+  console.log(user)
   const handleLogout = () => {
     authService.logout()
     setUser(null)
@@ -34,8 +34,8 @@ const App = () => {
     setUser(authService.getUser())
   }
 
-  const handleAddUserActivity = async newUserActivityData => {
-    const newUserActivity = await profileService.create(newUserActivityData)
+  const handleAddUserActivity = async (newUserActivityData) => {
+    const newUserActivity = await profileService.create(newUserActivityData, user.profile)
     setUserActivity([...userActivity, newUserActivity])
   }
 
