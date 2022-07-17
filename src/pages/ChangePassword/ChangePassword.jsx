@@ -12,7 +12,9 @@ const ChangePassword = props => {
 
   return (
     <div className={styles.pwBg}>
-      <img className={styles.bgTopBlob} src={Blob} alt="corner blob" />
+      <div className={styles.imgDiv}>
+        <img className={styles.bgTopBlob} src={Blob} alt="corner blob" />
+      </div>
       <main className={styles.pwContainer}>
         <div className={styles.pwFormBg}>
           <h2 className={styles.h2}>Change Password</h2>
@@ -20,7 +22,9 @@ const ChangePassword = props => {
           <ChangePasswordForm {...props} updateMessage={updateMessage} />
         </div>
       </main>
-      <img className={styles.bgBottomBlob} src={Blob} alt="corner blob" />
+      <div className={styles.imgDiv}>
+        <img className={styles.bgBottomBlob} src={Blob} alt="corner blob" />
+      </div>
     </div>
   )
 }

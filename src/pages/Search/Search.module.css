@@ -79,7 +79,7 @@
   background-color: #ff96ff;
   border: 1.5px solid black;
   border-radius: .25rem;
-  box-shadow: 2px 4px rgb(255, 255, 255), 2px 4px 0 1px black;
+  box-shadow: 3px 4px #ecff50, 3px 4px 0 1px black;
   box-sizing: border-box;
   color: rgba(0, 0, 0, 0.85);
   cursor: pointer;
@@ -104,14 +104,14 @@
 
 .button6:hover,
 .button6:focus {
-  box-shadow: 2px 4px rgb(255, 255, 255), 2px 4px 0 1px black;
+  box-shadow: 3px 4px rgb(255, 255, 255), 3px 4px 0 1px black;
   color: rgba(0, 0, 0, 0.65);
   border: 1.5px solid black;
 }
 
 .button6:hover {
   transform: translateY(-1px);
-  box-shadow: 2px 4px rgb(255, 255, 255), 2px 4px 0 1px rgba(0, 0, 0, 0.186);
+  box-shadow: 3px 4px rgb(255, 255, 255), 3px 4px 0 1px rgba(0, 0, 0, 0.186);
 }
 
 .button6:active {
