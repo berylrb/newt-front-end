@@ -1,17 +1,33 @@
 import { useState, useRef, useEffect } from "react"
+import { useLocation, useParams } from "react-router-dom"
 import styles from './Profile.module.css'
 import UserActivity from "../../components/UserActivity/UserActivity"
+import { show } from "../../services/profileService"
 
-const Profile = ({profile, handleAddUserActivity, user, userActivity}) => {
+const Profile = ({handleAddUserActivity, user, userActivity}) => {
   const [validForm, setValidForm] = useState(false)
+  const {id} = useParams()
   const formElement = useRef()
-  console.log(userActivity)
+  const {state} = useLocation()
+  console.log("Profiles are not working", state)
+  const [profile, setProfile] = useState()
+
   const [formData, setFormData] = useState({
     activity: '',
     type: '',
     price: 0,
     participants: 0
   })
+
+  console.log('profile', profile, 'user', user, 'userid', user._id, 'profileid', profile?._id)
+
+  useEffect(() => {
+    const fetchProfile = async() => {
+      const profileData = await show(id)
+      setProfile(profileData)
+    }
+    fetchProfile()
+  }, [id])
 
   useEffect(() => {
     formElement.current.checkValidity() ? setValidForm(true) : setValidForm(false)
@@ -31,7 +47,7 @@ const Profile = ({profile, handleAddUserActivity, user, userActivity}) => {
       <div className={styles.profileBg}>
         <div className={styles.profilePageContents}>
           <div className={styles.profileGreeting}>
-            <h4>Hi, {profile.name}</h4>
+            <h4>Hi, {profile?.name}</h4>
           </div>
           <div className={styles.addActivityForm}>
             <form 
@@ -91,7 +107,7 @@ const Profile = ({profile, handleAddUserActivity, user, userActivity}) => {
             </div>
         </div>
         <div>
-          {userActivity.map(activity =>
+          {userActivity?.map(activity =>
             <UserActivity activity={activity}/>
             )}  
         </div>

@@ -19,7 +19,6 @@ import * as profileService from './services/profileService'
 const App = () => {
   const [user, setUser] = useState(authService.getUser())
   const [userActivity, setUserActivity] = useState([])
-  const [profile, setProfile] = useState(user)
   const navigate = useNavigate()
   console.log(user)
   const handleLogout = () => {
@@ -39,11 +38,11 @@ const App = () => {
 
   useEffect(() => {
     const fetchAllUserActivities = async () =>{
-      const profile = await profileService.show(user.profile)
+      const profile = await profileService.show(user?.profile)
       setUserActivity(profile.userActivity)
     }
     fetchAllUserActivities()
-  }, [user.profile])
+  }, [user?.profile])
 
   return (
     <>
@@ -64,12 +63,12 @@ const App = () => {
         />
         <Route
           path="/profiles"
-          element={user ? <Profiles setProfile={setProfile} /> : <Navigate to="/login" />}
+          element={user ? <Profiles /> : <Navigate to="/login" />}
         />
         <Route
           path="/profiles/:id"
           element={<Profile 
-            profile={profile} 
+            profile={user?.profile} 
             user={user} 
             userActivity={userActivity} handleAddUserActivity={handleAddUserActivity}/>}
         />
