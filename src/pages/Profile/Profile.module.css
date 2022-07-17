@@ -3,3 +3,24 @@
   width: 100vw;
   background-color: #ff96ff;
 }
+
+.profilePageContents {
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-top: 100px;
+}
+
+
+.profileGreeting {
+  display: flex;
+  padding: 20px;
+}
+
+
+.addActivityForm {
+  width: 60%;
+  
+}

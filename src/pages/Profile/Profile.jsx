@@ -28,70 +28,73 @@ const Profile = ({user, handleAddUserActivity}) => {
   return ( 
     <>
       <div className={styles.profileBg}>
-        <h1>Profile Page</h1>
-        <h2>{user.name}</h2>
-      <div>
-        <form 
-          autoComplete="off" 
-          onSubmit={handleSubmit}
-          ref={formElement}>
-          <div>
-            <label htmlFor="activity-name">Activity</label>
-            <input 
-              type="text"
-              className="activity-name"
-              id="name-input"
-              name="activity"
-              value={formData.activity}
-              onChange={handleChange}
-            />
+        <div className={styles.profilePageContents}>
+          <div className={styles.profileGreeting}>
+            <h4>Hi, {user.name}</h4>
           </div>
-          <div>
-            <label htmlFor="activity-type">Type</label>
-            <input 
-              type="text"
-              className="activity-type"
-              id="type-input"
-              name="type"
-              value={formData.type}
-              onChange={handleChange}
-            />
-          </div>
-          <div>
-            <label htmlFor="activity-price">Price</label>
-            <input 
-              type="text"
-              className="activity-price"
-              id="price-input"
-              name="price"
-              value={formData.price}
-              onChange={handleChange}
-            />
-          </div>
-          <div>
-            <label htmlFor="activity-participants">Participant #</label>
-            <input 
-              type="text"
-              className="activity-participants"
-              id="participant-input"
-              name="participants"
-              value={formData.participants}
-              onChange={handleChange}
-            />
-          </div>
-            <button 
-            type="submit"
-            disabled={!validForm}>
-            Add Activity!
-            </button>
-          </form>
-      </div>
-      <div>
-        <h4>Saved Activities</h4>
-      </div>
-      <div>
-        <h4>Done Activities</h4>
-      </div>
+          <div className={styles.addActivityForm}>
+            <form 
+              autoComplete="off" 
+              onSubmit={handleSubmit}
+              ref={formElement}>
+              <div>
+                <label htmlFor="activity-name">Activity</label>
+                <input 
+                  type="text"
+                  className="activity-name"
+                  id="name-input"
+                  name="activity"
+                  value={formData.activity}
+                  onChange={handleChange}
+                />
+              </div>
+              <div>
+                <label htmlFor="activity-type">Type</label>
+                <input 
+                  type="text"
+                  className="activity-type"
+                  id="type-input"
+                  name="type"
+                  value={formData.type}
+                  onChange={handleChange}
+                />
+              </div>
+              <div>
+                <label htmlFor="activity-price">Price</label>
+                <input 
+                  type="text"
+                  className="activity-price"
+                  id="price-input"
+                  name="price"
+                  value={formData.price}
+                  onChange={handleChange}
+                />
+              </div>
+              <div>
+                <label htmlFor="activity-participants">Participant #</label>
+                <input 
+                  type="text"
+                  className="activity-participants"
+                  id="participant-input"
+                  name="participants"
+                  value={formData.participants}
+                  onChange={handleChange}
+                />
+              </div>
+                <button 
+                type="submit"
+                disabled={!validForm}>
+                Add Activity!
+                </button>
+              </form>
+            </div>
+        </div>
+        <div>
+          <h4>Saved Activities</h4>
+        </div>
+        <div>
+          <h4>Done Activities</h4>
+        </div>
       </div>
     </>
   );
