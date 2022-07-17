@@ -8,7 +8,7 @@ const Landing = ({ user }) => {
       <div className={styles.landingBg}>
         <img className={styles.bgTopBlob} src={Blob} alt="corner blob" />
         <main className={styles.container}>
-          <AOTD />
+          <AOTD user={user}/>
         </main>
         <img className={styles.bgBottomBlob} src={Blob} alt="corner blob" />
       </div>
