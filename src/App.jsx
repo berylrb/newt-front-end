@@ -40,11 +40,10 @@ const App = () => {
   useEffect(() => {
     const fetchAllUserActivities = async () =>{
       const profile = await profileService.show(user.profile)
-      console.log('user activity data',profile)
       setUserActivity(profile.userActivity)
     }
     fetchAllUserActivities()
-  }, [])
+  }, [user.profile])
 
   return (
     <>
