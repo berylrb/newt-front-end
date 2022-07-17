@@ -92,8 +92,11 @@ const Profile = ({profile, handleAddUserActivity, user, userActivity}) => {
         </div>
         <div>
           {userActivity.map(activity =>
-            <UserActivity activity={activity}/>
-            )}  
+            <UserActivity 
+              activity={activity}
+              key={activity._id}
+            />
+          )}  
         </div>
         <div>
           <h4>Saved Activities</h4>

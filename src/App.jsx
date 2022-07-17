@@ -67,10 +67,10 @@ const App = () => {
           element={user ? <Profiles setProfile={setProfile} /> : <Navigate to="/login" />}
         />
         <Route
-          path="/profiles/:id"
+          path="/profile/:id"
           element={<Profile 
             profile={profile} 
-            user={user} 
+            user={user}
             userActivity={userActivity} handleAddUserActivity={handleAddUserActivity}/>}
         />
         <Route
