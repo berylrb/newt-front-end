@@ -1,9 +1,13 @@
 import { useState, useRef, useEffect } from "react"
+import { useLocation } from "react-router-dom"
 import styles from './Profile.module.css'
 
-const Profile = ({profile, handleAddUserActivity, user}) => {
+const Profile = ({handleAddUserActivity, user}) => {
   const [validForm, setValidForm] = useState(false)
   const formElement = useRef()
+  const {state} = useLocation()
+  console.log("Profiles are not working", state)
+  const profile = state
 
   const [formData, setFormData] = useState({
     activity: '',
@@ -11,6 +15,10 @@ const Profile = ({profile, handleAddUserActivity, user}) => {
     price: 0,
     participants: 0
   })
+
+  console.log('profile', profile, 'user', user, 'userid', user._id, 'profileid', profile?._id)
+
+
 
   useEffect(() => {
     formElement.current.checkValidity() ? setValidForm(true) : setValidForm(false)
@@ -30,7 +38,7 @@ const Profile = ({profile, handleAddUserActivity, user}) => {
       <div className={styles.profileBg}>
         <div className={styles.profilePageContents}>
           <div className={styles.profileGreeting}>
-            <h4>Hi, {profile.name}</h4>
+            <h4>Hi, {profile?.name}</h4>
           </div>
           <div className={styles.addActivityForm}>
             <form 

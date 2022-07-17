@@ -21,7 +21,6 @@ import * as profileService from './services/profileService'
 const App = () => {
   const [user, setUser] = useState(authService.getUser())
   const [userActivity, setUserActivity] = useState([])
-  const [profile, setProfile] = useState(user)
   const navigate = useNavigate()
   console.log(user)
   const handleLogout = () => {
@@ -66,11 +65,11 @@ const App = () => {
         />
         <Route
           path="/profiles"
-          element={user ? <Profiles setProfile={setProfile} /> : <Navigate to="/login" />}
+          element={user ? <Profiles /> : <Navigate to="/login" />}
         />
         <Route
-          path="/profiles/:id"
-          element={<Profile profile={profile} user={user} handleAddUserActivity={handleAddUserActivity}/>}
+          path='/profiles/:id'
+          element={<Profile user={user} handleAddUserActivity={handleAddUserActivity}/>}
         />
         <Route
           path="/changePassword"
