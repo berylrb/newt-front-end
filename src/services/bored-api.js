@@ -10,6 +10,7 @@ export async function getSoloActivity() {
 
 
 export async function getGroupActivity() {
+  
   const res = await fetch(`${baseUrl}/activity?participants=4`)
   const data = await res.json()
   console.log(data)
