@@ -38,11 +38,11 @@ const App = () => {
 
   useEffect(() => {
     const fetchAllUserActivities = async () =>{
-      const profile = await profileService.show(user.profile)
+      const profile = await profileService.show(user?.profile)
       setUserActivity(profile.userActivity)
     }
     fetchAllUserActivities()
-  }, [user.profile])
+  }, [user?.profile])
 
   return (
     <>
@@ -68,7 +68,7 @@ const App = () => {
         <Route
           path="/profiles/:id"
           element={<Profile 
-            profile={user.profile} 
+            profile={user?.profile} 
             user={user} 
             userActivity={userActivity} handleAddUserActivity={handleAddUserActivity}/>}
         />

@@ -1,14 +1,16 @@
 import { useState, useRef, useEffect } from "react"
-import { useLocation } from "react-router-dom"
+import { useLocation, useParams } from "react-router-dom"
 import styles from './Profile.module.css'
 import UserActivity from "../../components/UserActivity/UserActivity"
+import { show } from "../../services/profileService"
 
 const Profile = ({handleAddUserActivity, user, userActivity}) => {
   const [validForm, setValidForm] = useState(false)
+  const {id} = useParams()
   const formElement = useRef()
   const {state} = useLocation()
   console.log("Profiles are not working", state)
-  const profile = state
+  const [profile, setProfile] = useState()
 
   const [formData, setFormData] = useState({
     activity: '',
@@ -19,7 +21,13 @@ const Profile = ({handleAddUserActivity, user, userActivity}) => {
 
   console.log('profile', profile, 'user', user, 'userid', user._id, 'profileid', profile?._id)
 
-
+  useEffect(() => {
+    const fetchProfile = async() => {
+      const profileData = await show(id)
+      setProfile(profileData)
+    }
+    fetchProfile()
+  }, [id])
 
   useEffect(() => {
     formElement.current.checkValidity() ? setValidForm(true) : setValidForm(false)

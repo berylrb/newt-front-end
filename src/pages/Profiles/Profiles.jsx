@@ -26,6 +26,7 @@ const Profiles = (props) => {
             <div className={styles.cardContainer}>
               {profiles.map(profile=>
                 <Link 
+                key={profile._id}
                 to={`/profiles/${profile._id}`}
                 state={profile}>
                 <div key={profile._id}  className={styles.profileNameLink}>
