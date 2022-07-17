@@ -9,8 +9,8 @@ async function getAllProfiles() {
   return await res.json()
 }
 
-async function create(userActivity) {
-  const res = await fetch(BASE_URL, {
+async function create(userActivity, id) {
+  const res = await fetch(`${BASE_URL}/${id}/userActivities`, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
