@@ -81,13 +81,10 @@ const ChangePasswordForm = props => {
           onChange={handleChange}
         />
       </div>
-      <div className={styles.inputContainer}>
-        <button disabled={isFormInvalid()} className={styles.button}>
+      <div className={styles.buttonDiv}>
+        <button disabled={isFormInvalid()} className={styles.button6}>
           Change Password
         </button>
-        <Link to="/">
-          <button>Cancel</button>
-        </Link>
       </div>
     </form>
   )
