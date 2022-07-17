@@ -54,7 +54,8 @@ const ActivityDetails = () => {
             </div>
             <div className={styles.returnContainer}>
               <br />
-              <Link className={styles.returnLink} to="/">Return</Link>
+              <Link className={styles.returnLink} to="/">Return Home</Link>
+              <Link className={styles.returnLink} to="/search">Return to Search</Link>
             </div>
           </div>
         </>
