@@ -1,7 +1,7 @@
 import { useState, useRef, useEffect } from "react"
 import styles from './Profile.module.css'
 
-const Profile = ({profile, handleAddUserActivity, user}) => {
+const Profile = ({profile, handleAddUserActivity, user, activity}) => {
   const [validForm, setValidForm] = useState(false)
   const formElement = useRef()
 
@@ -88,6 +88,11 @@ const Profile = ({profile, handleAddUserActivity, user}) => {
                 </button>
               </form>
             </div>
+        </div>
+        <div>
+          {activity.map(singleActivity => 
+            <h5>Test</h5>
+          )}
         </div>
         <div>
           <h4>Saved Activities</h4>
