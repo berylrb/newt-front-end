@@ -18,7 +18,6 @@ import * as profileService from './services/profileService'
 
 const App = () => {
   const [user, setUser] = useState(authService.getUser())
-  const [userActivity, setUserActivity] = useState([])
   const navigate = useNavigate()
   console.log(user)
   const handleLogout = () => {
@@ -46,25 +45,6 @@ const App = () => {
     return await profileService.addPhoto(photoData,id)
   }
 
-  const handleAddUserActivity = async (newUserActivityData) => {
-    const newUserActivity = await profileService.create(newUserActivityData, user.profile)
-    setUserActivity([...userActivity, newUserActivity])
-  }
-
-  const handleDeleteUserActivity = async (userActivityId) => {
-    console.log(userActivityId)
-    const deletedUserActivity = await profileService.deleteOne(userActivityId)
-    // setUserActivity(userActivity.filter(activity => activity._id !== deletedUserActivity._id))
-  }
-
-  useEffect(() => {
-    const fetchAllUserActivities = async () =>{
-      const profile = await profileService.show(user?.profile)
-      setUserActivity(profile.userActivity)
-    }
-    fetchAllUserActivities()
-  }, [user?.profile])
-
   return (
     <>
       <NavBar user={user} handleLogout={handleLogout} />
@@ -91,8 +71,6 @@ const App = () => {
           element={<Profile 
             profile={user?.profile} 
             user={user} 
-            userActivity={userActivity} handleAddUserActivity={handleAddUserActivity}
-            handleDeleteUserActivity={handleDeleteUserActivity}
             />}
         />
         <Route
