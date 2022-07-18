@@ -30,20 +30,10 @@ const App = () => {
     setUser(authService.getUser())
   }
 
-  const handleAddPhoto = async (newPhotoData, photo) => {
-    const newPhoto = await profileService.create(newPhotoData)
-    if (photo){
-      newPhoto.photo = await photoHelper(photo, newPhotoData)
-    }
-    setUser([...user, newPhoto])
-    navigate('/')
-  }
 
-  const photoHelper = async (photo, id) => {
-    const photoData = new FormData()
-    photoData.append('photo', photo)
-    return await profileService.addPhoto(photoData,id)
-  }
+
+
+
 
   return (
     <>
@@ -52,7 +42,7 @@ const App = () => {
         <Route path="/" element={<Landing user={user} />} />
         <Route
           path="/signup"
-          element={<Signup handleSignupOrLogin={handleSignupOrLogin} handleAddPhoto={handleAddPhoto} />}
+          element={<Signup handleSignupOrLogin={handleSignupOrLogin} />}
         />
         <Route
           path="/login"
