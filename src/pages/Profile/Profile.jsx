@@ -57,27 +57,19 @@ const Profile = ({user}) => {
 
   return ( 
     <>
-    {/* {user === user.id 
-      ?  */}
+      {/* {user === user.id
+        ? */}
       <div className={styles.profilePage}>
-      <div className={styles.profileBg}>
+        <div className={styles.profileBg}>
         <div className={styles.profileGreeting}>
-            <h4>Hi, {profile?.name}</h4>
-            <img src={profile?.photo} alt="profile-avatar" className={styles.profileAvatar} />
+          <h4>Hi, {profile?.name}</h4>
+          <img src={profile?.photo} alt="profile-avatar" className={styles.profileAvatar} />
             <br/>
             <br/>
             <br/>
           </div>
         <div className={styles.profilePageContents}>
-            <div>
-      {/* : */}
-              <h4>Saved Activities</h4>
-            </div>
-            <div>
-              <h4>Done Activities</h4>
-            </div>
           </div>
-        
         <div className={styles.formAndAddedDiv}>
           <div className={styles.formParentDiv}>
             <div className={styles.addActivityForm}>
@@ -97,7 +89,7 @@ const Profile = ({user}) => {
                     name="activity"
                     value={formData.activity}
                     onChange={handleChange}
-                    />
+                  />
                 </div>
                 <div className={styles.activityProfileInput}>
                   <label htmlFor="activity-type">Type</label>
@@ -149,14 +141,22 @@ const Profile = ({user}) => {
                     key={activity._id} 
                     activity={activity}
                     handleDeleteUserActivity={handleDeleteUserActivity}
-                  />
+                    />
                   )} 
-              </div>
             </div>
+        {/* : */}
+              <div>
+                <h4>Saved Activities</h4>
+              </div>
+              <div>
+                <h4>Done Activities</h4>
+              </div>
+      {/* } */}
           </div>
-    {/* }     */}
         </div>
-    </>
+      </div>
+        
+        </>
   );
 }
 
