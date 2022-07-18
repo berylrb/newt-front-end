@@ -141,3 +141,8 @@ h3 {
   margin: 30px 0 0px 25px;
 }
 
+
+.profileAvatar {
+  width: 30px;
+  height: auto;
+}

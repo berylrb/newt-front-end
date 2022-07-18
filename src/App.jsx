@@ -18,8 +18,11 @@ import * as profileService from './services/profileService'
 
 const App = () => {
   const [user, setUser] = useState(authService.getUser())
+  
   const navigate = useNavigate()
   console.log(user)
+
+
   const handleLogout = () => {
     authService.logout()
     setUser(null)
