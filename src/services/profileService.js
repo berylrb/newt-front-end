@@ -56,8 +56,9 @@ async function addPhoto(photoData, id) {
 }
 
 
-async function addApiActivity(id, activity) {
-  const res = await fetch(`${BASE_URL}/${id}/activities`, {
+async function addApiActivity(profileId, activity) {
+  console.log('this is id', profileId)
+  const res = await fetch(`${BASE_URL}/${profileId}/activities`, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
