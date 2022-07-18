@@ -1,10 +1,10 @@
 import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 
-const EditUserActivity = (props) => {
+const EditUserActivity = ({activity}) => {
 
   const location = useLocation()
-  const [formData, setFormData] = useState(location.state.userActivity)
+  const [formData, setFormData] = useState(location.state.activity)
   const [validForm, setValidForm] = useState(true)
 
   const handleChange = evt => {
@@ -13,7 +13,7 @@ const EditUserActivity = (props) => {
 
   return ( 
     <>
-    <h2>Edit Your Activity</h2>
+      <h1>Edit Your Activity</h1>
       <form autoComplete="off">
         <div>
           <label htmlFor="activity-name">Activity</label>
