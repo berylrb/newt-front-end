@@ -55,4 +55,17 @@ async function addPhoto(photoData, id) {
   return await res.json()
 }
 
-export { getAllProfiles, addPhoto, create, show, deleteOne }
+
+async function addApiActivity(id, activity) {
+  const res = await fetch(`${BASE_URL}/${id}/activities`, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+      'Authorization': `Bearer ${tokenService.getToken()}`
+    },
+    body: JSON.stringify(activity),
+  })
+    return res.json()
+}
+
+export { getAllProfiles, addPhoto, create, show, deleteOne, addApiActivity }
