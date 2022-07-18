@@ -1,14 +1,12 @@
 import { useState, useEffect} from 'react'
 import { Link } from 'react-router-dom'
 import { getActivityDetails } from '../../services/bored-api'
-import { useLocation, useParams } from 'react-router-dom'
-import { show } from '../../services/profileService'
+import { useLocation } from 'react-router-dom'
 import  styles from './ActivityDetails.module.css'
 import * as profileService from '../../services/profileService'
 
 const ActivityDetails = ( {user} ) => {
   const [activityDetails, setActivityDetails] = useState({})
-  const {id} = useParams()
   // const { activityName } = useParams()
   const location = useLocation()
   console.log(location)
