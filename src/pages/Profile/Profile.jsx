@@ -3,8 +3,9 @@ import { useLocation, useParams } from "react-router-dom"
 import styles from './Profile.module.css'
 import UserActivity from "../../components/UserActivity/UserActivity"
 import { show } from "../../services/profileService"
+import * as profileService from '../../services/profileService'
 
-const Profile = ({handleAddUserActivity, handleDeleteUserActivity, user, userActivity}) => {
+const Profile = ({user}) => {
   const [validForm, setValidForm] = useState(false)
   const {id} = useParams()
   const formElement = useRef()
@@ -29,6 +30,12 @@ const Profile = ({handleAddUserActivity, handleDeleteUserActivity, user, userAct
     fetchProfile()
   }, [id])
 
+  const handleDeleteUserActivity = async (userActivityId) => {
+    console.log(userActivityId)
+    const updatedProfile = await profileService.deleteOne(userActivityId)
+    setProfile(updatedProfile)
+  }
+
   useEffect(() => {
     formElement.current.checkValidity() ? setValidForm(true) : setValidForm(false)
   }, [formData])
@@ -41,6 +48,12 @@ const Profile = ({handleAddUserActivity, handleDeleteUserActivity, user, userAct
     evt.preventDefault()
     handleAddUserActivity(formData)
   }
+
+  const handleAddUserActivity = async (newUserActivityData) => {
+    const updatedProfile = await profileService.create(newUserActivityData, user.profile)
+    setProfile(updatedProfile)
+  }
+
 
   return ( 
     <>
@@ -124,11 +137,11 @@ const Profile = ({handleAddUserActivity, handleDeleteUserActivity, user, userAct
               </div>
             </div>
             <div className={styles.addedActivityDiv}>
-                {userActivity?.map(activity =>
+                {profile?.userActivity?.map(activity =>
                   <UserActivity
-                  key={activity._id} 
-                  activity={activity}
-                  handleDeleteUserActivity={handleDeleteUserActivity}
+                    key={activity._id} 
+                    activity={activity}
+                    handleDeleteUserActivity={handleDeleteUserActivity}
               
                   />
                   )} 
