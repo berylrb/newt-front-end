@@ -1,64 +1,21 @@
-h3 {
-  font-size: 1.2em;
-  color: white;
-}
-
-
-.profileBg{
-  height: 130vh;
-  width: 100vw;
-  background-color: #ff96ff;
+.userActivityDiv {
+  width: 25vw;
+  height: 35vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 30px;
-}
-
-.h3 {
-  background-color: #90a3ff;
-  width: 100%;
-  border-bottom: 2px solid black;
-  text-align: center;
-  padding: 10px;
-}
-
-.profilePageContents {
-  width: 70%;
-  height: 80%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  padding-top: 100px;
-  background-color: white;
   border: 2px solid black;
+  margin: 10px;
 }
 
 
-.profileGreeting {
-  display: flex;
-  padding: 20px;
+h4 {
+  text-align: left;
 }
 
-
-.addActivityForm {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  margin-top: 30px;
-  padding: 0 0 30px 0;
-  width: 40%;
-  height: 60%;
-  background-color: white;
-  border: 2px solid black;
-  
-}
-
-.activityProfileInput {
-  display: flex;
-  flex-direction: column;
+p, h4 {
+  margin: 5px;
 }
 
 .buttonDiv {
@@ -81,7 +38,7 @@ h3 {
   font-weight: 500;
   justify-content: center;
   line-height: 1.25;
-  margin: 18px 0 0 0;
+  margin: 1px 0 0 0;
   height: 40px;
   padding: 10px;
   position: relative;
@@ -91,7 +48,7 @@ h3 {
   -webkit-user-select: none;
   touch-action: manipulation;
   vertical-align: baseline;
-  width: 100%;
+  width: 60%;
 
 }
 
@@ -113,18 +70,4 @@ h3 {
   box-shadow: 2px 2px rgb(176, 176, 176), 2px 2px 0 1px rgba(0, 0, 0, 0.186);
   color: rgba(0, 0, 0, 0.65);
   transform: translateY(0);
-}
-
-
-.addedActivityDiv {
-  display: flex;
-  flex-direction: column;
-  height: 30%;
-
-}
-
-.formAndAddedDiv {
-  display: flex;
-  justify-content: center;
-  width: 100%;
 }
