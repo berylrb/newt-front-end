@@ -45,16 +45,35 @@ const Profile = ({handleAddUserActivity, handleDeleteUserActivity, user, userAct
   return ( 
     <>
       <div className={styles.profileBg}>
-        <div className={styles.profilePageContents}>
-          <div className={styles.profileGreeting}>
+        <div className={styles.profileGreeting}>
             <h4>Hi, {profile?.name}</h4>
           </div>
-          <div className={styles.addActivityForm}>
+        <div className={styles.profilePageContents}>
+          
+            <div>
+          {userActivity?.map(activity =>
+            <UserActivity
+            key={activity._id} 
+            activity={activity}
+            handleDeleteUserActivity={handleDeleteUserActivity}
+            />
+            )} 
+            </div>
+            <div>
+              <h4>Saved Activities</h4>
+            </div>
+            <div>
+              <h4>Done Activities</h4>
+            </div>
+          </div>
+        
+        <div className={styles.addActivityForm}>
+            <h3 className={styles.h3}>Add an Activity</h3>
             <form 
               autoComplete="off" 
               onSubmit={handleSubmit}
               ref={formElement}>
-              <div>
+              <div className={styles.activityProfileInput}>
                 <label htmlFor="activity-name">Activity</label>
                 <input 
                   type="text"
@@ -65,7 +84,7 @@ const Profile = ({handleAddUserActivity, handleDeleteUserActivity, user, userAct
                   onChange={handleChange}
                 />
               </div>
-              <div>
+              <div className={styles.activityProfileInput}>
                 <label htmlFor="activity-type">Type</label>
                 <input 
                   type="text"
@@ -76,7 +95,7 @@ const Profile = ({handleAddUserActivity, handleDeleteUserActivity, user, userAct
                   onChange={handleChange}
                 />
               </div>
-              <div>
+              <div className={styles.activityProfileInput}>
                 <label htmlFor="activity-price">Price</label>
                 <input 
                   type="text"
@@ -87,8 +106,8 @@ const Profile = ({handleAddUserActivity, handleDeleteUserActivity, user, userAct
                   onChange={handleChange}
                 />
               </div>
-              <div>
-                <label htmlFor="activity-participants">Participant #</label>
+              <div className={styles.activityProfileInput}>
+                <label htmlFor="activity-participants">Participants</label>
                 <input 
                   type="text"
                   className="activity-participants"
@@ -98,30 +117,18 @@ const Profile = ({handleAddUserActivity, handleDeleteUserActivity, user, userAct
                   onChange={handleChange}
                 />
               </div>
-                <button 
-                type="submit"
-                disabled={!validForm}>
-                Add Activity!
-                </button>
+                <div className={styles.buttonDiv}>
+                  <button 
+                  className={styles.button6}
+                  type="submit"
+                  disabled={!validForm}>
+                  Add Activity!
+                  </button>
+                </div>
               </form>
             </div>
-        </div>
-        <div>
-          {userActivity?.map(activity =>
-            <UserActivity
-            key={activity._id} 
-            activity={activity}
-            handleDeleteUserActivity={handleDeleteUserActivity}
-            />
-            )} 
-        </div>
-        <div>
-          <h4>Saved Activities</h4>
-        </div>
-        <div>
-          <h4>Done Activities</h4>
-        </div>
-      </div>
+            </div>
+        
     </>
   );
 }
