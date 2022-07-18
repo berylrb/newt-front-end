@@ -93,8 +93,8 @@ const Profile = ({profile, handleAddUserActivity, user, userActivity}) => {
         <div>
           {userActivity.map(activity =>
             <UserActivity 
-              activity={activity}
-              key={activity._id}
+            activity={activity}
+            key={activity._id}
             />
           )}  
         </div>
