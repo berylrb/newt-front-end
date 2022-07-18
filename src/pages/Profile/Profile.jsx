@@ -61,6 +61,10 @@ const Profile = ({user}) => {
       <div className={styles.profileBg}>
         <div className={styles.profileGreeting}>
             <h4>Hi, {profile?.name}</h4>
+            <img src={profile?.photo} alt="profile-avatar" className={styles.profileAvatar} />
+            <br/>
+            <br/>
+            <br/>
           </div>
         <div className={styles.profilePageContents}>
             <div>
