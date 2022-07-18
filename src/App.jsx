@@ -14,6 +14,7 @@ import Search from './pages/Search/Search'
 import ActivityDetails from './pages/ActivityDetails/ActivityDetails'
 import SearchDetails from './pages/Search/SearchDetails/SearchDetails'
 import * as profileService from './services/profileService'
+import EditUserActivity from './components/EditUserActivity/EditUserActivity.'
 
 
 const App = () => {
@@ -58,6 +59,10 @@ const App = () => {
         <Route
           path="/profiles"
           element={user ? <Profiles /> : <Navigate to="/login" />}
+        />
+        <Route
+          path="/edit"
+          element={<EditUserActivity />}
         />
         <Route
           path="/profiles/:id"
