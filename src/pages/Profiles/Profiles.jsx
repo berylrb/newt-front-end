@@ -1,6 +1,6 @@
 import { useState, useRef, useEffect } from "react"
 import { useLocation, useParams } from "react-router-dom"
-import styles from './Profile.module.css'
+import styles from './Profiles.module.css'
 import UserActivity from "../../components/UserActivity/UserActivity"
 import { show } from "../../services/profileService"
 import * as profileService from '../../services/profileService'
