@@ -5,12 +5,7 @@ import { Link } from 'react-router-dom'
 
 const Profiles = (props) => {
   const [profiles, setProfiles] = useState([])
-  const navigate = useNavigate()
 
-  const handleClick = (profile) => {
-    props.setProfile(profile)
-    navigate('/profiles/:id')
-  }
 
   useEffect(()=> {
     const fetchProfiles = async () => {
@@ -30,13 +25,18 @@ const Profiles = (props) => {
           <>
             <div className={styles.cardContainer}>
               {profiles.map(profile=>
-                <div key={profile._id}  className={styles.profileNameLink} onClick={()=> handleClick(profile)}>
+                <Link 
+                key={profile._id}
+                to={`/profiles/${profile._id}`}
+                state={profile}>
+                <div key={profile._id}  className={styles.profileNameLink}>
                   <div className={styles.profileCard}>
                     <div className={styles.profileNameDiv}>
                       <p key={profile._id} profile={profile}>{profile.name}</p>
                     </div>
                   </div>
                 </div>
+                </Link>
               )}
             </div>
             
