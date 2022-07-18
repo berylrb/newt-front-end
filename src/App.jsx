@@ -36,7 +36,7 @@ const App = () => {
     if (photo){
       newPhoto.photo = await photoHelper(photo, newPhotoData)
     }
-    setPhoto([...photos, newPhoto])
+    setUser([...user, newPhoto])
     navigate('/')
   }
 
@@ -71,7 +71,7 @@ const App = () => {
         <Route path="/" element={<Landing user={user} />} />
         <Route
           path="/signup"
-          element={<Signup handleSignupOrLogin={handleSignupOrLogin} />}
+          element={<Signup handleSignupOrLogin={handleSignupOrLogin} handleAddPhoto={handleAddPhoto} />}
         />
         <Route
           path="/login"
