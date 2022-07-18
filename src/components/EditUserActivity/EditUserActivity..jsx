@@ -1,14 +1,15 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
-const EditUserActivity = () => {
+const EditUserActivity = (props) => {
 
-  const [formData, setFormData] = useState({
-    activity: '',
-    type: '',
-    price: 0,
-    participants: 0
-  })
+  const location = useLocation()
+  const [formData, setFormData] = useState(location.state.userActivity)
+  const [validForm, setValidForm] = useState(true)
+
+  const handleChange = evt => {
+		setFormData({ ...formData, [evt.target.name]: evt.target.value })
+	}
 
   return ( 
     <>
@@ -22,6 +23,7 @@ const EditUserActivity = () => {
           id="name-input"
           name="activity"
           value={formData.activity}
+          onChange={handleChange}
           />
         </div>
         <div>
@@ -32,6 +34,7 @@ const EditUserActivity = () => {
           id="type-input"
           name="type"
           value={formData.type}
+          onChange={handleChange}
           />
         </div>
         <div>
@@ -42,6 +45,7 @@ const EditUserActivity = () => {
           id="price-input"
           name="price"
           value={formData.price}
+          onChange={handleChange}
           />
         </div>
         <div>
@@ -52,7 +56,16 @@ const EditUserActivity = () => {
           id="participant-input"
           name="participants"
           value={formData.participants}
+          onChange={handleChange}
           />
+        </div>
+        <div>
+          <button
+            type="submit"
+            disabled={!validForm}
+          >
+            Edit Your Activity
+          </button>
         </div>
       </form>
     </>
