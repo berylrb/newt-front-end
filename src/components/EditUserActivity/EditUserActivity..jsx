@@ -3,6 +3,13 @@ import { Link } from "react-router-dom";
 
 const EditUserActivity = () => {
 
+  const [formData, setFormData] = useState({
+    activity: '',
+    type: '',
+    price: 0,
+    participants: 0
+  })
+
   return ( 
     <>
     <h2>Edit Your Activity</h2>
