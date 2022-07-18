@@ -31,6 +31,21 @@ const App = () => {
     setUser(authService.getUser())
   }
 
+  const handleAddPhoto = async (newPhotoData, photo) => {
+    const newPhoto = await profileService.create(newPhotoData)
+    if (photo){
+      newPhoto.photo = await photoHelper(photo, newPhotoData)
+    }
+    setPhoto([...photos, newPhoto])
+    navigate('/')
+  }
+
+  const photoHelper = async (photo, id) => {
+    const photoData = new FormData()
+    photoData.append('photo', photo)
+    return await profileService.addPhoto(photoData,id)
+  }
+
   const handleAddUserActivity = async (newUserActivityData) => {
     const newUserActivity = await profileService.create(newUserActivityData, user.profile)
     setUserActivity([...userActivity, newUserActivity])
