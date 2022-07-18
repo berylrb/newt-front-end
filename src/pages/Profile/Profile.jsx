@@ -59,65 +59,69 @@ const Profile = ({handleAddUserActivity, handleDeleteUserActivity, user, userAct
           </div>
         
         <div className={styles.formAndAddedDiv}>
-        <div className={styles.addActivityForm}>
-            <h3 className={styles.h3}>Add an Activity</h3>
-            <form 
-              autoComplete="off" 
-              onSubmit={handleSubmit}
-              ref={formElement}>
-              <div className={styles.activityProfileInput}>
-                <label htmlFor="activity-name">Activity</label>
-                <input 
-                  type="text"
-                  className="activity-name"
-                  id="name-input"
-                  name="activity"
-                  value={formData.activity}
-                  onChange={handleChange}
-                />
+          <div className={styles.formParentDiv}>
+            <div className={styles.addActivityForm}>
+              <div className={styles.h3}>
+                <h3>Add an Activity</h3>
               </div>
-              <div className={styles.activityProfileInput}>
-                <label htmlFor="activity-type">Type</label>
-                <input 
-                  type="text"
-                  className="activity-type"
-                  id="type-input"
-                  name="type"
-                  value={formData.type}
-                  onChange={handleChange}
-                />
-              </div>
-              <div className={styles.activityProfileInput}>
-                <label htmlFor="activity-price">Price</label>
-                <input 
-                  type="text"
-                  className="activity-price"
-                  id="price-input"
-                  name="price"
-                  value={formData.price}
-                  onChange={handleChange}
-                />
-              </div>
-              <div className={styles.activityProfileInput}>
-                <label htmlFor="activity-participants">Participants</label>
-                <input 
-                  type="text"
-                  className="activity-participants"
-                  id="participant-input"
-                  name="participants"
-                  value={formData.participants}
-                  onChange={handleChange}
-                />
-              </div>
-                <div className={styles.buttonDiv}>
-                  <button 
-                  className={styles.button6}
-                  type="submit"
-                  disabled={!validForm}>
-                  Add Activity!
-                  </button>
+              <form 
+                autoComplete="off" 
+                onSubmit={handleSubmit}
+                ref={formElement}>
+                <div className={styles.activityProfileInput}>
+                  <label htmlFor="activity-name">Activity</label>
+                  <input 
+                    type="text"
+                    className="activity-name"
+                    id="name-input"
+                    name="activity"
+                    value={formData.activity}
+                    onChange={handleChange}
+                  />
                 </div>
-              </form>
+                <div className={styles.activityProfileInput}>
+                  <label htmlFor="activity-type">Type</label>
+                  <input 
+                    type="text"
+                    className="activity-type"
+                    id="type-input"
+                    name="type"
+                    value={formData.type}
+                    onChange={handleChange}
+                  />
+                </div>
+                <div className={styles.activityProfileInput}>
+                  <label htmlFor="activity-price">Price</label>
+                  <input 
+                    type="text"
+                    className="activity-price"
+                    id="price-input"
+                    name="price"
+                    value={formData.price}
+                    onChange={handleChange}
+                  />
+                </div>
+                <div className={styles.activityProfileInput}>
+                  <label htmlFor="activity-participants">Participants</label>
+                  <input 
+                    type="text"
+                    className="activity-participants"
+                    id="participant-input"
+                    name="participants"
+                    value={formData.participants}
+                    onChange={handleChange}
+                  />
+                </div>
+                  <div className={styles.buttonDiv}>
+                    <button 
+                    className={styles.button6}
+                    type="submit"
+                    disabled={!validForm}>
+                    Add Activity!
+                    </button>
+                  </div>
+                </form>
+              </div>
             </div>
             <div className={styles.addedActivityDiv}>
                 {userActivity?.map(activity =>
