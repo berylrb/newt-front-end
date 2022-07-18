@@ -35,6 +35,7 @@ const App = () => {
     if (photo){
       newPhoto.photo = await photoHelper(photo, newPhotoData)
     }
+    console.log('newPhoto', newPhoto)
     setUser([...user, newPhoto])
     navigate('/')
   }
