@@ -129,6 +129,7 @@ const Profile = ({handleAddUserActivity, handleDeleteUserActivity, user, userAct
                   key={activity._id} 
                   activity={activity}
                   handleDeleteUserActivity={handleDeleteUserActivity}
+              
                   />
                   )} 
               </div>

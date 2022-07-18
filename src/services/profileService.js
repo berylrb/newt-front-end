@@ -30,8 +30,9 @@ async function show(id) {
   return res.json()
 }
 
-async function deleteOne(id) {
-  const res = await fetch(`${BASE_URL}/${id}`, {
+async function deleteOne(userActivityId) {
+  console.log(`${BASE_URL}/userActivity/${userActivityId}`)
+  const res = await fetch(`${BASE_URL}/userActivity/${userActivityId}`, {
     method: 'DELETE',
     headers: {
       'Authorization': `Bearer ${tokenService.getToken()}`
@@ -41,7 +42,7 @@ async function deleteOne(id) {
 }
 
 async function addPhoto(photoData, profileId) {
-  const res = await fetch(`${BASE_URL}/${profileId}/add-photo`, {
+  const res = await fetch(`${BASE_URL}/userActivity/${profileId}/add-photo`, {
     method: 'PUT',
     headers: {
       'Authorization': `Bearer ${tokenService.getToken()}`
