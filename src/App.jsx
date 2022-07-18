@@ -83,7 +83,7 @@ const App = () => {
         />
         <Route
           path="/activity"
-          element={<ActivityDetails handleSignupOrLogin={handleSignupOrLogin} />}
+          element={<ActivityDetails handleSignupOrLogin={handleSignupOrLogin} user={user} />}
         />
         <Route path="/activity/:activityName" element={<SearchDetails />} />
       </Routes>

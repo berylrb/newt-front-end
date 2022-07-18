@@ -1,12 +1,14 @@
 import { useState, useEffect} from 'react'
 import { Link } from 'react-router-dom'
 import { getActivityDetails } from '../../services/bored-api'
-import { useLocation } from 'react-router-dom'
+import { useLocation, useParams } from 'react-router-dom'
+import { show } from '../../services/profileService'
 import  styles from './ActivityDetails.module.css'
 import * as profileService from '../../services/profileService'
 
 const ActivityDetails = ( {user} ) => {
   const [activityDetails, setActivityDetails] = useState({})
+  const {id} = useParams()
   // const { activityName } = useParams()
   const location = useLocation()
   console.log(location)
@@ -26,11 +28,18 @@ const ActivityDetails = ( {user} ) => {
   }, [key])
   console.log(key)
 
-  const handleAddUserActivity = async (newApiActivityData) => {
-    const updatedApiProfile = await profileService.add()
+  const handleSubmit = async (evt) => {
+    evt.preventDefault()
+    console.log('user', user.profile, activityDetails)
+    const activity = await profileService.addApiActivity(user.profile, activityDetails)
+    console.log('activity', activity)
   }
 
-  }
+  // const handleAddApiActivity = async (newApiActivityData) => {
+  //   
+    
+  // }
+
 
   return (
     <>
@@ -63,7 +72,7 @@ const ActivityDetails = ( {user} ) => {
             <div className={styles.returnContainer}>
               <br />
               <Link className={styles.returnLink} to="/">Return Home</Link>
-              <Link className={styles.returnLink} to="/search">Return to Search</Link>
+              <button onClick={handleSubmit} className={styles.addButton}>Add to List</button>
             </div>
           </div>
         </>

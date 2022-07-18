@@ -22,10 +22,13 @@ const Profile = ({user}) => {
 
   console.log('profile', profile, 'user', user, 'userid', user._id, 'profileid', profile?._id)
 
+
+
   useEffect(() => {
     const fetchProfile = async() => {
       const profileData = await show(id)
       setProfile(profileData)
+      // set activities based on profiledata.activities
     }
     fetchProfile()
   }, [id])
