@@ -45,7 +45,7 @@ async function deleteOne(userActivityId) {
 }
 
 async function addPhoto(photoData, profileId) {
-  const res = await fetch(`${BASE_URL}/userActivity/${profileId}/add-photo`, {
+  const res = await fetch(`${BASE_URL}/${profileId}/add-photo`, {
     method: 'PUT',
     headers: {
       'Authorization': `Bearer ${tokenService.getToken()}`
