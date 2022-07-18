@@ -36,10 +36,10 @@ const App = () => {
     setUserActivity([...userActivity, newUserActivity])
   }
 
-  const handleDeleteUserActivity = async (profileId, userActivityId) => {
+  const handleDeleteUserActivity = async (userActivityId) => {
     console.log(userActivityId)
-    const deletedUserActivity = await profileService.deleteOne(profileId, userActivityId)
-    setUserActivity(userActivity.filter(activity => activity._id !== deletedUserActivity._id))
+    const deletedUserActivity = await profileService.deleteOne(userActivityId)
+    // setUserActivity(userActivity.filter(activity => activity._id !== deletedUserActivity._id))
   }
 
   useEffect(() => {
