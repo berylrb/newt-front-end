@@ -57,7 +57,9 @@ const Profile = ({user}) => {
 
   return ( 
     <>
-    <div className={styles.profilePage}>
+    {/* {user === user.id 
+      ?  */}
+      <div className={styles.profilePage}>
       <div className={styles.profileBg}>
         <div className={styles.profileGreeting}>
             <h4>Hi, {profile?.name}</h4>
@@ -68,6 +70,7 @@ const Profile = ({user}) => {
           </div>
         <div className={styles.profilePageContents}>
             <div>
+      {/* : */}
               <h4>Saved Activities</h4>
             </div>
             <div>
@@ -94,7 +97,7 @@ const Profile = ({user}) => {
                     name="activity"
                     value={formData.activity}
                     onChange={handleChange}
-                  />
+                    />
                 </div>
                 <div className={styles.activityProfileInput}>
                   <label htmlFor="activity-type">Type</label>
@@ -127,7 +130,7 @@ const Profile = ({user}) => {
                     name="participants"
                     value={formData.participants}
                     onChange={handleChange}
-                  />
+                    />
                 </div>
                   <div className={styles.buttonDiv}>
                     <button 
@@ -142,18 +145,17 @@ const Profile = ({user}) => {
             </div>
             <div className={styles.addedActivityDiv}>
                 {profile?.userActivity?.map(activity =>
-                  <UserActivity
+                    <UserActivity
                     key={activity._id} 
                     activity={activity}
                     handleDeleteUserActivity={handleDeleteUserActivity}
-              
                   />
                   )} 
               </div>
             </div>
-            </div>
-            </div>
-        
+          </div>
+    {/* }     */}
+        </div>
     </>
   );
 }
