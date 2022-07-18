@@ -34,7 +34,6 @@ const SignupForm = props => {
     } catch (err) {
       props.updateMessage(err.message)
     }
-    console.log('photo?', photoData, photoData.photo)
   }
 
   const { name, email, password, passwordConf } = formData
