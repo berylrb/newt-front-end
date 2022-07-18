@@ -3,8 +3,9 @@ import { Link } from 'react-router-dom'
 import { getActivityDetails } from '../../services/bored-api'
 import { useLocation } from 'react-router-dom'
 import  styles from './ActivityDetails.module.css'
+import * as profileService from '../../services/profileService'
 
-const ActivityDetails = () => {
+const ActivityDetails = ( {user} ) => {
   const [activityDetails, setActivityDetails] = useState({})
   // const { activityName } = useParams()
   const location = useLocation()
@@ -24,6 +25,13 @@ const ActivityDetails = () => {
     fetchActivityDetails()
   }, [key])
   console.log(key)
+
+  const handleAddUserActivity = async (newApiActivityData) => {
+    const updatedApiProfile = await profileService.add()
+  }
+
+  }
+
   return (
     <>
       <div className={styles.detailsPage}>
