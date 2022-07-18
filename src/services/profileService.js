@@ -31,13 +31,16 @@ async function show(id) {
 }
 
 async function deleteOne(userActivityId) {
-  console.log(`${BASE_URL}/userActivity/${userActivityId}`)
-  const res = await fetch(`${BASE_URL}/userActivity/${userActivityId}`, {
+  console.log(userActivityId)
+  const pathTest = `${BASE_URL}/userActivity/${userActivityId}`
+  console.log(pathTest)
+  const res = await fetch(pathTest, {
     method: 'DELETE',
     headers: {
       'Authorization': `Bearer ${tokenService.getToken()}`
     }
   })
+  console.log(res)
   return res.json()
 }
 
