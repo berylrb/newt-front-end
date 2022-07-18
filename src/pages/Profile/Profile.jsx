@@ -72,6 +72,7 @@ const Profile = ({user}) => {
         <div className={styles.profilePageContents}>
             <div>
               <h4>Saved Activities</h4>
+              
             </div>
             <div>
               <h4>Done Activities</h4>
