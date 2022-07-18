@@ -31,6 +31,7 @@ async function show(id) {
 }
 
 async function deleteOne(id) {
+  console.log('delete front end')
   const res = await fetch(`${BASE_URL}/${id}`, {
     method: 'DELETE',
     headers: {
