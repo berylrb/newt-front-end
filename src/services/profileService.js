@@ -30,6 +30,16 @@ async function show(id) {
   return res.json()
 }
 
+async function deleteOne(id) {
+  const res = await fetch(`${BASE_URL}/${id}`, {
+    method: 'DELETE',
+    headers: {
+      'Authorization': `Bearer ${tokenService.getToken()}`
+    }
+  })
+  return res.json()
+}
+
 async function addPhoto(photoData, profileId) {
   const res = await fetch(`${BASE_URL}/${profileId}/add-photo`, {
     method: 'PUT',
@@ -41,4 +51,4 @@ async function addPhoto(photoData, profileId) {
   return await res.json()
 }
 
-export { getAllProfiles, addPhoto, create, show }
+export { getAllProfiles, addPhoto, create, show, deleteOne }

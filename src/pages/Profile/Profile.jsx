@@ -4,7 +4,7 @@ import styles from './Profile.module.css'
 import UserActivity from "../../components/UserActivity/UserActivity"
 import { show } from "../../services/profileService"
 
-const Profile = ({handleAddUserActivity, user, userActivity}) => {
+const Profile = ({handleAddUserActivity, handleDeleteUserActivity, user, userActivity}) => {
   const [validForm, setValidForm] = useState(false)
   const {id} = useParams()
   const formElement = useRef()
@@ -108,8 +108,12 @@ const Profile = ({handleAddUserActivity, user, userActivity}) => {
         </div>
         <div>
           {userActivity?.map(activity =>
-            <UserActivity activity={activity}/>
-            )}  
+            <UserActivity
+            key={activity._id} 
+            activity={activity}
+            handleDeleteUserActivity={handleDeleteUserActivity}
+            />
+            )} 
         </div>
         <div>
           <h4>Saved Activities</h4>
