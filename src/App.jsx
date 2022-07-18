@@ -36,6 +36,11 @@ const App = () => {
     setUserActivity([...userActivity, newUserActivity])
   }
 
+  const handleDeleteUserActivity = async id => {
+    const deletedUserActivity = await profileService.deleteOne(id)
+    setUserActivity(userActivity.filter(item => item._id !== id))
+  }
+
   useEffect(() => {
     const fetchAllUserActivities = async () =>{
       const profile = await profileService.show(user?.profile)
@@ -70,7 +75,9 @@ const App = () => {
           element={<Profile 
             profile={user?.profile} 
             user={user} 
-            userActivity={userActivity} handleAddUserActivity={handleAddUserActivity}/>}
+            userActivity={userActivity} handleAddUserActivity={handleAddUserActivity}
+            handleDeleteUserActivity={handleDeleteUserActivity}
+            />}
         />
         <Route
           path="/changePassword"
