@@ -1,6 +1,6 @@
 import './App.css'
 
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 import { Routes, Route, useNavigate, Navigate } from 'react-router-dom'
 import NavBar from './components/NavBar/NavBar'
 import Signup from './pages/Signup/Signup'
@@ -13,7 +13,6 @@ import * as authService from './services/authService'
 import Search from './pages/Search/Search'
 import ActivityDetails from './pages/ActivityDetails/ActivityDetails'
 import SearchDetails from './pages/Search/SearchDetails/SearchDetails'
-import * as profileService from './services/profileService'
 import EditUserActivity from './components/EditUserActivity/EditUserActivity.'
 
 
