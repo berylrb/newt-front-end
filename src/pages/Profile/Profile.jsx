@@ -44,21 +44,12 @@ const Profile = ({handleAddUserActivity, handleDeleteUserActivity, user, userAct
 
   return ( 
     <>
+    <div className={styles.profilePage}>
       <div className={styles.profileBg}>
         <div className={styles.profileGreeting}>
             <h4>Hi, {profile?.name}</h4>
           </div>
         <div className={styles.profilePageContents}>
-          
-            <div>
-          {userActivity?.map(activity =>
-            <UserActivity
-            key={activity._id} 
-            activity={activity}
-            handleDeleteUserActivity={handleDeleteUserActivity}
-            />
-            )} 
-            </div>
             <div>
               <h4>Saved Activities</h4>
             </div>
@@ -67,6 +58,7 @@ const Profile = ({handleAddUserActivity, handleDeleteUserActivity, user, userAct
             </div>
           </div>
         
+        <div className={styles.formAndAddedDiv}>
         <div className={styles.addActivityForm}>
             <h3 className={styles.h3}>Add an Activity</h3>
             <form 
@@ -126,6 +118,18 @@ const Profile = ({handleAddUserActivity, handleDeleteUserActivity, user, userAct
                   </button>
                 </div>
               </form>
+            </div>
+            <div className={styles.addedActivityDiv}>
+                {userActivity?.map(activity =>
+                  <UserActivity
+                  key={activity._id} 
+                  activity={activity}
+                  handleDeleteUserActivity={handleDeleteUserActivity}
+              
+                  />
+                  )} 
+              </div>
+            </div>
             </div>
             </div>
         
