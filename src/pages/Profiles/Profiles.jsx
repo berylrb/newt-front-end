@@ -20,7 +20,7 @@ const Profile = ({user}) => {
     participants: 0
   })
 
-  console.log('profile', profile, 'user', user, 'userid', user._id, 'profileid', profile?._id)
+  console.log('profile', profile, 'user', user, 'userid', user?._id, 'profileid', profile?._id)
 
   useEffect(() => {
     const fetchProfile = async() => {
