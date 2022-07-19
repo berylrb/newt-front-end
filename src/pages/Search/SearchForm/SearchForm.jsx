@@ -74,7 +74,7 @@ const SearchForm = (props) => {
           </select>
           {/* <label>Price:</label> */}
           <div className={styles.selectSecondRow}>
-            <select className={styles.select} name="price" id="price"onChange={handleChange}>
+            <select className={styles.selectPrice} name="price" id="price"onChange={handleChange}>
               <option value=''>Price</option>
               <option value="0">Free</option>
               <option value="">$</option>

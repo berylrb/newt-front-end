@@ -1,4 +1,4 @@
-
+import styles from './ProfileAppActivities.module.css'
 import ApiActivityCard from '../ApiActivityCard/ApiActivityCard'
 
 
@@ -6,7 +6,7 @@ import ApiActivityCard from '../ApiActivityCard/ApiActivityCard'
 const ProfileApiActivities = ( {profile} ) => {
   console.log('profile', profile)
   return (
-    <div className='div'>
+    <div className={styles.profileCardDiv}>
       {profile?.activities?.map(activity =>
         <ApiActivityCard
           key={activity._id}
