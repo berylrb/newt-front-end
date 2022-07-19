@@ -44,14 +44,15 @@ async function deleteOne(userActivityId) {
   return res.json()
 }
 
-async function update(userActivityId){
+async function update(userActivityId, formData){
+  console.log('activity id for hunter', userActivityId)
   const res = await fetch(`${BASE_URL}/${userActivityId}`, {
     method: 'PUT',
     headers: {
       'Content-Type': 'application/json',
       'Authorization': `Bearer ${tokenService.getToken()}`
     },
-    body: JSON.stringify(userActivityId)
+    body: JSON.stringify(formData)
   })
   return res.json()
 }

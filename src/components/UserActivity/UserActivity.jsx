@@ -17,13 +17,8 @@ const UserActivity = (props) => {
         <button className={styles.button6} onClick={() => props.handleDeleteUserActivity(props.activity._id)}>Delete</button>
         <button>
         <Link
-          to={{ 
-            pathname: "/edit",
-            state: {
-            activity: props.activity,
-            handleUpdateActivity: props.handleUpdateActivity
-            }
-          }}
+          to="/edit"
+          state={props.activity}
           >
             Edit
         </Link>
