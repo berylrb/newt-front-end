@@ -4,6 +4,7 @@ import { Link, useLocation } from "react-router-dom";
 const EditUserActivity = ({activity, handleUpdateActivity}) => {
 
   const location = useLocation()
+  console.log(location)
   const [formData, setFormData] = useState(location.state.activity)
   const [validForm, setValidForm] = useState(true)
   const formElement = useRef()
