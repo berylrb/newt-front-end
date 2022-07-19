@@ -75,15 +75,18 @@
 }
 
 .profilePicDiv {
-  height: 100px;
-  width: 100%;
-  position: relative;
-  overflow: hidden;
-  border-radius: 50%;
   
 }
 
 .profilePic {
-  height: 100%;
-  width: auto;
+  display: inline-block;
+  height: 150px;
+  width: 150px;
+  border-radius: 50%;
+  
+  object-fit: cover;
+  /* background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover; */
+  
 }
