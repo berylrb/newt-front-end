@@ -31,6 +31,9 @@ const Profiles = (props) => {
                 state={profile}>
                 <div key={profile._id}  className={styles.profileNameLink}>
                   <div className={styles.profileCard}>
+                    <div className={styles.profilePicDiv}>
+                      <img className={styles.profilePic} src={profile.photo} alt="profile-pic" profile={profile} />
+                    </div>
                     <div className={styles.profileNameDiv}>
                       <p key={profile._id} profile={profile}>{profile.name}</p>
                     </div>
