@@ -19,7 +19,6 @@ const UserActivity = (props) => {
         <Link
           to="/edit"
           state={props.activity}
-          handleUpdateActivity={props.handleUpdateActivity}
           >
             Edit
         </Link>

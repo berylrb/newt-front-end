@@ -21,6 +21,7 @@ const Profile = ({user}) => {
     participants: 0
   })
 
+  
 
   useEffect(() => {
     
