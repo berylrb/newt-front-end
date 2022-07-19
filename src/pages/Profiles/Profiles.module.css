@@ -73,3 +73,17 @@
   color: black;
   text-decoration: none;
 }
+
+.profilePicDiv {
+  height: 100px;
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+  border-radius: 50%;
+  
+}
+
+.profilePic {
+  height: 100%;
+  width: auto;
+}
