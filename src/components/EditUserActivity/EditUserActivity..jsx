@@ -1,12 +1,20 @@
 import { useState, useRef, useEffect } from "react";
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
+import * as profileService from '../../services/profileService'
 
-const EditUserActivity = ({activity, handleUpdateActivity}) => {
-
+const EditUserActivity = ({activity}) => {
+  const navigate = useNavigate()
   const location = useLocation()
-  const [formData, setFormData] = useState(location.state.activity)
+  const [formData, setFormData] = useState({
+    activity: location.state.activity,
+    type: location.state.type,
+    price: location.state.price,
+    participants: location.state.participants
+  })
   const [validForm, setValidForm] = useState(true)
   const formElement = useRef()
+
+  console.log('location surprise', location)
 
   const handleChange = evt => {
 		setFormData({ ...formData, [evt.target.name]: evt.target.value })
@@ -16,12 +24,20 @@ const EditUserActivity = ({activity, handleUpdateActivity}) => {
     formElement.current.checkValidity() ? setValidForm(true) : setValidForm(false)
   }, [formData])
 
+  const handleUpdateActivity = async () => {
+    const updatedProfile = await profileService.update(location.state._id, formData)
+      navigate(`/profiles/${updatedProfile._id}`)
+      console.log('updated prof', updatedProfile)
+  }
+
   const handleSubmit = evt => {
 		evt.preventDefault()
     handleUpdateActivity(formData)
 	}
 
+
   return ( 
+    
     <>
       <h1>Edit Your Activity</h1>
       <form 
@@ -36,7 +52,7 @@ const EditUserActivity = ({activity, handleUpdateActivity}) => {
           className="activity-name"
           id="name-input"
           name="activity"
-          value={formData.activity}
+          value={formData.activity || ''}
           onChange={handleChange}
           />
         </div>
@@ -47,7 +63,7 @@ const EditUserActivity = ({activity, handleUpdateActivity}) => {
           className="activity-type"
           id="type-input"
           name="type"
-          value={formData.type}
+          value={formData.type || ''}
           onChange={handleChange}
           />
         </div>
@@ -58,7 +74,7 @@ const EditUserActivity = ({activity, handleUpdateActivity}) => {
           className="activity-price"
           id="price-input"
           name="price"
-          value={formData.price}
+          value={formData.price || ''}
           onChange={handleChange}
           />
         </div>
@@ -69,7 +85,7 @@ const EditUserActivity = ({activity, handleUpdateActivity}) => {
           className="activity-participants"
           id="participant-input"
           name="participants"
-          value={formData.participants}
+          value={formData.participants || ''}
           onChange={handleChange}
           />
         </div>
