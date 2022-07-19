@@ -4,8 +4,9 @@ import { getActivityDetails } from '../../../services/bored-api';
 import { useParams } from 'react-router-dom';
 import styles from './SearchDetails.module.css'
 import { Link } from 'react-router-dom';
+import * as profileService from '../../../services/profileService'
 
-const SearchDetails = () => {
+const SearchDetails = ({user}) => {
   const [searchDetails, setSearchDetails] = useState({})
   // const location = useLocation()
   // const { key } = location.state.search.key
@@ -18,6 +19,14 @@ const SearchDetails = () => {
     }
     fetchSearchDetails()
   }, [activityName])
+
+  const handleSubmit = async (evt) => {
+    evt.preventDefault()
+    console.log('user', user.profile, searchDetails)
+    const activity = await profileService.addApiActivity(user.profile, searchDetails)
+    console.log('activity', activity)
+  }
+
   return (
     <>
       <div className={styles.detailsPage}>
@@ -49,6 +58,7 @@ const SearchDetails = () => {
             <div className={styles.returnContainer}>
               <br />
               <Link className={styles.returnLink} to="/search">Return to Search</Link>
+              <button onClick={handleSubmit} className={styles.addButton}>Add to List</button>
             </div>
           </div>
         </>

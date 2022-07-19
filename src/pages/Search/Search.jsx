@@ -29,7 +29,9 @@ const Search = () => {
           <div className={styles.searchHeader}>
             <h1 className={styles.searchH1}>ACTIVITY SEARCH</h1>
           </div>
+          <div className={styles.searchHolder}>
             <SearchForm handleTypeSearch={handleTypeSearch} />
+          </div>
           {searchDetails && (
           <div className={styles.resultsContainer}>
             <div className={styles.searchCardDiv}>

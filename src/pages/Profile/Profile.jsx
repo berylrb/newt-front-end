@@ -1,9 +1,10 @@
 import { useState, useRef, useEffect } from "react"
-import { useLocation, useParams } from "react-router-dom"
+import { Navigate, useLocation, useParams } from "react-router-dom"
 import styles from './Profile.module.css'
 import UserActivity from "../../components/UserActivity/UserActivity"
 import { show } from "../../services/profileService"
 import * as profileService from '../../services/profileService'
+import ProfileApiActivities from "../../components/ProfileApiActivities/ProfileApiActivities"
 
 const Profile = ({user}) => {
   const [validForm, setValidForm] = useState(false)
@@ -39,6 +40,15 @@ const Profile = ({user}) => {
     setProfile(updatedProfile)
   }
 
+  const handleUpdateActivity = async userActivityId => {
+    const updatedProfile = await profileService.update(userActivityId)
+    const updatedProfileActivities = profile.activities.map(activity =>
+      activity._id === updatedProfile._id ? updatedProfile : activity
+      )
+      setProfile(updatedProfileActivities)
+      Navigate('/profiles/:id')
+  }
+
   useEffect(() => {
     formElement.current.checkValidity() ? setValidForm(true) : setValidForm(false)
   }, [formData])
@@ -65,14 +75,23 @@ const Profile = ({user}) => {
       <div className={styles.profilePage}>
         <div className={styles.profileBg}>
         <div className={styles.profileGreeting}>
-          <h4>Hi, {profile?.name}</h4>
-          <img src={profile?.photo} alt="profile-avatar" className={styles.profileAvatar} />
-            <br/>
-            <br/>
-            <br/>
-          </div>
+            <h4>Hi, {profile?.name}</h4>
+            <img src={profile?.photo} alt="profile-avatar" className={styles.profileAvatar} />
+        </div>
         <div className={styles.profilePageContents}>
+          <div className={styles.apiDivs}>
+            <div className={styles.apiSavedActivities}>
+              <div className={styles.apiHeader}>
+                <h4 className={styles.apiH4}>Saved Activities</h4>
+              </div>
+              <ProfileApiActivities profile={profile}/>
+            </div>
+            <div className={styles.apiDoneActivities}>
+              <h4>Done Activities</h4>
+            </div>
           </div>
+        </div>
+        
         <div className={styles.formAndAddedDiv}>
           <div className={styles.formParentDiv}>
             <div className={styles.addActivityForm}>
@@ -144,20 +163,13 @@ const Profile = ({user}) => {
                     key={activity._id} 
                     activity={activity}
                     handleDeleteUserActivity={handleDeleteUserActivity}
-                    />
-                  )} 
+                    handleUpdateActivity={handleUpdateActivity}
+                  />
+                  )}
             </div>
-        {/* : */}
-              <div>
-                <h4>Saved Activities</h4>
-              </div>
-              <div>
-                <h4>Done Activities</h4>
-              </div>
-      {/* } */}
-          </div>
         </div>
       </div>
+    </div>
         
         </>
   );

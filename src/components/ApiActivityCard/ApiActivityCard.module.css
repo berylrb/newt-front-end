@@ -1,0 +1,12 @@
+.cardHolder {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: auto;
+  width: 90%;
+  background-color: #ecff50;
+  border: 2px solid black;
+  margin: 20px;
+  padding: 20px;
+}

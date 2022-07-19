@@ -1,20 +1,34 @@
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 
-const EditUserActivity = (props) => {
+const EditUserActivity = ({activity, handleUpdateActivity}) => {
 
   const location = useLocation()
-  const [formData, setFormData] = useState(location.state.userActivity)
+  const [formData, setFormData] = useState(location.state.activity)
   const [validForm, setValidForm] = useState(true)
+  const formElement = useRef()
 
   const handleChange = evt => {
 		setFormData({ ...formData, [evt.target.name]: evt.target.value })
 	}
 
+  useEffect(() => {
+    formElement.current.checkValidity() ? setValidForm(true) : setValidForm(false)
+  }, [formData])
+
+  const handleSubmit = evt => {
+		evt.preventDefault()
+    handleUpdateActivity(formData)
+	}
+
   return ( 
     <>
-    <h2>Edit Your Activity</h2>
-      <form autoComplete="off">
+      <h1>Edit Your Activity</h1>
+      <form 
+        autoComplete="off" 
+        ref={formElement} 
+        onSubmit={handleSubmit}
+        >
         <div>
           <label htmlFor="activity-name">Activity</label>
           <input 
@@ -64,7 +78,7 @@ const EditUserActivity = (props) => {
             type="submit"
             disabled={!validForm}
           >
-            Edit Your Activity
+            Save Activity
           </button>
         </div>
       </form>
