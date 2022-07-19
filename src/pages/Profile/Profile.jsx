@@ -21,13 +21,6 @@ const Profile = ({user}) => {
     participants: 0
   })
 
-  
-
-  // useEffect(() => {
-    
-  //   console.log('user_id', user?._id, 'profile_id', profile?._id)
-  // }, [profile])
-
 
 
   useEffect(() => {
@@ -94,26 +87,27 @@ const Profile = ({user}) => {
           <div className={styles.apiDivs}>
             <div className={styles.apiSavedActivities}>
               <div className={styles.apiHeader}>
-                <h4 className={styles.apiH4}>Saved Activities</h4>
+                <h4 className={styles.apiH4}>WILL DO</h4>
               </div>
               <ProfileApiActivities profile={profile}/>
             </div>
             <div className={styles.apiDoneActivities}>
-              <h4>Done Activities</h4>
+              <div className={styles.apiHeaderDone}>
+                <h4 className={styles.apiH4Done}>DONE</h4>
+              </div>
             </div>
           </div>
         </div>
 
-        
-        
-        
+        {/* user activity form */}
+
         <div className={styles.formAndAddedDiv}>
-          {/* <div className={styles.formParentDiv}> */}
             <div className={styles.addActivityForm}>
               <div className={styles.h3}>
                 <h3>Add an Activity</h3>
               </div>
               <form 
+                className={styles.formBody}
                 autoComplete="off" 
                 onSubmit={handleSubmit}
                 ref={formElement}>
@@ -171,16 +165,17 @@ const Profile = ({user}) => {
                   </div>
               </form>
             </div>
-            {/* </div> */}
-            <div className={styles.addedActivityDiv}>
-                {profile?.userActivity?.map(activity =>
-                  <UserActivity
-                    key={activity._id} 
-                    activity={activity}
-                    handleDeleteUserActivity={handleDeleteUserActivity}
-                    handleUpdateActivity={handleUpdateActivity}
-                  />
-                  )}
+            <div className={styles.addedHolder}>
+              <div className={styles.addedActivityDiv}>
+                  {profile?.userActivity?.map(activity =>
+                    <UserActivity
+                      key={activity._id} 
+                      activity={activity}
+                      handleDeleteUserActivity={handleDeleteUserActivity}
+                      handleUpdateActivity={handleUpdateActivity}
+                    />
+                    )}
+              </div>
             </div>
         </div>
         </>
