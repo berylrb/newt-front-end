@@ -48,6 +48,8 @@ h2 {
   flex-direction: column;
   align-items: center;
   border: 2px solid black;
+  margin: -30px 0 10px 10px;
+  z-index: 5;
 }
 
 
@@ -99,14 +101,14 @@ h2 {
 }
 
 .bgTopBlob {
-  width: 20%;
+  width: 180px;
   transform: rotate(180deg);
   z-index: -1;
 }
 
 
 .bgBottomBlob {
-  width: 20%;
+  width: 180px;
   position: absolute;
   bottom: 0;
   right: 0;

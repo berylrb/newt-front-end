@@ -5,8 +5,7 @@ const ApiActivityCard = (props) => {
   
   return (
     <div className={styles.cardHolder}>
-      <h4>Activity:</h4>
-        <p>{props.activity.activity}</p>
+      {props.activity.activity}
     </div>
   )
 }
