@@ -1,17 +1,12 @@
-import { useState, useEffect } from 'react'
+
 import ApiActivityCard from '../ApiActivityCard/ApiActivityCard'
-import styles from './ProfileApiActivities.module.css'
 
 
-const ProfileApiActivities = ({ profile }) => {
-  const [profileApiActivities, setProfileApiActivities] = useState([])
 
-  useEffect(() => {
-    if (profile) setProfileApiActivities(profile.activities)
-  }, [profile])
-
+const ProfileApiActivities = ( {profile} ) => {
+  console.log('profile', profile)
   return (
-    <div className={styles.apiActivityDiv}>
+    <div className='div'>
       {profile?.activities?.map(activity =>
         <ApiActivityCard
           key={activity._id}
