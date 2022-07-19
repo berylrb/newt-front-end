@@ -1,5 +1,5 @@
 import { useState, useRef, useEffect } from "react"
-import { useLocation, useParams } from "react-router-dom"
+import { Navigate, useLocation, useParams } from "react-router-dom"
 import styles from './Profile.module.css'
 import UserActivity from "../../components/UserActivity/UserActivity"
 import { show } from "../../services/profileService"
@@ -38,6 +38,15 @@ const Profile = ({user}) => {
     console.log(userActivityId)
     const updatedProfile = await profileService.deleteOne(userActivityId)
     setProfile(updatedProfile)
+  }
+
+  const handleUpdateActivity = async userActivityId => {
+    const updatedProfile = await profileService.update(userActivityId)
+    const updatedProfileActivities = profile.activities.map(activity =>
+      activity._id === updatedProfile._id ? updatedProfile : activity
+      )
+      setProfile(updatedProfileActivities)
+      Navigate('/profiles/:id')
   }
 
   useEffect(() => {
@@ -151,9 +160,9 @@ const Profile = ({user}) => {
                     key={activity._id} 
                     activity={activity}
                     handleDeleteUserActivity={handleDeleteUserActivity}
-              
+                    handleUpdateActivity={handleUpdateActivity}
                   />
-                  )} 
+                  )}
               </div>
             </div>
             </div>

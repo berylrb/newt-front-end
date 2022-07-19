@@ -44,6 +44,18 @@ async function deleteOne(userActivityId) {
   return res.json()
 }
 
+async function update(userActivityId){
+  const res = await fetch(`${BASE_URL}/${userActivityId}`, {
+    method: 'PUT',
+    headers: {
+      'Content-Type': 'application/json',
+      'Authorization': `Bearer ${tokenService.getToken()}`
+    },
+    body: JSON.stringify(userActivityId)
+  })
+  return res.json()
+}
+
 async function addPhoto(photoData, id) {
   const res = await fetch(`${BASE_URL}/${id}/add-photo`, {
     method: 'PUT',
@@ -69,4 +81,4 @@ async function addApiActivity(profileId, activity) {
     return res.json()
 }
 
-export { getAllProfiles, addPhoto, create, show, deleteOne, addApiActivity }
+export { getAllProfiles, addPhoto, create, show, deleteOne, addApiActivity, update }
