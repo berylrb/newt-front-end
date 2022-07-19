@@ -4,6 +4,7 @@ import styles from './Profile.module.css'
 import UserActivity from "../../components/UserActivity/UserActivity"
 import { show } from "../../services/profileService"
 import * as profileService from '../../services/profileService'
+import ProfileApiActivities from "../../components/ProfileApiActivities/ProfileApiActivities"
 
 const Profile = ({user}) => {
   const [validForm, setValidForm] = useState(false)
@@ -72,7 +73,7 @@ const Profile = ({user}) => {
         <div className={styles.profilePageContents}>
             <div>
               <h4>Saved Activities</h4>
-              
+              <ProfileApiActivities profile={profile}/>
             </div>
             <div>
               <h4>Done Activities</h4>
