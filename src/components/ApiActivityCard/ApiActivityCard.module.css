@@ -1,0 +1,8 @@
+.cardHolder {
+  height: 10vh;
+  width: 30vw;
+  background-color: #ecff50;
+  border: 2px solid black;
+  overflow-y: scroll;
+  margin: 20px;
+}
