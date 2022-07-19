@@ -23,10 +23,10 @@ const Profile = ({user}) => {
 
   
 
-  useEffect(() => {
+  // useEffect(() => {
     
-    console.log('user_id', user?._id, 'profile_id', profile?._id)
-  }, [profile])
+  //   console.log('user_id', user?._id, 'profile_id', profile?._id)
+  // }, [profile])
 
 
 
@@ -79,11 +79,18 @@ const Profile = ({user}) => {
       <div className={styles.profileBg}>
       {user?.profile === profile?._id ?
         <>
-        <div className={styles.profileGreeting}>
-            <h4>Hi, {profile?.name}</h4>
+        <div className={styles.greetingAndPic}>
+          <div className={styles.profilePicDiv}>
             <img src={profile?.photo} alt="profile-avatar" className={styles.profileAvatar} />
+          </div>
+          <div className={styles.profileGreeting}>
+            <h4 className={styles.profNameh4}>{profile?.name}</h4>
+          </div>
         </div>
         <div className={styles.profilePageContents}>
+          <div className={styles.colorBarPageContents}>
+            <h4 className={styles.ugh}>ugh</h4>
+          </div>
           <div className={styles.apiDivs}>
             <div className={styles.apiSavedActivities}>
               <div className={styles.apiHeader}>
@@ -101,7 +108,7 @@ const Profile = ({user}) => {
         
         
         <div className={styles.formAndAddedDiv}>
-          <div className={styles.formParentDiv}>
+          {/* <div className={styles.formParentDiv}> */}
             <div className={styles.addActivityForm}>
               <div className={styles.h3}>
                 <h3>Add an Activity</h3>
@@ -162,9 +169,9 @@ const Profile = ({user}) => {
                     Add Activity!
                     </button>
                   </div>
-                </form>
-              </div>
+              </form>
             </div>
+            {/* </div> */}
             <div className={styles.addedActivityDiv}>
                 {profile?.userActivity?.map(activity =>
                   <UserActivity
@@ -180,7 +187,7 @@ const Profile = ({user}) => {
         :
         <>
         <div className={styles.profileGreeting}>
-            <h4>{profile?.name}'s Profile</h4>
+            <h4>{profile?.name}</h4>
             <img src={profile?.photo} alt="profile-avatar" className={styles.profileAvatar} />
         </div>
         <div className={styles.profilePageContents}>
@@ -191,9 +198,9 @@ const Profile = ({user}) => {
               </div>
               <ProfileApiActivities profile={profile}/>
             </div>
-            <div className={styles.apiDoneActivities}>
+            {/* <div className={styles.apiDoneActivities}>
               <h4>Done Activities</h4>
-            </div>
+            </div> */}
           </div>
         </div>
         <div className={styles.addedActivityDiv}>

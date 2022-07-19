@@ -8,7 +8,7 @@ const AOTD = ({user}) => {
       <main className={styles.aotdContainer}>
       <h1>Become an object in motion.</h1>
         <div className={styles.aotdBg}>
-          <h2 className={styles.h2}>ACTIVITY OF THE DAY</h2>
+          <h2 className={styles.h2}>RANDOM ACTIVITY</h2>
           <div className={styles.soloDiv}>
             <h4 className={styles.h4SoloGroup}>Solo</h4>
             <SoloActivity user={user}/>
