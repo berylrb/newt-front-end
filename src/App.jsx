@@ -84,7 +84,7 @@ const App = () => {
           path="/activity"
           element={<ActivityDetails handleSignupOrLogin={handleSignupOrLogin} user={user} />}
         />
-        <Route path="/activity/:activityName" element={<SearchDetails />} />
+        <Route path="/activity/:activityName" element={<SearchDetails user={user}/>} />
       </Routes>
     </>
   )

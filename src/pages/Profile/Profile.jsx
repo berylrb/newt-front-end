@@ -1,9 +1,10 @@
 import { useState, useRef, useEffect } from "react"
-import { useLocation, useParams } from "react-router-dom"
+import { Navigate, useLocation, useParams } from "react-router-dom"
 import styles from './Profile.module.css'
 import UserActivity from "../../components/UserActivity/UserActivity"
 import { show } from "../../services/profileService"
 import * as profileService from '../../services/profileService'
+import ProfileApiActivities from "../../components/ProfileApiActivities/ProfileApiActivities"
 
 const Profile = ({user}) => {
   const [validForm, setValidForm] = useState(false)
@@ -39,6 +40,15 @@ const Profile = ({user}) => {
     setProfile(updatedProfile)
   }
 
+  const handleUpdateActivity = async userActivityId => {
+    const updatedProfile = await profileService.update(userActivityId)
+    const updatedProfileActivities = profile.activities.map(activity =>
+      activity._id === updatedProfile._id ? updatedProfile : activity
+      )
+      setProfile(updatedProfileActivities)
+      Navigate('/profiles/:id')
+  }
+
   useEffect(() => {
     formElement.current.checkValidity() ? setValidForm(true) : setValidForm(false)
   }, [formData])
@@ -72,6 +82,7 @@ const Profile = ({user}) => {
         <div className={styles.profilePageContents}>
             <div>
               <h4>Saved Activities</h4>
+              <ProfileApiActivities profile={profile}/>
             </div>
             <div>
               <h4>Done Activities</h4>
@@ -149,9 +160,9 @@ const Profile = ({user}) => {
                     key={activity._id} 
                     activity={activity}
                     handleDeleteUserActivity={handleDeleteUserActivity}
-              
+                    handleUpdateActivity={handleUpdateActivity}
                   />
-                  )} 
+                  )}
               </div>
             </div>
             </div>
