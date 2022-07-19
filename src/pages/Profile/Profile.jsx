@@ -70,10 +70,10 @@ const Profile = ({user}) => {
 
   return ( 
     <>
-      {/* {user === user.id
-        ? */}
       <div className={styles.profilePage}>
         <div className={styles.profileBg}>
+      {user === user.id ?
+      <>
         <div className={styles.profileGreeting}>
             <h4>Hi, {profile?.name}</h4>
             <img src={profile?.photo} alt="profile-avatar" className={styles.profileAvatar} />
@@ -167,10 +167,33 @@ const Profile = ({user}) => {
                   />
                   )}
             </div>
+            </div>
+      </>
+            :
+            <>
+            <div className={styles.profileGreeting}>
+            <h4>{profile?.name}'s Profile</h4>
+            <img src={profile?.photo} alt="profile-avatar" className={styles.profileAvatar} />
         </div>
+        <div className={styles.profilePageContents}>
+          <div className={styles.apiDivs}>
+            <div className={styles.apiSavedActivities}>
+              <div className={styles.apiHeader}>
+                <h4 className={styles.apiH4}>Saved Activities</h4>
+              </div>
+              <ProfileApiActivities profile={profile}/>
+            </div>
+            <div className={styles.apiDoneActivities}>
+              <h4>Done Activities</h4>
+            </div>
+          </div>
+        </div>
+            
+            </>
+      }
+            </div>
       </div>
-    </div>
-        
+
         </>
   );
 }
