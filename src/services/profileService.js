@@ -57,6 +57,11 @@ async function update(userActivityId, formData){
   return res.json()
 }
 
+// async function updateWantCompany(wantCompanyId, companyFormData)
+
+
+
+
 async function addPhoto(photoData, id) {
   const res = await fetch(`${BASE_URL}/${id}/add-photo`, {
     method: 'PUT',
