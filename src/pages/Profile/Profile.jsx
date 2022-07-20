@@ -58,6 +58,12 @@ const Profile = ({user}) => {
   const handleSubmit = evt => {
     evt.preventDefault()
     handleAddUserActivity(formData)
+    setFormData({
+      activity: '',
+      type: '',
+      price: 0,
+      participants: 0
+    })
   }
 
   const handleAddUserActivity = async (newUserActivityData) => {
@@ -208,6 +214,8 @@ const Profile = ({user}) => {
             <UserActivity
               key={activity._id} 
               activity={activity}
+              profile={profile}
+              user={user}
               />
             )}
         </div>
