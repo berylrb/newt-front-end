@@ -3,7 +3,9 @@
 
 #### A Mern Stack Application
 _______
-## [Check out the site!](DEPLOYMENT LINK)
+## [Check out the site!](https://newt-activity.netlify.app/)
+## [Trello Board](https://trello.com/b/v9YnBlTX/newt-beryl-rachel-kevin)
+## [Back End Github](https://github.com/berylrb/newt-back-end)
 _______
 ## Why Newt?
 
@@ -12,7 +14,7 @@ _______
 ## Our Team:
 <font color="pink">**Beryl: scrum master, UI design**</font>
 <br>
-<font color="aqua">**Rachel: CRUD development**</font>
+<font color="purple">**Rachel: CRUD development**</font>
 <br>
 <font color="red">**Kevin: Application layout design**</font>
 ________
