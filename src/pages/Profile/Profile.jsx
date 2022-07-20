@@ -65,7 +65,6 @@ const Profile = ({user}) => {
     setProfile(updatedProfile)
   }
 
-
   return ( 
     <>
     <div className={styles.profilePage}>
@@ -89,7 +88,7 @@ const Profile = ({user}) => {
               <div className={styles.apiHeader}>
                 <h4 className={styles.apiH4}>WILL DO</h4>
               </div>
-              <ProfileApiActivities profile={profile}/>
+              <ProfileApiActivities profile={profile} />
             </div>
             <div className={styles.apiDoneActivities}>
               <div className={styles.apiHeaderDone}>
@@ -165,6 +164,7 @@ const Profile = ({user}) => {
                   </div>
               </form>
             </div>
+            {profile?.userActivity.length? 
             <div className={styles.addedHolder}>
               <div className={styles.addedActivityDiv}>
                   {profile?.userActivity?.map(activity =>
@@ -177,6 +177,11 @@ const Profile = ({user}) => {
                     )}
               </div>
             </div>
+            :
+            <div className={styles.noActivities}>
+              <p>Activities you create will appear here, human.</p>
+            </div>
+            }
         </div>
         </>
         :
@@ -193,9 +198,9 @@ const Profile = ({user}) => {
               </div>
               <ProfileApiActivities profile={profile}/>
             </div>
-            {/* <div className={styles.apiDoneActivities}>
+            <div className={styles.apiDoneActivities}>
               <h4>Done Activities</h4>
-            </div> */}
+            </div>
           </div>
         </div>
         <div className={styles.addedActivityDiv}>
