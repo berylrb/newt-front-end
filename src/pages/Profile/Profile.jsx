@@ -36,7 +36,7 @@ const Profile = ({user}) => {
     setProfile(updatedProfile)
   }
 
-  const handleUpdateActivity = async userActivityId => {
+  const handleUpdateActivity = async (userActivityId) => {
     const updatedProfile = await profileService.update(userActivityId)
     const updatedProfileActivities = profile.activities.map(activity =>
       activity._id === updatedProfile._id ? updatedProfile : activity
