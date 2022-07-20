@@ -12,5 +12,72 @@
 }
 
 .inputContainer {
+  width: 70%;
+  display: flex;
+  flex-direction: column;
+}
+
+.inputContainerPhoto {
+  display: flex;
+  flex-direction: column;
   margin-bottom: 1rem;
+  width: 65%;
+}
+
+
+.formDiv {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.button6 {
+  align-items: center;
+  background-color: #90a3ff;
+  border: 1.5px solid black;
+  border-radius: .25rem;
+  box-shadow: 2px 4px #ff96ff, 2px 4px 0 1px black;
+  box-sizing: border-box;
+  color: white;
+  cursor: pointer;
+  display: inline-flex;
+  font-size: 16px;
+  font-weight: 500;
+  justify-content: center;
+  line-height: 1.25;
+  margin: 18px 0 0 0;
+  height: 40px;
+  padding: calc(.875rem - 1px) calc(1.5rem - 1px);
+  position: relative;
+  text-decoration: none;
+  transition: all 250ms;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  vertical-align: baseline;
+  width: 60%;
+
+}
+
+.button6:hover,
+.button6:focus {
+  box-shadow: 2px 4px #90a3ff, 2px 4px 0 1px black;
+  color: rgba(0, 0, 0, 0.65);
+  border: 1.5px solid black;
+}
+
+.button6:hover {
+  background-color: #ff96ff;
+  transform: translateY(-1px);
+  box-shadow: 2px 4px #90a3ff, 2px 4px 0 1px black;
+}
+
+.button6:active {
+  background-color: #ff96ff;
+  border: 1.5px solid black;
+  box-shadow: 2px 2px rgb(176, 176, 176), 2px 2px 0 1px rgba(0, 0, 0, 0.186);
+  color: rgba(0, 0, 0, 0.65);
+  transform: translateY(0);
 }

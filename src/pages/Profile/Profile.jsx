@@ -65,7 +65,6 @@ const Profile = ({user}) => {
     setProfile(updatedProfile)
   }
 
-
   return ( 
     <>
     <div className={styles.profilePage}>
@@ -89,7 +88,7 @@ const Profile = ({user}) => {
               <div className={styles.apiHeader}>
                 <h4 className={styles.apiH4}>WILL DO</h4>
               </div>
-              <ProfileApiActivities profile={profile}/>
+              <ProfileApiActivities profile={profile} />
             </div>
             <div className={styles.apiDoneActivities}>
               <div className={styles.apiHeaderDone}>

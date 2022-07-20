@@ -43,77 +43,74 @@ const SignupForm = props => {
   }
 
   return (
-    <form
-      autoComplete="off"
-      onSubmit={handleSubmit}
-      className={styles.container}
-    >
-      <div className={styles.inputContainer}>
-        <label htmlFor="name" className={styles.label}>Name</label>
-        <input
-          type="text"
-          autoComplete="off"
-          id="name"
-          value={name}
-          name="name"
-          onChange={handleChange}
-        />
-      </div>
-      <div className={styles.inputContainer}>
-        <label htmlFor="email" className={styles.label}>Email</label>
-        <input
-          type="text"
-          autoComplete="off"
-          id="email"
-          value={email}
-          name="email"
-          onChange={handleChange}
-        />
-      </div>
-      <div className={styles.inputContainer}>
-        <label htmlFor="password" className={styles.label}>Password</label>
-        <input
-          type="password"
-          autoComplete="off"
-          id="password"
-          value={password}
-          name="password"
-          onChange={handleChange}
-        />
-      </div>
-      <div className={styles.inputContainer}>
-        <label htmlFor="confirm" className={styles.label}>
-          Confirm Password
-        </label>
-        <input
-          type="password"
-          autoComplete="off"
-          id="confirm"
-          value={passwordConf}
-          name="passwordConf"
-          onChange={handleChange}
-        />
-      </div>
-      <div className={styles.inputContainer}>
-        <label htmlFor="photo-upload" className={styles.label}>
-          Upload Photo
-        </label>
-        <input
-          type="file"
-          id="photo-upload"
-          name="photo"
-          onChange={handleChangePhoto}
-        />
-      </div>
-      <div className={styles.inputContainer}>
-        <button disabled={isFormInvalid()} className={styles.button}>
+    <div className={styles.formDiv}>
+      <form
+        autoComplete="off"
+        onSubmit={handleSubmit}
+        className={styles.container}
+      >
+        <div className={styles.inputContainer}>
+          <label htmlFor="name" className={styles.label}>Name</label>
+          <input
+            type="text"
+            autoComplete="off"
+            id="name"
+            value={name}
+            name="name"
+            onChange={handleChange}
+          />
+        </div>
+        <div className={styles.inputContainer}>
+          <label htmlFor="email" className={styles.label}>Email</label>
+          <input
+            type="text"
+            autoComplete="off"
+            id="email"
+            value={email}
+            name="email"
+            onChange={handleChange}
+          />
+        </div>
+        <div className={styles.inputContainer}>
+          <label htmlFor="password" className={styles.label}>Password</label>
+          <input
+            type="password"
+            autoComplete="off"
+            id="password"
+            value={password}
+            name="password"
+            onChange={handleChange}
+          />
+        </div>
+        <div className={styles.inputContainer}>
+          <label htmlFor="confirm" className={styles.label}>
+            Confirm Password
+          </label>
+          <input
+            type="password"
+            autoComplete="off"
+            id="confirm"
+            value={passwordConf}
+            name="passwordConf"
+            onChange={handleChange}
+          />
+        </div>
+        <div className={styles.inputContainerPhoto}>
+          <label htmlFor="photo-upload" className={styles.label}>
+            Upload Photo
+          </label>
+          <input
+            type="file"
+            id="photo-upload"
+            name="photo"
+            onChange={handleChangePhoto}
+          />
+        </div>
+        <button disabled={isFormInvalid()} className={styles.button6}>
           Sign Up
         </button>
-        <Link to="/">
-          <button>Cancel</button>
-        </Link>
-      </div>
-    </form>
+      </form>
+    </div>
   )
 }
 
