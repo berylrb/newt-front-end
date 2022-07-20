@@ -51,10 +51,6 @@ const SearchDetails = ({user}) => {
               <h4>PRICE:</h4>
               {searchDetails.price}
             </div>
-            <div className={styles.activityAccessibility}>
-              <h4>ACCESSIBILITY:</h4>
-              {searchDetails.accessibility}
-            </div>
             <div className={styles.returnContainer}>
               <br />
               <Link className={styles.returnLink} to="/search">Return to Search</Link>
