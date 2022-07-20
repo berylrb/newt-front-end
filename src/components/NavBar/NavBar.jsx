@@ -9,7 +9,7 @@ const NavBar = ({ user, handleLogout, profile }) => {
         {user ?
           <nav>
             <Link className="navLink" to="/">
-              <img className={styles.newtHeader} src={newt} alt="newt" />
+              <img className="newtHeader" src={newt} alt="newt" />
             </Link>
             <Link className="navLink" to="/profiles">Community</Link>
             <Link className="navLink"  to={`/profiles/${user.profile}`}>Profile</Link>
@@ -20,7 +20,7 @@ const NavBar = ({ user, handleLogout, profile }) => {
         :
         <>
           <div className={styles.newtDiv}>
-            <img className={styles.newtHeader} src={newt} alt="newt" />
+            <img className="newtHeader" src={newt} alt="newt" />
           </div>
           <nav>
             <Link className="navLink"  to="/login">Log In</Link>
