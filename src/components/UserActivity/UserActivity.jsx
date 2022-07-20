@@ -7,7 +7,7 @@ import { useParams } from 'react-router-dom'
 const UserActivity = (props, {user}) => {
   const [profile, setProfile] = useState()
   const {id} = useParams()
-  console.log(props)
+  
 
 
 
@@ -15,6 +15,7 @@ const UserActivity = (props, {user}) => {
     const fetchProfile = async() => {
       const profileData = await show(id)
       setProfile(profileData)
+      console.log('profs', profile?._id)
       // set activities based on profiledata.activities
     }
     fetchProfile()
@@ -32,8 +33,6 @@ const UserActivity = (props, {user}) => {
         <p>${props.activity.price}</p>
         <h4>Participants:</h4>
         <p>{props.activity.participants}</p>
-        {user?.profile === profile?._id ?
-        <>
         <button className={styles.button6} onClick={() => props.handleDeleteUserActivity(props.activity._id)}>Delete</button>
         <button>
         <Link
@@ -43,14 +42,6 @@ const UserActivity = (props, {user}) => {
             Edit
         </Link>
         </button>
-
-        
-        </>
-        :
-        <>
-          <p> </p>
-        </>
-      }
     </div>
     </>
   )
