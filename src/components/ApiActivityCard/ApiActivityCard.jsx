@@ -2,7 +2,7 @@ import styles from './ApiActivityCard.module.css'
 import pinkStar from '../../assets/pink-star.png'
 
 const ApiActivityCard = (props, {user}) => {
-  console.log('this is props', props, "this is user", props.profile?._id)
+  
   return (
   <>
     <div className={styles.cardHolder}>

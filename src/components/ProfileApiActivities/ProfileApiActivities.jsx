@@ -11,6 +11,7 @@ const ProfileApiActivities = ( {profile, user, addToDoneActivities} ) => {
         <ApiActivityCard
           key={activity._id}
           activity={activity}
+          addToDoneActivities={addToDoneActivities}
         />
       )}
       {profile?.doneActivities?.map((activity, idx) =>
