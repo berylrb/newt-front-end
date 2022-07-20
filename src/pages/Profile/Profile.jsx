@@ -208,6 +208,8 @@ const Profile = ({user}) => {
             <UserActivity
               key={activity._id} 
               activity={activity}
+              profile={profile}
+              user={user}
               />
             )}
         </div>
