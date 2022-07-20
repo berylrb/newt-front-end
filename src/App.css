@@ -32,3 +32,9 @@ body {
   background-color: #ff96ff;
   color: black;
 }
+
+.navLink:active {
+  background-color: #90a3ff;
+  color: white;
+  border: 2px solid white;
+}

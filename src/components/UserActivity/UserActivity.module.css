@@ -1,6 +1,6 @@
 .userActivityDiv {
-  width: 25vw;
-  height: 35vh;
+  width: 80%;
+  height: 40%;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -10,12 +10,8 @@
 }
 
 
-h4 {
-  text-align: left;
-}
-
 p, h4 {
-  margin: 5px;
+  margin: 0 0 5px 0;
 }
 
 .buttonDiv {

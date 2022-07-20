@@ -1,10 +1,29 @@
 import styles from './UserActivity.module.css'
 import { Link } from 'react-router-dom'
+import { useState, useEffect } from 'react'
+import { show } from "../../services/profileService"
+import { useParams } from 'react-router-dom'
 
-const UserActivity = (props) => {
-  console.log(props)
+const UserActivity = (props, {user}) => {
+  const [profile, setProfile] = useState()
+  const {id} = useParams()
+  
+
+
+
+  useEffect(() => {
+    const fetchProfile = async() => {
+      const profileData = await show(id)
+      setProfile(profileData)
+      console.log('profs', profile?._id)
+      // set activities based on profiledata.activities
+    }
+    fetchProfile()
+  }, [id])
+
+
   return (
-
+    <>
     <div className={styles.userActivityDiv}>
         <h4>Activity:</h4>
         <p>{props.activity.activity}</p>
@@ -19,11 +38,12 @@ const UserActivity = (props) => {
         <Link
           to="/edit"
           state={props.activity}
-          >
+          > 
             Edit
         </Link>
         </button>
     </div>
+    </>
   )
 }
 

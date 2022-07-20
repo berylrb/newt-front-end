@@ -1,12 +1,15 @@
 .cardHolder {
   display: flex;
-  flex-direction: column;
-  justify-content: center;
+  flex-direction: row;
+  justify-content: flex-start;
   align-items: center;
-  height: auto;
+  /* height: 30%; */
   width: 90%;
-  background-color: #ecff50;
-  border: 2px solid black;
-  margin: 20px;
-  padding: 20px;
+  font-weight: 500;
+  margin: 15px 10px 15px 10px;
+}
+
+
+.starBulletImg {
+  height: 50px;
 }
