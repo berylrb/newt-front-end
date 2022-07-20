@@ -1,5 +1,19 @@
-.container {
+.signupContainer {
   display: flex;
   align-items: center;
   flex-direction: column;
 }
+
+.signupFormBg {
+  margin: 90px;
+  width: 50%;
+  height: 50%;
+  background-color: #ecff50;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 2px solid black;
+  box-shadow: 12px 15px #ff96ff, 12px 15px 0 2px black;
+  z-index: 1;
+}
+
