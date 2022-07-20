@@ -31,7 +31,7 @@ export async function getActivityDetails(key) {
 export async function activitySearch(formData) {
   console.log(formData)
   
-  const options = `?type=${formData.type}&&accessibility=${formData.accessibility}&&participants=${formData.participants}&&price=${formData.price}`
+  const options = `?type=${formData.type}&&participants=${formData.participants}&&price=${formData.price}`
   const path = `${baseUrl}/activity${options}`
   console.log(path)
   const res = await fetch(path)

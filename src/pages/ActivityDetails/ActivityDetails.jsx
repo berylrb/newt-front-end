@@ -63,10 +63,6 @@ const ActivityDetails = ( {user} ) => {
               <h4>PRICE:</h4>
               {activityDetails.price}
             </div>
-            <div className={styles.activityAccessibility}>
-              <h4>ACCESSIBILITY:</h4>
-              {activityDetails.accessibility}
-            </div>
             <div className={styles.returnContainer}>
               <br />
               <Link className={styles.returnLink} to="/">Return Home</Link>
