@@ -28,14 +28,15 @@ const Profiles = (props) => {
                 <Link 
                 key={profile._id}
                 to={`/profiles/${profile._id}`}
-                state={profile}>
-                <div key={profile._id}  className={styles.profileNameLink}>
+                state={profile}
+                className={styles.profileNameLink}>
+                <div key={profile._id}>
                   <div className={styles.profileCard}>
                     <div className={styles.profilePicDiv}>
                       <img className={styles.profilePic} src={profile.photo} alt="profile-pic" profile={profile} />
                     </div>
                     <div className={styles.profileNameDiv}>
-                      <p key={profile._id} profile={profile}>{profile.name}</p>
+                      <p className={styles.profNameP} key={profile._id} profile={profile}>{profile.name}</p>
                     </div>
                   </div>
                 </div>
