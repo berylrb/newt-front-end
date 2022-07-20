@@ -9,6 +9,7 @@ h3 {
 }
 
 .profileBg{
+  width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
@@ -88,7 +89,8 @@ h3 {
   display: flex;
   justify-content: center;
   border-bottom: 2px solid black;
-  /* position: fixed; */
+  /* position: absolute;
+  width: calc((.75 * (.75 * .35) * 100%)); */
 }
 
 .apiH4 {

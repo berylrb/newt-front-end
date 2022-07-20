@@ -33,7 +33,7 @@ const Profile = ({user}) => {
   }, [id])
 
   const handleDeleteUserActivity = async (userActivityId) => {
-    console.log(userActivityId)
+    console.log('userActivityId', userActivityId)
     const updatedProfile = await profileService.deleteOne(userActivityId)
     setProfile(updatedProfile)
   }

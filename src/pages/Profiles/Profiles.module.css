@@ -67,12 +67,17 @@
 
 .profileNameDiv {
   background-color: white;
-  width: 100%;
+  width: 85%;
   border: 2px solid black;
   display: flex;
-  justify-content: center;
+  justify-content: flex-end;
   align-items: center;
-  margin-top: 100px;
+  padding: 5px;
+  margin: 85px 0 60px -55px;
+}
+
+.profNameP {
+  margin: 0;
 }
 
 
