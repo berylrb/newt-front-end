@@ -37,9 +37,9 @@
 
 .profileCard {
   height: 50%;
-  width: 85%;
+  width: 80%;
   background-color: #90a3ff;
-  padding: 30px;
+  padding: 10px;
   margin: 40px 30px 40px 30px;
   border: 2px solid black;
   box-shadow: 12px 15px #ecff50, 12px 15px 0 2px black;

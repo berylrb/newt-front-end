@@ -164,6 +164,7 @@ const Profile = ({user}) => {
                   </div>
               </form>
             </div>
+            {profile?.userActivity.length? 
             <div className={styles.addedHolder}>
               <div className={styles.addedActivityDiv}>
                   {profile?.userActivity?.map(activity =>
@@ -176,6 +177,11 @@ const Profile = ({user}) => {
                     )}
               </div>
             </div>
+            :
+            <div className={styles.noActivities}>
+              <p>Activities you create will appear here, human.</p>
+            </div>
+            }
         </div>
         </>
         :
@@ -192,9 +198,9 @@ const Profile = ({user}) => {
               </div>
               <ProfileApiActivities profile={profile}/>
             </div>
-            {/* <div className={styles.apiDoneActivities}>
+            <div className={styles.apiDoneActivities}>
               <h4>Done Activities</h4>
-            </div> */}
+            </div>
           </div>
         </div>
         <div className={styles.addedActivityDiv}>

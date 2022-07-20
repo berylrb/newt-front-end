@@ -1,7 +1,6 @@
 import { useState } from 'react'
 import SignupForm from '../../components/SignupForm/SignupForm'
 import styles from './Signup.module.css'
-import flowers from '../../assets/flowers.png'
 
 const Signup = props => {
   const [message, setMessage] = useState([''])
