@@ -13,7 +13,7 @@ const LoginPage = props => {
   return (
     <>
       <div className={styles.loginBg}>
-      <img className={styles.bgTopBlob} src={Blob} alt="corner blob" />
+        <img className={styles.bgTopBlob} src={Blob} alt="corner blob" />
         <main className={styles.loginContainer}>
           <div className={styles.loginFormBg}>
             <h2 className={styles.h2}>LOG IN</h2>
