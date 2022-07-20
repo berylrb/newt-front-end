@@ -1,5 +1,4 @@
 import styles from '../Landing.module.css'
-
 import { useState, useEffect } from 'react'
 import { getGroupActivity } from '../../../services/bored-api'
 import { Link } from 'react-router-dom'
@@ -23,7 +22,6 @@ const GroupActivity = ({user}) => {
     {user ?
       <div>
         <div className={styles.groupLinkDiv}>
-          
           <Link className={styles.activityLink} to="/activity" state={{groupActivity}}>
             {groupActivity?.activity}
           </Link>
@@ -32,18 +30,14 @@ const GroupActivity = ({user}) => {
     :
       <div>
         <div className={styles.groupLinkDiv}>
-        
           <Link className={styles.activityLink} to="/login">
             {groupActivity?.activity}
           </Link>
         </div>
       </div>
     }
-    
     </>
   )
 }
-
-
 
 export default GroupActivity

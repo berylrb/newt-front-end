@@ -35,52 +35,51 @@ const ActivityDetails = ( {user} ) => {
 
   // const handleAddApiActivity = async (newApiActivityData) => {
   //   
-    
   // }
 
 
   return (
     <>
       <div className={styles.detailsPage}>
-        {activityDetails.activity ?
-        <>
-          <div className={styles.activityDetails}>
-            <div className={styles.activityName}>
-              <h4>ACTIVITY:</h4>
-              <p>
+      {activityDetails.activity ?
+      <>
+        <div className={styles.activityDetails}>
+          <div className={styles.activityName}>
+            <h4>ACTIVITY:</h4>
+            <p>
               {activityDetails.activity}
-              </p>
-            </div>
-            <div className={styles.activityType}>
-              <h4>TYPE:</h4>
-              {activityDetails.type}
-            </div>
-            <div className={styles.activityPartic}>
-              <h4>PARTICIPANTS:</h4>
-              {activityDetails.participants}
-            </div>
-            <div className={styles.activityPrice}>
-              <h4>PRICE:</h4>
-              {activityDetails.price}
-            </div>
-            <div className={styles.activityAccessibility}>
-              <h4>ACCESSIBILITY:</h4>
-              {activityDetails.accessibility}
-            </div>
-            <div className={styles.returnContainer}>
-              <br />
-              <Link className={styles.returnLink} to="/">Return Home</Link>
-              <button onClick={handleSubmit} className={styles.addButton}>Add to List</button>
-            </div>
+            </p>
           </div>
-        </>
-        :
-        <>
-          <p>Loading activity details...</p>
-          <div className='returnContainer'>
-            <Link className='returnLink' to="/">Return</Link>
+          <div className={styles.activityType}>
+            <h4>TYPE:</h4>
+            {activityDetails.type}
           </div>
-        </>
+          <div className={styles.activityPartic}>
+            <h4>PARTICIPANTS:</h4>
+            {activityDetails.participants}
+          </div>
+          <div className={styles.activityPrice}>
+            <h4>PRICE:</h4>
+            {activityDetails.price}
+          </div>
+          <div className={styles.activityAccessibility}>
+            <h4>ACCESSIBILITY:</h4>
+            {activityDetails.accessibility}
+          </div>
+          <div className={styles.returnContainer}>
+            <br />
+            <Link className={styles.returnLink} to="/">Return Home</Link>
+            <button onClick={handleSubmit} className={styles.addButton}>Add to List</button>
+          </div>
+        </div>
+      </>
+      :
+      <>
+        <p>Loading activity details...</p>
+        <div className='returnContainer'>
+          <Link className='returnLink' to="/">Return</Link>
+        </div>
+      </>
       }
       </div>
     </>

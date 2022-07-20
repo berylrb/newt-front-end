@@ -1,5 +1,4 @@
 import styles from '../Landing.module.css'
-
 import { useState, useEffect } from 'react'
 import { getSoloActivity } from '../../../services/bored-api'
 import { Link } from 'react-router-dom'
@@ -7,7 +6,6 @@ import { Link } from 'react-router-dom'
 
 const SoloActivity = ({user}) => {
   const [soloActivity, setSoloActivity] = useState()
-
 
   useEffect(() => {
     const fetchSoloActivity = async () => {
