@@ -9,7 +9,6 @@ const SearchForm = (props) => {
   // const selectedType = props.searchParams[type]
   const [formData, setFormData] = useState({
     type: '',
-    accessibility: '',
     participants: '',
     price: ''
   })
@@ -47,21 +46,6 @@ const SearchForm = (props) => {
             <option name="busywork" value="busywork">BusyWork</option>
           </select>
           {/* <SearchType setSearchType={setSearchType} /> */}
-          {/* <label>Accessibility:</label> */}
-          <select className={styles.select} name="accessibility" id="access" onChange={handleChange}>
-            <option value=''>Accessibility</option>
-            <option value='0.0'>0</option>
-            <option value="0.1">1</option>
-            <option value="0.2">2</option>
-            <option value="0.3">3</option>
-            <option value="0.4">4</option>
-            <option value="0.5">5</option>
-            <option value="0.6">6</option>
-            <option value="0.7">7</option>
-            <option value="0.8">8</option>
-            <option value="0.9">9</option>
-            <option value="1.0">10</option>
-          </select>
           {/* <label>Participants:</label> */}
           <select className={styles.select} name="participants" id="participants" onChange={handleChange}>
             <option value=''>Participants</option>
