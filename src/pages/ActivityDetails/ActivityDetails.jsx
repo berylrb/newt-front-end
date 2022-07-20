@@ -4,10 +4,11 @@ import { getActivityDetails } from '../../services/bored-api'
 import { useLocation } from 'react-router-dom'
 import  styles from './ActivityDetails.module.css'
 import * as profileService from '../../services/profileService'
+import * as activityService from '../../services/activityService'
+import CommentSection from '../../components/CommentSection/CommentSection'
 
 const ActivityDetails = ( {user} ) => {
   const [activityDetails, setActivityDetails] = useState({})
-  // const { activityName } = useParams()
   const location = useLocation()
   console.log(location)
   const key = location.state.soloActivity 
@@ -61,6 +62,13 @@ const ActivityDetails = ( {user} ) => {
             <div className={styles.activityPrice}>
               <h4>PRICE:</h4>
               {activityDetails.price}
+            </div>
+            <div className={styles.CommentSectionDiv}>
+              <CommentSection 
+                activityDetails={activityDetails}
+                setActivityDetails={setActivityDetails}
+                profile={user?.profile}
+              />
             </div>
             <div className={styles.returnContainer}>
               <br />
