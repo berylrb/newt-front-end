@@ -21,7 +21,6 @@ const SoloActivity = ({user}) => {
     {user ?
       <div>
         <div className={styles.soloLinkDiv}>
-          
           <Link className={styles.activityLink} to="/activity" state={{soloActivity}}>
             {soloActivity?.activity}
           </Link>
@@ -30,14 +29,12 @@ const SoloActivity = ({user}) => {
     :
       <div>
         <div className={styles.soloLinkDiv}>
-        
           <Link className={styles.activityLink} to="/login">
             {soloActivity?.activity}
           </Link>
         </div>
       </div>
     }
-    
     </>
   )
 }

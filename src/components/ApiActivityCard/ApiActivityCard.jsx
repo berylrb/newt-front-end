@@ -9,6 +9,7 @@ const ApiActivityCard = (props) => {
       </div>
       <div className={styles.activityProp}>
         {props.activity.activity}
+        <button onClick={() => props.addToDoneActivities(props.activity)}>+</button>
       </div>
     </div>
   )
