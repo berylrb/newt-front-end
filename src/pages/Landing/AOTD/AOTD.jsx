@@ -6,7 +6,7 @@ const AOTD = ({user}) => {
   return (
     <>
       <main className={styles.aotdContainer}>
-      <h1>Become an object in motion.</h1>
+        <h1>Become an object in motion.</h1>
         <div className={styles.aotdBg}>
           <h2 className={styles.h2}>RANDOM ACTIVITY</h2>
           <div className={styles.soloDiv}>
@@ -19,7 +19,6 @@ const AOTD = ({user}) => {
           </div>
         </div>
       </main>
-
     </>
   )
 }

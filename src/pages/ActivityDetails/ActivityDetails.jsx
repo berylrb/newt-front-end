@@ -35,19 +35,18 @@ const ActivityDetails = ( {user} ) => {
 
   // const handleAddApiActivity = async (newApiActivityData) => {
   //   
-    
   // }
 
 
   return (
     <>
       <div className={styles.detailsPage}>
-        {activityDetails.activity ?
-        <>
-          <div className={styles.activityDetails}>
-            <div className={styles.activityName}>
-              <h4>ACTIVITY:</h4>
-              <p>
+      {activityDetails.activity ?
+      <>
+        <div className={styles.activityDetails}>
+          <div className={styles.activityName}>
+            <h4>ACTIVITY:</h4>
+            <p>
               {activityDetails.activity}
               </p>
             </div>
@@ -69,14 +68,14 @@ const ActivityDetails = ( {user} ) => {
               <button onClick={handleSubmit} className={styles.addButton}>Add to List</button>
             </div>
           </div>
-        </>
-        :
-        <>
-          <p>Loading activity details...</p>
-          <div className='returnContainer'>
-            <Link className='returnLink' to="/">Return</Link>
-          </div>
-        </>
+      </>
+      :
+      <>
+        <p>Loading activity details...</p>
+        <div className='returnContainer'>
+          <Link className='returnLink' to="/">Return</Link>
+        </div>
+      </>
       }
       </div>
     </>
