@@ -1,25 +1,8 @@
 import styles from './UserActivity.module.css'
 import { Link } from 'react-router-dom'
-import { useState, useEffect } from 'react'
-import { show } from "../../services/profileService"
-import { useParams } from 'react-router-dom'
 
-const UserActivity = (props, {user}) => {
-  const [profile, setProfile] = useState()
-  const {id} = useParams()
+const UserActivity = (props) => {
   
-
-
-
-  useEffect(() => {
-    const fetchProfile = async() => {
-      const profileData = await show(id)
-      setProfile(profileData)
-      console.log('profs', profile?._id)
-      // set activities based on profiledata.activities
-    }
-    fetchProfile()
-  }, [id])
 
 
   return (
@@ -33,6 +16,10 @@ const UserActivity = (props, {user}) => {
         <p>${props.activity.price}</p>
         <h4>Participants:</h4>
         <p>{props.activity.participants}</p>
+
+
+        {props.user?.profile === props.profile?._id ?
+        <>
         <button className={styles.button6} onClick={() => props.handleDeleteUserActivity(props.activity._id)}>Delete</button>
         <button>
         <Link
@@ -42,6 +29,12 @@ const UserActivity = (props, {user}) => {
             Edit
         </Link>
         </button>
+        </>
+        :
+        <>
+        <p> </p>
+        </>
+      }
     </div>
     </>
   )
