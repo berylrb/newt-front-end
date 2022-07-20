@@ -101,6 +101,8 @@ const Profile = ({user}) => {
                   <ApiActivityCard
                     key={activity._id} 
                     activity={activity}
+                    user={user}
+                    profile={profile}
                     addToDoneActivities={addToDoneActivities}
                   />
                 )}
@@ -113,6 +115,8 @@ const Profile = ({user}) => {
                   <ApiActivityCard
                     key={activity._id} 
                     activity={activity}
+                    user={user}
+                    profile={profile}
                     addToDoneActivities={addToDoneActivities}
                     idx={idx}
                   />
@@ -219,11 +223,30 @@ const Profile = ({user}) => {
             <div className={styles.apiSavedActivities}>
               <div className={styles.apiHeader}>
                 <h4 className={styles.apiH4}>Saved Activities</h4>
+                {profile?.activities?.map(activity =>
+                  <ApiActivityCard
+                    key={activity._id} 
+                    activity={activity}
+                    user={user}
+                    profile={profile}
+                    addToDoneActivities={addToDoneActivities}
+                  />
+                )}
               </div>
               <ProfileApiActivities profile={profile}/>
             </div>
             <div className={styles.apiDoneActivities}>
               <h4>Done Activities</h4>
+              {profile?.doneActivities?.map((activity, idx) =>
+                  <ApiActivityCard
+                    key={activity._id} 
+                    activity={activity}
+                    user={user}
+                    profile={profile}
+                    addToDoneActivities={addToDoneActivities}
+                    idx={idx}
+                  />
+              )}
             </div>
           </div>
         </div>
