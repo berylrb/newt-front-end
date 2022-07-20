@@ -14,7 +14,8 @@ const Profile = ({user}) => {
   const {state} = useLocation()
   console.log("Profiles are not working", state)
   const [profile, setProfile] = useState()
-  const [doneActivities, setDoneActivities] = useState({})
+  const [doneActivities, setDoneActivities] = useState([])
+  const [notDoneActivities, setNotDoneActivities] = useState(user?.profile?.activities)
 
   const [formData, setFormData] = useState({
     activity: '',
@@ -55,8 +56,9 @@ const Profile = ({user}) => {
 		setFormData({ ...formData, [evt.target.name]: evt.target.value })
 	}
 
-  const addToDoneActivities = (activity) => {
+  const addToDoneActivities = (activity, idx) => {
     setDoneActivities([...doneActivities, activity])
+    setNotDoneActivities([profile.activities.filter((activity, i) => i !== activity)])
   }
 
   const handleSubmit = evt => {
@@ -107,7 +109,7 @@ const Profile = ({user}) => {
                   />
                 )} */}
               </div>
-              <ProfileApiActivities profile={profile} />
+              <ProfileApiActivities profile={profile} addToDoneActivities={addToDoneActivities}/>
             </div>
             <div className={styles.apiDoneActivities}>
               <div className={styles.apiHeaderDone}>
@@ -233,7 +235,7 @@ const Profile = ({user}) => {
                   />
                 )} */}
               </div>
-              <ProfileApiActivities profile={profile}/>
+              <ProfileApiActivities profile={profile} addToDoneActivities={addToDoneActivities}/>
             </div>
             <div className={styles.apiDoneActivities}>
               <h4>Done Activities</h4>
