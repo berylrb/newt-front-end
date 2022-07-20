@@ -3,9 +3,10 @@
 
 #### A Mern Stack Application
 _______
-## [Check out the site!](https://newt-activity.netlify.app/)
-## [Trello Board](https://trello.com/b/v9YnBlTX/newt-beryl-rachel-kevin)
-## [Back End Github](https://github.com/berylrb/newt-back-end)
+## Getting Started:
+* [Check out the site!](https://newt-activity.netlify.app/)
+* [Trello Board](https://trello.com/b/v9YnBlTX/newt-beryl-rachel-kevin)
+* [Back End Github](https://github.com/berylrb/newt-back-end)
 _______
 ## Why Newt?
 
