@@ -1,23 +1,23 @@
 # Newt
 ![main screenshot](SCREENSHOT OF TITLE PAGE)
 
-#### A Mern Stack Application
-_______
-## Getting Started:
-* [Check out the site!](https://newt-activity.netlify.app/)
-* [Trello Board](https://trello.com/b/v9YnBlTX/newt-beryl-rachel-kevin)
-* [Back End Github](https://github.com/berylrb/newt-back-end)
+#### A MERN Stack Application
 _______
 ## Why Newt?
 
 Objects at rest stay at rest- let's change that! This application will help users discover more about themselves, their peers, and their community by providing them with inspiring ideas to get up, get moving, and try something new.
 _______
+## Getting Started:
+* [Check out the site!](https://newt-activity.netlify.app/)
+* [Trello Board](https://trello.com/b/v9YnBlTX/newt-beryl-rachel-kevin)
+* [Back End GitHub Repository](https://github.com/berylrb/newt-back-end)
+_______
 ## Our Team:
-<font color="pink">**Beryl: scrum master, UI design**</font>
+<font color="pink">**Beryl: [GitHub](https://github.com/berylrb)**</font>
 <br>
-<font color="purple">**Rachel: CRUD development**</font>
+<font color="purple">**Rachel: [GitHub](https://github.com/rharen11)**</font>
 <br>
-<font color="red">**Kevin: Application layout design**</font>
+<font color="red">**Kevin: [GitHub](https://github.com/UncleHagi)**</font>
 ________
 ## What to look forward to:
 ![app1](SCREENSHOT)
