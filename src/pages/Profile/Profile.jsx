@@ -21,8 +21,6 @@ const Profile = ({user}) => {
     participants: 0
   })
 
-
-
   useEffect(() => {
     const fetchProfile = async() => {
       const profileData = await show(id)
@@ -221,7 +219,7 @@ const Profile = ({user}) => {
         </div>
         
         </>
-        }
+      }
       </div>
     </div>
         
