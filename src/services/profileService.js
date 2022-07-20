@@ -57,9 +57,6 @@ async function update(userActivityId, formData){
   return res.json()
 }
 
-// async function updateWantCompany(wantCompanyId, companyFormData)
-
-
 
 
 async function addPhoto(photoData, id) {
