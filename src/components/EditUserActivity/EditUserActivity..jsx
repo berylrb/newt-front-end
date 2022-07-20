@@ -26,8 +26,8 @@ const EditUserActivity = ({activity}) => {
 
   const handleUpdateActivity = async () => {
     const updatedProfile = await profileService.update(location.state._id, formData)
-      navigate(`/profiles/${updatedProfile._id}`)
-      console.log('updated prof', updatedProfile)
+    navigate(`/profiles/${updatedProfile._id}`)
+    console.log('updated prof', updatedProfile)
   }
 
   const handleSubmit = evt => {
@@ -37,7 +37,6 @@ const EditUserActivity = ({activity}) => {
 
 
   return ( 
-    
     <>
       <h1>Edit Your Activity</h1>
       <form 
