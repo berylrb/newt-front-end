@@ -18,6 +18,7 @@ import EditUserActivity from './components/EditUserActivity/EditUserActivity.'
 
 const App = () => {
   const [user, setUser] = useState(authService.getUser())
+
   
   const navigate = useNavigate()
   console.log(user)
@@ -67,7 +68,7 @@ const App = () => {
           path="/profiles/:id"
           element={<Profile 
             profile={user?.profile} 
-            user={user} 
+            user={user}
             />}
         />
         <Route
