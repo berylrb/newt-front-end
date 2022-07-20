@@ -21,8 +21,6 @@ const Profile = ({user}) => {
     participants: 0
   })
 
-  
-
   useEffect(() => {
     
     console.log('user_id', user?._id, 'profile_id', profile?._id)

@@ -99,7 +99,7 @@ const EditUserActivity = ({activity}) => {
         </div>
       </form>
     </>
-   );
+  );
 }
- 
+
 export default EditUserActivity;
