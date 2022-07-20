@@ -1,4 +1,4 @@
-const baseUrl = "https://www.boredapi.com/api"
+const baseUrl = "https://bored-api-beryl.herokuapp.com/api"
 
 export async function getSoloActivity() {
   const res = await fetch(`${baseUrl}/activity?participants=1`)
