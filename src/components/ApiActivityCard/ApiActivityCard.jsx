@@ -5,9 +5,9 @@ const ApiActivityCard = (props, {user}) => {
   return (
   <>
     <div className={styles.cardHolder}>
-    <div className={styles.star}>
-    <img className={styles.starBulletImg} src={pinkStar} alt="pink star bullet" />
-    </div>
+      <div className={styles.star}>
+        <img className={styles.starBulletImg} src={pinkStar} alt="pink star bullet" />
+      </div>
     <div className={styles.activityProp}>
     {props.activity.activity}
     </div>
@@ -22,7 +22,7 @@ const ApiActivityCard = (props, {user}) => {
     <p></p>
   </>
   } */}
-  </div>
+    </div>
   </>
   )
 }
