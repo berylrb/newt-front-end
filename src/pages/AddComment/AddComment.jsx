@@ -37,18 +37,18 @@ const AddComment = (props, {user}) => {
     <>
       <main>
         <div className={styles.formCard}>
-          <div className={styles.formHeader}>
-            <h3>Add a comment</h3>
-          </div>
+          
           <div className={styles.formContainer}>
+            <div className={styles.formHeader}>
+              <h3 className={styles.headerH3}>Add a comment</h3>
+            </div>
             <form 
               onSubmit={handleSubmitComment}
               autoComplete="off"
               className={styles.formBody}
             >
               <div className={styles.inputContainer}>
-                <input 
-                  type="text"
+                <textarea
                   id="commentInput"
                   name="comment"
                   value={formData.comment}

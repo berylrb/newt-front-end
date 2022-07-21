@@ -19,7 +19,6 @@ p {
   justify-content: space-evenly;
   align-items: center;
   background-color: #ff96ff;
-  padding: 60px;
 }
 
 .activityDetails {
@@ -31,7 +30,7 @@ p {
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
-  margin: 10px 0 30px 0;
+  margin: 20px 0 30px 0;
   box-shadow: 12px 15px #90a3ff, 12px 15px 0 2px black;
 }
 
@@ -214,6 +213,7 @@ p {
   justify-content: center;
   align-items: center;
   overflow-y: scroll;
+  width: 100%;
 }
 
 .activityDetailsBottom {
