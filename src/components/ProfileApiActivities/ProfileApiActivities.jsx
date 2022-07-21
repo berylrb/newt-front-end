@@ -9,7 +9,8 @@ const ProfileApiActivities = ( {profile, user, addToDoneActivities} ) => {
   return (
     <div className={styles.profileCardDiv}>
       {profile?.activities?.map(activity =>
-      <Link to="/activity"
+      <Link className={styles.activityLink}
+        to="/activity"
         state={{soloActivity: activity}}
         >
         <ApiActivityCard

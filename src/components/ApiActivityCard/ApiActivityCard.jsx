@@ -6,22 +6,22 @@ const ApiActivityCard = (props, {user}) => {
   <>
     <div className={styles.cardHolder}>
     <div className={styles.star}>
-    <img class={styles.starBulletImg} src={pinkStar} alt="pink star bullet" />
+    <img className={styles.starBulletImg} src={pinkStar} alt="pink star bullet" />
     </div>
     <div className={styles.activityProp}>
     {props.activity.activity}
     </div>
-  {props.user?.profile === props.profile?._id ?
+  {/* {props.user?.profile === props.profile?._id ?
   <>
     <div>
-      <button onClick={() => props.addToDoneActivities(props.activity, props.idx)}>+</button>
+      <button onClick={() => props.addToDoneActivities(props.activity, props.idx)}>-></button>
     </div>
   </>
   :
   <>
     <p></p>
   </>
-  }
+  } */}
   </div>
   </>
   )
