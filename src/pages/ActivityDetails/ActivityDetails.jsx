@@ -59,6 +59,7 @@ const ActivityDetails = ( {user} ) => {
   return (
     <>
       <div className={styles.detailsPage}>
+        <div className={styles.allDetailsContents}>
       {activityDetails.activity ?
       <>
         <div className={styles.activityDetails}>
@@ -128,6 +129,7 @@ const ActivityDetails = ( {user} ) => {
             </div>
           </div>
         }
+        </div>
       </div>
     </>
   )

@@ -46,6 +46,7 @@ const SearchDetails = ({user}) => {
   return (
     <>
       <div className={styles.detailsPage}>
+      <div className={styles.allDetailsContents}>
         {searchDetails.activity ?
         <>
           <div className={styles.activityDetails}>
@@ -113,6 +114,7 @@ const SearchDetails = ({user}) => {
             </div>
           </div>
         }
+        </div>
       </div>
     </>
   )

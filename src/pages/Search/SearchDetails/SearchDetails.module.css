@@ -22,9 +22,19 @@ p {
   background-color: #ff96ff;
 }
 
+
+.allDetailsContents {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 100%;
+  height: 80%;
+}
+
 .activityDetails {
-  width: 50%;
-  height: 50%;
+  width: 45%;
+  height: 60%;
   background-color: white;
   border: 2px solid black;
   display: flex;
@@ -218,9 +228,10 @@ p {
   
 }
 
+
 .activityDetailsBottom {
-  width: 50%;
-  height: 50%;
+  width: 45%;
+  height: 55%;
   background-color: white;
   border: 2px solid black;
   display: flex;
@@ -230,6 +241,7 @@ p {
   box-shadow: 12px 15px #ecff50, 12px 15px 0 2px black;
   margin: 30px;
 }
+
 
 
 .detailsHeaderBottom {
