@@ -28,9 +28,7 @@ const AddComment = (props, {user}) => {
   }
 
   const {comment} = formData
-  const isFormInvalid = () => {
-    return !(comment)
-  }
+
 
 
   return (
@@ -56,7 +54,7 @@ const AddComment = (props, {user}) => {
                 />
               </div>
               <div className={styles.commentButtonDiv}>
-                <button className={styles.button6} disabled={isFormInvalid}>
+                <button className={styles.button6}>
                   Add Comment
                 </button>
               </div>
