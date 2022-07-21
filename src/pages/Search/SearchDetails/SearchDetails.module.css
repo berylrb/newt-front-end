@@ -225,8 +225,10 @@ p {
   align-items: center;
   overflow-y: scroll;
   width: 100%;
-  
+  padding: 20px;
+  margin: 0 0 20px 0;
 }
+
 
 
 .activityDetailsBottom {
