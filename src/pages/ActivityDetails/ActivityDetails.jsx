@@ -6,11 +6,13 @@ import  styles from './ActivityDetails.module.css'
 import * as profileService from '../../services/profileService'
 import * as activityService from '../../services/activityService'
 import CommentSection from '../../components/CommentSection/CommentSection'
+import ProfileApiActivities from '../../components/ProfileApiActivities/ProfileApiActivities'
 
 const ActivityDetails = ( {user} ) => {
   const [activityDetails, setActivityDetails] = useState({})
   const location = useLocation()
   const [savedActivity, setSavedActivity] = useState()
+  // const [show, setShow] = useState(false)
   const navigate = useNavigate()
   console.log(location)
   const key = location.state.soloActivity 
@@ -39,11 +41,13 @@ const ActivityDetails = ( {user} ) => {
     console.log('user', user.profile, activityDetails)
     const activity = await profileService.addApiActivity(user.profile, activityDetails)
     setSavedActivity(activity)
+    // setShow(true)
     console.log('activity', activity)
   }
 
   const buttonSubmit = async evt => {
     navigate('/')
+
   }
 
   // const handleAddApiActivity = async (newApiActivityData) => {
@@ -79,8 +83,16 @@ const ActivityDetails = ( {user} ) => {
             </div>
             <div className={styles.returnContainer}>
               <br />
-              <p>Wanna save this activity? Add it to your list!</p>
-              <button onClick={handleSubmit} className={styles.addButton}>Add to List</button>
+              {savedActivity >= 0  ?
+              <>
+                <p>Wanna save this activity? Add it to your list!</p>
+                <button onClick={handleSubmit} className={styles.addButton}>Add to List</button>
+              </>
+              :
+              <>
+                <p> </p>
+              </>
+              }
               <button className={styles.button6} onClick={buttonSubmit}>Go Back</button>
               
             </div>
@@ -91,7 +103,7 @@ const ActivityDetails = ( {user} ) => {
                 setSavedActivity={setSavedActivity}
                 profile={user?.profile}
               />
-              }
+            }
           </div>
       </>
       :
