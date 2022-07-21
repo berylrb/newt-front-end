@@ -12,8 +12,11 @@ const CommentCard = (props) => {
 return (
   <>
     <div className={styles.commentCardContainer}>
+      <div className={styles.commentAuthor}>
+        <h4 className={styles.pAuthor}>{props.comment.author} says:</h4>
+      </div>
       <div className={styles.commentContent}>
-        <p>{props.comment.comment}</p>
+        <p className={styles.pContent}>{props.comment.comment}</p>
       </div>
       {/* {profile?.name === props.comment.author &&
         <div className={styles.deleteButtonDiv}>

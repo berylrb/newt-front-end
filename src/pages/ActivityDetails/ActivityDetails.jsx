@@ -85,35 +85,47 @@ const ActivityDetails = ( {user} ) => {
               <br />
               {savedActivity >= 0  ?
               <>
-                <p>Wanna save this activity? Add it to your list!</p>
+                <p className={styles.pSave}>Wanna save this activity? Add it to your list!</p>
                 <button onClick={handleSubmit} className={styles.addButton}>Add to List</button>
               </>
               :
               <>
-                <p> </p>
+                <p className={styles.pSave}> </p>
               </>
               }
               <button className={styles.button6} onClick={buttonSubmit}>Go Back</button>
-              
             </div>
-            {savedActivity &&
-              
-              <CommentSection 
-                savedActivity={savedActivity}
-                setSavedActivity={setSavedActivity}
-                profile={user?.profile}
-              />
-            }
+            
           </div>
       </>
       :
       <>
-        <p>Loading activity details...</p>
-        <div className='returnContainer'>
-          <Link className='returnLink' to="/">Return</Link>
+        <div className={styles.activityDetails}>
+        <div className={styles.detailsHeader}>
+            <h4 className={styles.detailsH4}>ACTIVITY DETAILS</h4>
+          </div>
+          <p>Loading activity details...</p>
+          <div className='returnContainer'>
+            <Link className='returnLink' to="/">Return</Link>
+          </div>
         </div>
       </>
       }
+
+        {savedActivity &&
+        <div className={styles.activityDetailsBottom}>
+          <div className={styles.detailsHeaderBottom}>
+            <h4 className={styles.detailsH4Bottom}>COMMUNITY COMMENTS</h4>
+          </div>
+          <div className={styles.commentHolder}>
+                  <CommentSection 
+                    savedActivity={savedActivity}
+                    setSavedActivity={setSavedActivity}
+                    profile={user?.profile}
+                  />
+            </div>
+          </div>
+        }
       </div>
     </>
   )
