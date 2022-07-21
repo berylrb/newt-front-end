@@ -5,7 +5,7 @@ import { useLocation } from 'react-router-dom'
 import  styles from './ActivityDetails.module.css'
 import * as profileService from '../../services/profileService'
 import * as activityService from '../../services/activityService'
-import CommentSection from '../../components/CommentSection/CommentSection'
+// import CommentSection from '../../components/CommentSection/CommentSection'
 
 const ActivityDetails = ( {user} ) => {
   const [activityDetails, setActivityDetails] = useState({})
@@ -21,6 +21,8 @@ const ActivityDetails = ( {user} ) => {
   useEffect(() => {
     const fetchActivityDetails = async () => {
       const activityData = await getActivityDetails(key)
+      const res = await activityService.findCommentsByKey(key)
+      console.log('res', res)
       setActivityDetails(activityData)
     }
     fetchActivityDetails()
@@ -37,7 +39,7 @@ const ActivityDetails = ( {user} ) => {
   // const handleAddApiActivity = async (newApiActivityData) => {
   //   
   // }
-
+  console.log('activity details', activityDetails)
 
   return (
     <>
@@ -63,13 +65,13 @@ const ActivityDetails = ( {user} ) => {
               <h4>PRICE:</h4>
               {activityDetails.price}
             </div>
-            <div className={styles.CommentSectionDiv}>
+            {/* <div className={styles.CommentSectionDiv}>
               <CommentSection 
                 activityDetails={activityDetails}
                 setActivityDetails={setActivityDetails}
                 profile={user?.profile}
               />
-            </div>
+            </div> */}
             <div className={styles.returnContainer}>
               <br />
               <Link className={styles.returnLink} to="/">Return Home</Link>

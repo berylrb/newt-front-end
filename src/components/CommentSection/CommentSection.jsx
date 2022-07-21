@@ -6,6 +6,7 @@ import { Link } from "react-router-dom"
 
 
 const CommentSection = (props) => {
+  console.log('activity deets', props.activityDetails.comments)
   return (
     <>
       <div className={styles.commentSectionBody}>
