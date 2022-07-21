@@ -68,8 +68,7 @@ const Profile = ({user}) => {
     setFormData({
       activity: '',
       type: '',
-      price: 0,
-      participants: 0
+      price: 0
     })
   }
 
@@ -159,14 +158,18 @@ const Profile = ({user}) => {
                   </div>
                   <div className={styles.activityProfileInput}>
                     <label htmlFor="activity-type">Type</label>
-                    <input 
-                      type="text"
-                      className="activity-type"
-                      id="type-input"
-                      name="type"
-                      value={formData.type}
-                      onChange={handleChange}
-                    />
+                    <select className={styles.selectType} name="type" id="type" onChange={handleChange} required>
+                      <option value=''>Type</option>
+                      <option name="query" value="education">Education</option>
+                      <option name="recreational" value="recreational">Recreational</option>
+                      <option name="social" value="social">Social</option>
+                      <option name="diy" value="diy">DIY</option>
+                      <option name="charity" value="charity">Charity</option>
+                      <option name="cooking" value="cooking">Cooking</option>
+                      <option name="relaxation" value="relaxation">Relaxation</option>
+                      <option name="music" value="music">Music</option>
+                      <option name="busywork" value="busywork">BusyWork</option>
+                    </select>
                   </div>
                   <div className={styles.activityProfileInput}>
                     <label htmlFor="activity-price">Price</label>
@@ -176,17 +179,6 @@ const Profile = ({user}) => {
                       id="price-input"
                       name="price"
                       value={formData.price}
-                      onChange={handleChange}
-                    />
-                  </div>
-                  <div className={styles.activityProfileInput}>
-                    <label htmlFor="activity-participants">Participants</label>
-                    <input 
-                      type="text"
-                      className="activity-participants"
-                      id="participant-input"
-                      name="participants"
-                      value={formData.participants}
                       onChange={handleChange}
                     />
                   </div>
