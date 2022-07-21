@@ -1,6 +1,7 @@
 import { useState, useRef, useEffect } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import * as profileService from '../../services/profileService'
+import styles from './EditUserActivity.module.css'
 
 const EditUserActivity = ({activity}) => {
   const navigate = useNavigate()
@@ -38,65 +39,65 @@ const EditUserActivity = ({activity}) => {
 
   return ( 
     <>
-      <h1>Edit Your Activity</h1>
-      <form 
-        autoComplete="off" 
-        ref={formElement} 
-        onSubmit={handleSubmit}
-        >
-        <div>
-          <label htmlFor="activity-name">Activity</label>
-          <input 
-          type="text" 
-          className="activity-name"
-          id="name-input"
-          name="activity"
-          value={formData.activity || ''}
-          onChange={handleChange}
-          />
+    <div className={styles.editPage}></div>
+      <div className={styles.editFormBg}>
+        <div className={styles.formDiv}>
+          <h1>UPDATE ACTIVITY DETAILS</h1>
+          <form 
+            autoComplete="off" 
+            ref={formElement} 
+            onSubmit={handleSubmit}
+            className={styles.container}
+            >
+            <div className={styles.inputContainer}>
+              <label htmlFor="activity-name" className={styles.label}>Activity</label>
+              <input 
+              type="text" 
+              className="activity-name"
+              id="name-input"
+              name="activity"
+              value={formData.activity || ''}
+              onChange={handleChange}
+              />
+            </div>
+            <div className={styles.inputContainer}>
+            <label htmlFor="activity-type">Type</label>
+              <select className={styles.label} name="type" id="type" onChange={handleChange} required>
+                <option value=''>Type</option>
+                <option name="query" value="education">Education</option>
+                <option name="recreational" value="recreational">Recreational</option>
+                <option name="social" value="social">Social</option>
+                <option name="diy" value="diy">DIY</option>
+                <option name="charity" value="charity">Charity</option>
+                <option name="cooking" value="cooking">Cooking</option>
+                <option name="relaxation" value="relaxation">Relaxation</option>
+                <option name="music" value="music">Music</option>
+                <option name="busywork" value="busywork">BusyWork</option>
+              </select>
+            </div>
+            <div className={styles.inputContainer}>
+              <label htmlFor="activity-price" className={styles.label}>Price</label>
+              <input 
+              type="text" 
+              className="activity-price"
+              id="price-input"
+              name="price"
+              value={formData.price || ''}
+              onChange={handleChange}
+              />
+            </div>
+            <div>
+              <button
+                type="submit"
+                disabled={!validForm}
+                className={styles.button6}
+              >
+                Save Activity
+              </button>
+            </div>
+          </form>
         </div>
-        <div>
-          <label htmlFor="activity-type">Type</label>
-          <input 
-          type="text" 
-          className="activity-type"
-          id="type-input"
-          name="type"
-          value={formData.type || ''}
-          onChange={handleChange}
-          />
-        </div>
-        <div>
-          <label htmlFor="activity-price">Price</label>
-          <input 
-          type="text" 
-          className="activity-price"
-          id="price-input"
-          name="price"
-          value={formData.price || ''}
-          onChange={handleChange}
-          />
-        </div>
-        <div>
-          <label htmlFor="activity-participants">Participants</label>
-          <input 
-          type="text" 
-          className="activity-participants"
-          id="participant-input"
-          name="participants"
-          value={formData.participants || ''}
-          onChange={handleChange}
-          />
-        </div>
-        <div>
-          <button
-            type="submit"
-            disabled={!validForm}
-          >
-            Save Activity
-          </button>
-        </div>
-      </form>
+      </div>
     </>
   );
 }
