@@ -68,8 +68,7 @@ const Profile = ({user}) => {
     setFormData({
       activity: '',
       type: '',
-      price: 0,
-      participants: 0
+      price: 0
     })
   }
 
@@ -132,89 +131,89 @@ const Profile = ({user}) => {
         </div>
 
         {/* user activity form */}
-
-        <div className={styles.formAndAddedDiv}>
-            <div className={styles.addActivityForm}>
-              <div className={styles.h3}>
-                <h3>Add an Activity</h3>
-              </div>
-              <form 
-                className={styles.formBody}
-                autoComplete="off" 
-                onSubmit={handleSubmit}
-                ref={formElement}>
-                <div className={styles.activityProfileInput}>
-                  <label htmlFor="activity-name">Activity</label>
-                  <input 
-                    type="text"
-                    className="activity-name"
-                    id="name-input"
-                    name="activity"
-                    value={formData.activity}
-                    onChange={handleChange}
-                  />
+        <div className={styles.bottomSectionDiv}>
+          <div className={styles.colorBarPageContents}>
+            <h4 className={styles.ugh}>ugh</h4>
+          </div>
+          <div className={styles.formAndAddedDiv}>
+              <div className={styles.addActivityForm}>
+                <div className={styles.h3}>
+                  <h3>Add an Activity</h3>
                 </div>
-                <div className={styles.activityProfileInput}>
-                  <label htmlFor="activity-type">Type</label>
-                  <input 
-                    type="text"
-                    className="activity-type"
-                    id="type-input"
-                    name="type"
-                    value={formData.type}
-                    onChange={handleChange}
-                  />
-                </div>
-                <div className={styles.activityProfileInput}>
-                  <label htmlFor="activity-price">Price</label>
-                  <input 
-                    type="text"
-                    className="activity-price"
-                    id="price-input"
-                    name="price"
-                    value={formData.price}
-                    onChange={handleChange}
-                  />
-                </div>
-                <div className={styles.activityProfileInput}>
-                  <label htmlFor="activity-participants">Participants</label>
-                  <input 
-                    type="text"
-                    className="activity-participants"
-                    id="participant-input"
-                    name="participants"
-                    value={formData.participants}
-                    onChange={handleChange}
-                  />
-                </div>
-                  <div className={styles.buttonDiv}>
-                    <button 
-                    className={styles.button6}
-                    type="submit"
-                    disabled={!validForm}>
-                    Add Activity!
-                    </button>
-                  </div>
-              </form>
-            </div>
-            {profile?.userActivity.length? 
-            <div className={styles.addedHolder}>
-              <div className={styles.addedActivityDiv}>
-                  {profile?.userActivity?.map(activity =>
-                    <UserActivity
-                      key={activity._id} 
-                      activity={activity}
-                      handleDeleteUserActivity={handleDeleteUserActivity}
-                      handleUpdateActivity={handleUpdateActivity}
+                <form 
+                  className={styles.formBody}
+                  autoComplete="off" 
+                  onSubmit={handleSubmit}
+                  ref={formElement}>
+                  <div className={styles.activityProfileInput}>
+                    <label htmlFor="activity-name">Activity</label>
+                    <input 
+                      type="text"
+                      className="activity-name"
+                      id="name-input"
+                      name="activity"
+                      value={formData.activity}
+                      onChange={handleChange}
                     />
-                    )}
+                  </div>
+                  <div className={styles.activityProfileInput}>
+                    <label htmlFor="activity-type">Type</label>
+                    <select className={styles.selectType} name="type" id="type" onChange={handleChange} required>
+                      <option value=''>Type</option>
+                      <option name="query" value="education">Education</option>
+                      <option name="recreational" value="recreational">Recreational</option>
+                      <option name="social" value="social">Social</option>
+                      <option name="diy" value="diy">DIY</option>
+                      <option name="charity" value="charity">Charity</option>
+                      <option name="cooking" value="cooking">Cooking</option>
+                      <option name="relaxation" value="relaxation">Relaxation</option>
+                      <option name="music" value="music">Music</option>
+                      <option name="busywork" value="busywork">BusyWork</option>
+                    </select>
+                  </div>
+                  <div className={styles.activityProfileInput}>
+                    <label htmlFor="activity-price">Price</label>
+                    <input 
+                      type="text"
+                      className="activity-price"
+                      id="price-input"
+                      name="price"
+                      value={formData.price}
+                      onChange={handleChange}
+                    />
+                  </div>
+                    <div className={styles.buttonDiv}>
+                      <button 
+                      className={styles.button6}
+                      type="submit"
+                      disabled={!validForm}>
+                      Add Activity!
+                      </button>
+                    </div>
+                </form>
               </div>
-            </div>
-            :
-            <div className={styles.noActivities}>
-              <p>Activities you create will appear here, human.</p>
-            </div>
-            }
+              {profile?.userActivity.length? 
+              <div className={styles.addedHolder}>
+                <div className={styles.addedActivityDiv}>
+                <div className={styles.addedHeader}>
+                  <h4 className={styles.H4}>{profile?.name}'s Added Activities</h4>
+                </div>
+                    {profile?.userActivity?.map(activity =>
+                      <UserActivity
+                        key={activity._id} 
+                        activity={activity}
+                        handleDeleteUserActivity={handleDeleteUserActivity}
+                        handleUpdateActivity={handleUpdateActivity}
+                      />
+                      )}
+                </div>
+              </div>
+              :
+              <div className={styles.noActivities}>
+                <p>Activities you create will appear here, human.</p>
+              </div>
+              }
+          </div>
         </div>
         </>
         :
@@ -268,6 +267,7 @@ const Profile = ({user}) => {
         
         </>
       }
+      
       </div>
     </div>
         

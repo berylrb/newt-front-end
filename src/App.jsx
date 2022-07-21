@@ -14,7 +14,8 @@ import Search from './pages/Search/Search'
 import ActivityDetails from './pages/ActivityDetails/ActivityDetails'
 import SearchDetails from './pages/Search/SearchDetails/SearchDetails'
 import EditUserActivity from './components/EditUserActivity/EditUserActivity.'
-import AddComment from './pages/AddComment/AddComment'
+import ProfileApiActivities from './components/ProfileApiActivities/ProfileApiActivities'
+
 
 
 const App = () => {
@@ -87,15 +88,7 @@ const App = () => {
           element={<ActivityDetails handleSignupOrLogin={handleSignupOrLogin} user={user} />}
         />
         <Route path="/activity/:activityName" element={<SearchDetails user={user}/>} />
-        <Route
-          patch="/activity/:activityName/addComment"
-          element={<AddComment
-            profile={user?.profile}
-            user={user}
-            />
-          }
-          />
-          
+
       </Routes>
     </>
   )
