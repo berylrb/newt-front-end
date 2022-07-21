@@ -15,7 +15,7 @@ const ApiActivityCard = (props, {user}) => {
   {props.user?.profile === props.profile?._id ?
   <>
     <div>
-      <button onClick={() => props.addToDoneActivities(props.activity)}>+</button>
+      <button onClick={() => props.addToDoneActivities(props.activity, props.idx)}>+</button>
     </div>
   </>
   :
