@@ -45,7 +45,7 @@ h3 {
   z-index: 1;
 }
 
-.profileGreeting {
+.profileGreeting, .profileGreetingOther {
   background-color:white;
   padding: 3px 25px 6px 35px;
   border: 2px solid black;
@@ -72,7 +72,7 @@ h3 {
 
 
 
-.profilePageContents {
+.profilePageContents, .profilePageContentsOther {
   width: 75%;
   height: 60%;
   background-color: white;
@@ -93,7 +93,7 @@ h3 {
   font-size: 3em;
 }
 
-.apiDivs {
+.apiDivs, .apiDivsOther {
   display: flex;
   flex-direction: row;
   width: 100%;
@@ -103,7 +103,7 @@ h3 {
   margin: 30px 0 50px 0;
 }
 
-.apiHeader {
+.apiHeader, .apiHeaderOther {
   background-color:#90a3ff;
   display: flex;
   justify-content: center;
@@ -112,7 +112,7 @@ h3 {
   width: calc((.75 * (.75 * .35) * 100%)); */
 }
 
-.apiH4 {
+.apiH4, .apiH4Other {
   background-color: #90a3ff;;
   padding: 10px;
 }
@@ -129,7 +129,34 @@ h3 {
   padding: 10px;
 }
 
-.apiSavedActivities {
+
+.apiDoneActivitiesOther {
+  display: flex;
+  flex-direction: column;
+  width: 35%;
+  height: 100%;
+  overflow-y: scroll;
+  background-color: white;
+  border: 2px solid black;
+  box-shadow: 12px 15px #90a3ff, 12px 15px 0 2px black;
+}
+
+.apiHeaderDoneOther{
+  background-color: #ecff50;
+  display: flex;
+  justify-content: center;
+  border-bottom: 2px solid black;
+  width: 100%;
+}
+
+
+.apiH4DoneOther {
+  background-color:#ecff50;
+  padding: 10px;
+}
+
+
+.apiSavedActivities, .apiSavedActivitiesOther {
   display: flex;
   flex-direction: column;
   height: 100%;
@@ -155,7 +182,18 @@ h3 {
 }  
 
 .bottomSectionDiv {
+  width: 75%;
+  height: 60%;
+  background-color: white;
+  border: 2px solid black;
+  margin: 40px 0 0 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
 
+.bottomSectionDivOther {
   width: 75%;
   height: 60%;
   background-color: white;
@@ -222,7 +260,6 @@ h3 {
 .H4 {
   background-color:#90a3ff;
   width: 100%;
-  border-bottom: 2px solid black;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -319,17 +356,19 @@ input {
   overflow-y: scroll;
   background-color: white;
   border: 2px solid black;
-  /* display: flex;
+}
+
+.addedActivityDivOther {
+  display: flex;
   flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
   height: 100%;
-  width: 35%;
+  width: 90%;
   overflow-y: scroll;
   background-color: white;
   border: 2px solid black;
-  box-shadow: 12px 15px #ecff50, 12px 15px 0 2px black;
-} */
 }
-
 
 
 .noActivities {
@@ -339,4 +378,36 @@ input {
   align-items: center;
   justify-content: center;
   
+}
+
+
+.addedHolderOther {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items:center;
+  justify-content: space-evenly;
+}
+
+
+
+.addedHeaderOther {
+  background-color:#ecff50;
+  width: 100%;
+  border-bottom: 2px solid black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.H4Other {
+  background-color:#ecff50;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  font-size: 1.2em;
 }

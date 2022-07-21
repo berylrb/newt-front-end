@@ -223,15 +223,26 @@ const Profile = ({user}) => {
         </>
         :
         <>
-        <div className={styles.profileGreeting}>
-            <h4>{profile?.name}</h4>
+
+
+        {/* viewing other person's profile */}
+
+        <div className={styles.greetingAndPic}>
+          <div className={styles.profilePicDiv}>
             <img src={profile?.photo} alt="profile-avatar" className={styles.profileAvatar} />
+          </div>
+          <div className={styles.profileGreetingOther}>
+            <h4 className={styles.profNameh4}>{profile?.name}</h4>
+          </div>
         </div>
-        <div className={styles.profilePageContents}>
-          <div className={styles.apiDivs}>
-            <div className={styles.apiSavedActivities}>
-              <div className={styles.apiHeader}>
-                <h4 className={styles.apiH4}>Saved Activities</h4>
+        <div className={styles.profilePageContentsOther}>
+          <div className={styles.colorBarPageContents}>
+            <h4 className={styles.ugh}>ugh</h4>
+          </div>
+          <div className={styles.apiDivsOther}>
+            <div className={styles.apiSavedActivitiesOther}>
+              <div className={styles.apiHeaderOther}>
+                <h4 className={styles.apiH4Other}>Saved Activities</h4>
                 {/* {profile?.activities?.map(activity =>
                   <ApiActivityCard
                     key={activity._id} 
@@ -244,8 +255,10 @@ const Profile = ({user}) => {
               </div>
               <ProfileApiActivities profile={profile} addToDoneActivities={addToDoneActivities}/>
             </div>
-            <div className={styles.apiDoneActivities}>
-              <h4>Done Activities</h4>
+            <div className={styles.apiDoneActivitiesOther}>
+              <div className={styles.apiHeaderDoneOther}>
+                <h4 className={styles.apiH4DoneOther}>Done Activities</h4>
+              </div>
               {/* {profile?.doneActivities?.map((activity, idx) =>
                   <ApiActivityCard
                     key={activity._id} 
@@ -259,15 +272,29 @@ const Profile = ({user}) => {
             </div>
           </div>
         </div>
-        <div className={styles.addedActivityDiv}>
-          {profile?.userActivity?.map(activity =>
-            <UserActivity
-              key={activity._id} 
-              activity={activity}
-              profile={profile}
-              user={user}
-              />
-            )}
+
+        {/* bottom section */}
+        <div className={styles.bottomSectionDivOther}>
+          <div className={styles.colorBarPageContents}>
+            <h4 className={styles.ugh}>ugh</h4>
+          </div>
+          <div className={styles.formAndAddedDiv}>
+            <div className={styles.addedHolderOther}>
+              <div className={styles.addedActivityDivOther}>
+                <div className={styles.addedHeaderOther}>
+                  <h4 className={styles.H4Other}>{profile?.name}'s Added Activities</h4>
+                </div>
+                {profile?.userActivity?.map(activity =>
+                  <UserActivity
+                    key={activity._id} 
+                    activity={activity}
+                    profile={profile}
+                    user={user}
+                    />
+                  )}
+              </div>
+            </div>
+          </div>
         </div>
         
         </>
