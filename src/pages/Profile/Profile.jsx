@@ -198,7 +198,7 @@ const Profile = ({user}) => {
                 </form>
               </div>
               {profile?.userActivity.length? 
-              <div className={styles.addedHolder}>
+              // <div className={styles.addedHolder}>
                 <div className={styles.addedActivityDiv}>
                 <div className={styles.addedHeader}>
                   <h4 className={styles.H4}>{profile?.name}'s Added Activities</h4>
@@ -212,7 +212,7 @@ const Profile = ({user}) => {
                       />
                       )}
                 </div>
-              </div>
+              // </div>
               :
               <div className={styles.noActivities}>
                 <p>Activities you create will appear here, human.</p>
