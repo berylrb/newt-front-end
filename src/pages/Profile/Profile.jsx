@@ -114,7 +114,8 @@ const Profile = ({user}) => {
             </div>
             <div className={styles.apiDoneActivities}>
               <div className={styles.apiHeaderDone}>
-                {/* <h4 className={styles.apiH4Done}>DONE</h4>{profile?.doneActivities?.map((activity, idx) =>
+                {/* <h4 className={styles.apiH4Done}>DONE</h4>
+                {profile?.doneActivities?.map((activity, idx) =>
                   <ApiActivityCard
                     key={activity._id} 
                     activity={activity}
