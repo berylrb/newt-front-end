@@ -19,15 +19,18 @@ const UserActivity = (props) => {
           </table>
         {props.user?.profile === props.profile?._id ?
         <>
-          <button className={styles.button6} onClick={() => props.handleDeleteUserActivity(props.activity._id)}>Delete</button>
-          <button>
-          <Link
-            to="/edit"
-            state={props.activity}
-          > 
-            Edit
-          </Link>
-          </button>
+          <div className={styles.buttonHolder}>
+            <button className={styles.button6} onClick={() => props.handleDeleteUserActivity(props.activity._id)}>Delete</button>
+            <button className={styles.button6Edit}>
+              <Link
+                to="/edit"
+                state={props.activity}
+                className={styles.editLink}
+              > 
+                Edit
+              </Link>
+            </button>
+          </div>
         </>
         :
         <>
