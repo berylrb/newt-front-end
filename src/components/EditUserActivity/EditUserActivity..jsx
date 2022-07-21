@@ -42,7 +42,9 @@ const EditUserActivity = ({activity}) => {
       <div className={styles.editPage}>
         <div className={styles.editFormBg}>
           <div className={styles.formDiv}>
-            <h3>UPDATE ACTIVITY DETAILS</h3>
+            <div className={styles.editHeader}>
+              <h4 className={styles.editH4}>UPDATE ACTIVITY DETAILS</h4>
+            </div>
             <form 
               autoComplete="off" 
               ref={formElement} 
@@ -86,15 +88,13 @@ const EditUserActivity = ({activity}) => {
                 onChange={handleChange}
                 />
               </div>
-              <div>
                 <button
                   type="submit"
                   disabled={!validForm}
                   className={styles.button6}
                 >
-                  Save Activity
+                  UPDATE ACTIVITY
                 </button>
-              </div>
             </form>
           </div>
         </div>
