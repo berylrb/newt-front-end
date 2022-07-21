@@ -58,7 +58,8 @@ const Profile = ({user}) => {
 
   const addToDoneActivities = (activity, idx) => {
     setDoneActivities([...doneActivities, activity])
-    setNotDoneActivities([profile.activities.filter((activity, i) => i !== activity)])
+    setNotDoneActivities([...profile.activities.filter((activity, i) => i !== idx)])
+    console.log(profile.activities?.filter((activity, i) => {return i !== idx}))
   }
 
   const handleSubmit = evt => {
