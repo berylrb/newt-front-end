@@ -6,6 +6,7 @@ import { show } from "../../services/profileService"
 import * as profileService from '../../services/profileService'
 import ProfileApiActivities from "../../components/ProfileApiActivities/ProfileApiActivities"
 import ApiActivityCard from "../../components/ApiActivityCard/ApiActivityCard"
+import Blob from '../../assets/corner-blob.png'
 
 const Profile = ({user}) => {
   const [validForm, setValidForm] = useState(false)
@@ -79,7 +80,11 @@ const Profile = ({user}) => {
 
   return ( 
     <>
+
+      
+    <main>
     <div className={styles.profilePage}>
+    {/* <img className={styles.bgTopBlob} src={Blob} alt="corner blob" /> */}
       <div className={styles.profileBg}>
       {user?.profile === profile?._id ?
         <>
@@ -269,8 +274,12 @@ const Profile = ({user}) => {
       }
       
       </div>
+      
     </div>
-        
+    {/* <img className={styles.bgBottomBlob} src={Blob} alt="corner blob" /> */}
+    </main>
+    
+    
     </>
   );
 }
