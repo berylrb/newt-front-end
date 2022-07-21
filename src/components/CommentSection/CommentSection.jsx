@@ -6,11 +6,11 @@ import { Link } from "react-router-dom"
 
 
 const CommentSection = (props) => {
-  console.log('activity deets', props.activityDetails.comments)
+  console.log('activity saved', props.savedActivity.comments)
   return (
     <>
       <div className={styles.commentSectionBody}>
-        {props.activityDetails.comments.length ?
+        {props.savedActivity?.comments?.length ?
           <>
             <div className={styles.commentSectionHeader}>
               <h3 className={styles.commentHeaderH3}>
@@ -18,19 +18,19 @@ const CommentSection = (props) => {
               </h3>
             </div>
             <div className={styles.commentCards}>
-              {props.activityDetails?.comments.map( comment => (
+              {props.savedActivity?.comments.map( comment => (
                 <CommentCard 
                 key={comment._id}
                 comment={comment}
                 profile={props.profile}
-                activityDetails={props.activityDetails}
-                setActivityDetails={props.setActivityDetails}
+                savedActivity={props.savedActivity}
+                setSavedActivity={props.setSavedActivity}
                 // handleDeleteComment={handleDeleteComment}
               />
               ))}
                 <AddComment
-                  activityDetails={props.activityDetails}
-                  setActivityDetails={props.setActivityDetails}
+                  savedActivity={props.savedActivity}
+                  setSavedActivity={props.setSavedActivity}
                 />
             </div>
           </>
@@ -42,8 +42,8 @@ const CommentSection = (props) => {
             <div className={styles.addCommentDiv}>
               <Link
               to="/activity/:activityName/addComment"
-                activityDetails={props.activityDetails}
-                setActivityDetails={props.setActivityDetails}
+              savedActivity={props.savedActivity}
+              setSavedActivity={props.setSavedActivity}
                 >
 
                 </Link>

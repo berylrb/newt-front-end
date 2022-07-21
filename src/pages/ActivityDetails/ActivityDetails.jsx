@@ -5,11 +5,12 @@ import { useLocation } from 'react-router-dom'
 import  styles from './ActivityDetails.module.css'
 import * as profileService from '../../services/profileService'
 import * as activityService from '../../services/activityService'
-// import CommentSection from '../../components/CommentSection/CommentSection'
+import CommentSection from '../../components/CommentSection/CommentSection'
 
 const ActivityDetails = ( {user} ) => {
   const [activityDetails, setActivityDetails] = useState({})
   const location = useLocation()
+  const [savedActivity, setSavedActivity] = useState()
   console.log(location)
   const key = location.state.soloActivity 
     ? location.state.soloActivity.key 
@@ -22,6 +23,7 @@ const ActivityDetails = ( {user} ) => {
     const fetchActivityDetails = async () => {
       const activityData = await getActivityDetails(key)
       const res = await activityService.findCommentsByKey(key)
+      setSavedActivity(res)
       console.log('res', res)
       setActivityDetails(activityData)
     }
@@ -33,6 +35,7 @@ const ActivityDetails = ( {user} ) => {
     evt.preventDefault()
     console.log('user', user.profile, activityDetails)
     const activity = await profileService.addApiActivity(user.profile, activityDetails)
+    setSavedActivity(activity)
     console.log('activity', activity)
   }
 
@@ -40,6 +43,7 @@ const ActivityDetails = ( {user} ) => {
   //   
   // }
   console.log('activity details', activityDetails)
+  console.log('saved activity', savedActivity)
 
   return (
     <>
@@ -65,13 +69,13 @@ const ActivityDetails = ( {user} ) => {
               <h4>PRICE:</h4>
               {activityDetails.price}
             </div>
-            {/* <div className={styles.CommentSectionDiv}>
+            <div className={styles.CommentSectionDiv}>
               <CommentSection 
-                activityDetails={activityDetails}
-                setActivityDetails={setActivityDetails}
+                savedActivity={savedActivity}
+                setSavedActivity={setSavedActivity}
                 profile={user?.profile}
               />
-            </div> */}
+            </div>
             <div className={styles.returnContainer}>
               <br />
               <Link className={styles.returnLink} to="/">Return Home</Link>
