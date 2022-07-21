@@ -83,7 +83,7 @@ const ActivityDetails = ( {user} ) => {
             </div>
             <div className={styles.returnContainer}>
               <br />
-              {handleSubmit.activity >= 0  ?
+              {savedActivity >= 0  ?
               <>
                 <p>Wanna save this activity? Add it to your list!</p>
                 <button onClick={handleSubmit} className={styles.addButton}>Add to List</button>
