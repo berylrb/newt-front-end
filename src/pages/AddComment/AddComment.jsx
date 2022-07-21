@@ -4,7 +4,6 @@ import styles from './AddComment.module.css'
 import { addComment } from "../../services/activityService"
 
 const AddComment = (props, {user}) => {
-  const [activityDetails, setActivityDetails] = useState({})
   const [formData, setFormData] = useState({
     comment: '',
   })
@@ -19,9 +18,10 @@ const AddComment = (props, {user}) => {
   const handleSubmitComment = async evt => {
     evt.preventDefault()
     try {
-      const updatedActivity = await addComment(activityDetails._id,
+      console.log('saved activity test', props.savedActivity)
+      const updatedActivity = await addComment(props.savedActivity._id,
         formData)
-        setActivityDetails(updatedActivity)
+        props.setSavedActivity(updatedActivity)
     } catch (err) {
       console.log(err)
     }

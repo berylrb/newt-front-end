@@ -10,7 +10,7 @@ const CommentSection = (props) => {
   return (
     <>
       <div className={styles.commentSectionBody}>
-        {props.savedActivity?.comments?.length ?
+        {props.savedActivity?.comments?.length ? 
           <>
             <div className={styles.commentSectionHeader}>
               <h3 className={styles.commentHeaderH3}>
@@ -28,10 +28,6 @@ const CommentSection = (props) => {
                 // handleDeleteComment={handleDeleteComment}
               />
               ))}
-                <AddComment
-                  savedActivity={props.savedActivity}
-                  setSavedActivity={props.setSavedActivity}
-                />
             </div>
           </>
           :
@@ -40,13 +36,10 @@ const CommentSection = (props) => {
               <p>No comments yet  ¯\_(ツ)_/¯</p>
             </div>
             <div className={styles.addCommentDiv}>
-              <Link
-              to="/activity/:activityName/addComment"
-              savedActivity={props.savedActivity}
-              setSavedActivity={props.setSavedActivity}
-                >
-                  Add a Comment!
-                </Link>
+            <AddComment
+                  savedActivity={props.savedActivity}
+                  setSavedActivity={props.setSavedActivity}
+                />
             </div>
           </>
         }

@@ -23,6 +23,8 @@ const ActivityDetails = ( {user} ) => {
     const fetchActivityDetails = async () => {
       const activityData = await getActivityDetails(key)
       const res = await activityService.findCommentsByKey(key)
+      // if (!res) {
+      // }
       setSavedActivity(res)
       console.log('res', res)
       setActivityDetails(activityData)
@@ -70,11 +72,14 @@ const ActivityDetails = ( {user} ) => {
               {activityDetails.price}
             </div>
             <div className={styles.CommentSectionDiv}>
+              {savedActivity &&
+              
               <CommentSection 
                 savedActivity={savedActivity}
                 setSavedActivity={setSavedActivity}
                 profile={user?.profile}
               />
+              }
             </div>
             <div className={styles.returnContainer}>
               <br />

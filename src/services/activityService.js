@@ -17,6 +17,7 @@ async function addComment(activityId, formData) {
 }
 
 
+
 async function findCommentsByKey(key) {
   const res = await fetch(`${BASE_URL}/${key}/comments`, {
     headers: {
@@ -26,7 +27,8 @@ async function findCommentsByKey(key) {
   
   return await res.json()
 }
+
 export {
   addComment,
-  findCommentsByKey
+  findCommentsByKey,
 }
