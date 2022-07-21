@@ -15,11 +15,7 @@ const Profile = ({user}) => {
   console.log("Profiles are not working", state)
   const [profile, setProfile] = useState()
   const [doneActivities, setDoneActivities] = useState([])
-<<<<<<< HEAD
-  const [notDoneActivities, setNotDoneActivities] =useState(user?.profile.activities)
-=======
   const [notDoneActivities, setNotDoneActivities] = useState(user?.profile?.activities)
->>>>>>> main
 
   const [formData, setFormData] = useState({
     activity: '',
@@ -240,14 +236,7 @@ const Profile = ({user}) => {
                   />
                 )} */}
               </div>
-<<<<<<< HEAD
-              <ProfileApiActivities 
-                profile={profile}
-                addToDoneActivities={addToDoneActivities}
-              />
-=======
               <ProfileApiActivities profile={profile} addToDoneActivities={addToDoneActivities}/>
->>>>>>> main
             </div>
             <div className={styles.apiDoneActivities}>
               <h4>Done Activities</h4>
