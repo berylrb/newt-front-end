@@ -45,7 +45,7 @@ const CommentSection = (props) => {
               savedActivity={props.savedActivity}
               setSavedActivity={props.setSavedActivity}
                 >
-
+                  Add a Comment!
                 </Link>
             </div>
           </>
