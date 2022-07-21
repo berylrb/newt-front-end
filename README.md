@@ -53,3 +53,5 @@ _______
 * Route for exploring the specific categories of activities (type, price, etc.)
 * User ability to move saved activities to a "done" list
 * User ability to show a checked box on their profile if they are open to group activities
+* [x] Add comments for specific activities
+* [x] User should see "add activity" button disappear on search page after adding to profile 
