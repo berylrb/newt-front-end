@@ -2,6 +2,22 @@ h3 {
   font-size: 1.2em;
 }
 
+.bgTopBlob {
+  width: 180px;
+  transform: rotate(180deg);
+  z-index: -1;
+}
+
+
+.bgBottomBlob {
+  width: 180px;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  z-index: 1;
+}
+
+
 .profilePage {
   height: 100vh;
   width: 100vw;
