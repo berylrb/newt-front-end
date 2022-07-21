@@ -1,28 +1,13 @@
 
-import { useState, useEffect } from "react"
-import { useParams } from "react-router-dom"
-import { show } from "../../services/profileService"
 import styles from './CommentCard.module.css'
 
 const CommentCard = (props) => {
-  const {id} = useParams()
-  const [profile, setProfile] = useState()
-  const activityId = props.activityDetails._id
+  const activityId = props.savedActivity._id
   const commentId = props.comment._id
 
   console.log('comment id', commentId, 'activity id', activityId)
 
 
-
-  console.log(profile)
-
-useEffect(() => {
-  const fetchProfile = async() => {
-    const profileData = await show(id)
-    setProfile(profileData)
-  }
-  fetchProfile()
-}, [id])
 
 return (
   <>

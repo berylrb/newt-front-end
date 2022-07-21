@@ -1,5 +1,6 @@
 import styles from './ProfileAppActivities.module.css'
 import ApiActivityCard from '../ApiActivityCard/ApiActivityCard'
+import { Link } from 'react-router-dom'
 
 
 
@@ -8,11 +9,15 @@ const ProfileApiActivities = ( {profile, user, addToDoneActivities} ) => {
   return (
     <div className={styles.profileCardDiv}>
       {profile?.activities?.map(activity =>
+      <Link to="/activity"
+        state={{soloActivity: activity}}
+        >
         <ApiActivityCard
           key={activity._id}
           activity={activity}
           addToDoneActivities={addToDoneActivities}
         />
+        </Link>
       )}
       {profile?.doneActivities?.map((activity, idx) =>
         <ApiActivityCard
