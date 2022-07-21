@@ -33,7 +33,7 @@ const CommentSection = (props) => {
           :
           <>
             <div className={styles.noCommentsDiv}>
-              <p>No comments yet  ¯\_(ツ)_/¯</p>
+              <p className={styles.noCommentP}>No comments yet  ¯\_(ツ)_/¯</p>
             </div>
             <div className={styles.addCommentDiv}>
             <AddComment
