@@ -1,26 +1,28 @@
 # Newt
-![main screenshot](SCREENSHOT OF TITLE PAGE)
+![main screenshot](./public/newtmain.png)
 
-#### A Mern Stack Application
-_______
-## [Check out the site!](https://newt-activity.netlify.app/)
-## [Trello Board](https://trello.com/b/v9YnBlTX/newt-beryl-rachel-kevin)
-## [Back End Github](https://github.com/berylrb/newt-back-end)
+#### A MERN Stack Application
 _______
 ## Why Newt?
 
 Objects at rest stay at rest- let's change that! This application will help users discover more about themselves, their peers, and their community by providing them with inspiring ideas to get up, get moving, and try something new.
 _______
+## Getting Started:
+* [Check out the site!](https://newt-activity.netlify.app/)
+* [Trello Board](https://trello.com/b/v9YnBlTX/newt-beryl-rachel-kevin)
+* [Back End GitHub Repository](https://github.com/berylrb/newt-back-end)
+_______
 ## Our Team:
-<font color="pink">**Beryl: scrum master, UI design**</font>
+<font color="pink">**Beryl Baldwin: [GitHub](https://github.com/berylrb)**</font>
 <br>
-<font color="purple">**Rachel: CRUD development**</font>
+<font color="purple">**Rachel Kinzel: [GitHub](https://github.com/rharen11)**</font>
 <br>
-<font color="red">**Kevin: Application layout design**</font>
+<font color="red">**Kevin Rodriguez: [GitHub](https://github.com/UncleHagi)**</font>
 ________
 ## What to look forward to:
-![app1](SCREENSHOT)
-![app2](SCREENSHOT)
+![Newt Community](./public/newtprofile2.png)
+![Newt Search](./public/newtsearch.png)
+![Newt Profile](./public/newttara.png)
 _______
 ## Technologies Used
 _______
@@ -40,9 +42,14 @@ _______
 
 ## Credits
 * [Bored API](http://www.boredapi.com/)
+* [Hunter Long](https://github.com/whlong1)- CRUD implementation
+* [David Stinson](https://github.com/DavidStinson)- API implementation
+* [Ben Manley](https://github.com/ManliestBen)- API implementation
 _______
 ## Ice Box
 _______
 * Point system for activities completed
 * Notes section for materials/supplies needed
 * Route for exploring the specific categories of activities (type, price, etc.)
+* User ability to move saved activities to a "done" list
+* User ability to show a checked box on their profile if they are open to group activities
