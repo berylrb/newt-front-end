@@ -16,6 +16,17 @@ async function addComment(activityId, formData) {
   return await res.json()
 }
 
+
+async function findCommentsByKey(key) {
+  const res = await fetch(`${BASE_URL}/${key}/comments`, {
+    headers: {
+      'Authorization': `Bearer ${tokenService.getToken()}`,
+    }
+  })
+  
+  return await res.json()
+}
 export {
-  addComment
+  addComment,
+  findCommentsByKey
 }
