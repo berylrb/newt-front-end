@@ -13,9 +13,9 @@ const CommentSection = (props) => {
         {props.savedActivity?.comments?.length ? 
           <>
             <div className={styles.commentSectionHeader}>
-              <h3 className={styles.commentHeaderH3}>
+              {/* <h3 className={styles.commentHeaderH3}>
                 Comments:
-              </h3>
+              </h3> */}
             </div>
             <div className={styles.commentCards}>
               {props.savedActivity?.comments.map( comment => (
