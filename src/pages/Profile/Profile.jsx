@@ -284,14 +284,22 @@ const Profile = ({user}) => {
                 <div className={styles.addedHeaderOther}>
                   <h4 className={styles.H4Other}>{profile?.name}'s Added Activities</h4>
                 </div>
-                {profile?.userActivity?.map(activity =>
-                  <UserActivity
-                    key={activity._id} 
-                    activity={activity}
-                    profile={profile}
-                    user={user}
-                    />
-                  )}
+                {profile?.userActivity?.length ?
+                  <>
+                  {profile?.userActivity?.map(activity =>
+                    <UserActivity
+                      key={activity._id} 
+                      activity={activity}
+                      profile={profile}
+                      user={user}
+                      />
+                    )}
+                  </>
+                :
+                  <>
+                    <p>No Activities Saved</p>
+                  </>
+                }
               </div>
             </div>
           </div>
