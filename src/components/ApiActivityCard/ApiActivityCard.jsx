@@ -2,7 +2,6 @@ import styles from './ApiActivityCard.module.css'
 import pinkStar from '../../assets/pink-star.png'
 
 const ApiActivityCard = (props, {user}) => {
-  
   return (
   <>
     <div className={styles.cardHolder}>
@@ -20,8 +19,7 @@ const ApiActivityCard = (props, {user}) => {
   </>
   :
   <>
-    <p>
-    </p>
+    <p></p>
   </>
   }
   </div>

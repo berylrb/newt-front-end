@@ -10,6 +10,7 @@ import CommentSection from '../../components/CommentSection/CommentSection'
 const ActivityDetails = ( {user} ) => {
   const [activityDetails, setActivityDetails] = useState({})
   const location = useLocation()
+  const [savedActivity, setSavedActivity] = useState()
   console.log(location)
   const key = location.state.soloActivity 
     ? location.state.soloActivity.key 
@@ -21,6 +22,9 @@ const ActivityDetails = ( {user} ) => {
   useEffect(() => {
     const fetchActivityDetails = async () => {
       const activityData = await getActivityDetails(key)
+      const res = await activityService.findCommentsByKey(key)
+      setSavedActivity(res)
+      console.log('res', res)
       setActivityDetails(activityData)
     }
     fetchActivityDetails()
@@ -31,13 +35,15 @@ const ActivityDetails = ( {user} ) => {
     evt.preventDefault()
     console.log('user', user.profile, activityDetails)
     const activity = await profileService.addApiActivity(user.profile, activityDetails)
+    setSavedActivity(activity)
     console.log('activity', activity)
   }
 
   // const handleAddApiActivity = async (newApiActivityData) => {
   //   
   // }
-
+  console.log('activity details', activityDetails)
+  console.log('saved activity', savedActivity)
 
   return (
     <>
@@ -65,8 +71,8 @@ const ActivityDetails = ( {user} ) => {
             </div>
             <div className={styles.CommentSectionDiv}>
               <CommentSection 
-                activityDetails={activityDetails}
-                setActivityDetails={setActivityDetails}
+                savedActivity={savedActivity}
+                setSavedActivity={setSavedActivity}
                 profile={user?.profile}
               />
             </div>
