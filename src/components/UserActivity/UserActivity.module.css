@@ -14,6 +14,25 @@ p, h4 {
   margin: 0 0 5px 0;
 }
 
+.table {
+  width: 80%;
+}
+
+.th {
+  border: 2px solid black;
+  width: 25%;
+  background-color:#ff96ff;
+  padding: 5px;
+  color: white;
+  text-align: center;
+}
+
+.td {
+  text-align: center;
+  border: 2px solid black;
+  padding: 10px;
+}
+
 .buttonDiv {
   display: flex;
   justify-content: center;

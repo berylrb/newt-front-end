@@ -5,14 +5,18 @@ const UserActivity = (props) => {
   return (
     <>
       <div className={styles.userActivityDiv}>
-        <h4>Activity:</h4>
-        <p>{props.activity.activity}</p>
-        <h4>Type:</h4>
-        <p>{props.activity.type}</p>
-        <h4>Price:</h4>
-        <p>${props.activity.price}</p>
-        <h4>Participants:</h4>
-        <p>{props.activity.participants}</p>
+      <table className={styles.table}>
+            <tr>
+              <th className={styles.th}>ACTIVITY</th>
+              <th className={styles.th}>TYPE</th>
+              <th className={styles.th}>PRICE</th>
+            </tr>
+            <tr>
+              <td className={styles.td}>{props.activity.activity}</td>
+              <td className={styles.td}>{props.activity.type}</td>
+              <td className={styles.td}>${props.activity.price}</td>
+            </tr>
+          </table>
         {props.user?.profile === props.profile?._id ?
         <>
           <button className={styles.button6} onClick={() => props.handleDeleteUserActivity(props.activity._id)}>Delete</button>
