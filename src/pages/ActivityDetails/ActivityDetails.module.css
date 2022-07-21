@@ -19,11 +19,12 @@ p {
   justify-content: space-evenly;
   align-items: center;
   background-color: #ff96ff;
+  padding: 20px 0 0 0;
 }
 
 .activityDetails {
   width: 50%;
-  height: 60%;
+  height: 50%;
   background-color: white;
   border: 2px solid black;
   display: flex;
@@ -121,7 +122,7 @@ p {
   font-weight: 500;
   justify-content: center;
   line-height: 1.25;
-  margin: 18px 0 0 0;
+  margin: 18px 0 18px 0;
   height: 40px;
   padding: calc(.875rem - 1px) calc(1.5rem - 1px);
   position: relative;
@@ -218,7 +219,7 @@ p {
 
 .activityDetailsBottom {
   width: 50%;
-  height: 60%;
+  height: 50%;
   background-color: white;
   border: 2px solid black;
   display: flex;

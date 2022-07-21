@@ -66,6 +66,7 @@ const ActivityDetails = ( {user} ) => {
             <h4 className={styles.detailsH4}>ACTIVITY DETAILS</h4>
           </div>
           <table className={styles.table}>
+            <tbody>
             <tr>
               <th className={styles.th}>ACTIVITY</th>
               <th className={styles.th}>TYPE</th>
@@ -76,6 +77,7 @@ const ActivityDetails = ( {user} ) => {
               <td className={styles.td}>{activityDetails.type}</td>
               <td className={styles.td}>${activityDetails.price}</td>
             </tr>
+            </tbody>
           </table>
           
             <div className={styles.CommentSectionDiv}>
