@@ -14,7 +14,7 @@ const UserActivity = (props) => {
             <tr>
               <td className={styles.td}>{props.activity.activity}</td>
               <td className={styles.td}>{props.activity.type}</td>
-              <td className={styles.td}>${props.activity.price}</td>
+              <td className={styles.td}>{props.activity.price}</td>
             </tr>
           </table>
         {props.user?.profile === props.profile?._id ?
