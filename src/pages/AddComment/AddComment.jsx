@@ -51,6 +51,7 @@ const AddComment = (props, {user}) => {
                   name="comment"
                   value={formData.comment}
                   onChange={handleChangeComment}
+                  required
                 />
               </div>
               <div className={styles.commentButtonDiv}>
