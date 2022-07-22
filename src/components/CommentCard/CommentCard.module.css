@@ -5,6 +5,9 @@
   align-items: center;
   border: 2px solid black;
   width: 60%;
+  height: 100%;
+  margin: 20px;
+
 }
 
 .commentAuthor {
@@ -29,6 +32,8 @@
   align-items: center;
   padding: 10px;
   width: 100%;
+  height: 100%;
+  margin: 20px;
 }
 
 
