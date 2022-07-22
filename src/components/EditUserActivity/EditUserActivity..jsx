@@ -84,7 +84,7 @@ const EditUserActivity = ({activity}) => {
                 className="activity-price"
                 id="price-input"
                 name="price"
-                value={formData.price || ''}
+                value={formData.price}
                 onChange={handleChange}
                 />
               </div>

@@ -5,8 +5,7 @@ import UserActivity from "../../components/UserActivity/UserActivity"
 import { show } from "../../services/profileService"
 import * as profileService from '../../services/profileService'
 import ProfileApiActivities from "../../components/ProfileApiActivities/ProfileApiActivities"
-import ApiActivityCard from "../../components/ApiActivityCard/ApiActivityCard"
-import Blob from '../../assets/corner-blob.png'
+
 
 const Profile = ({user}) => {
   const [validForm, setValidForm] = useState(false)
@@ -17,6 +16,8 @@ const Profile = ({user}) => {
   const [profile, setProfile] = useState()
   const [doneActivities, setDoneActivities] = useState([])
   const [notDoneActivities, setNotDoneActivities] = useState(user?.profile?.activities)
+
+  console.log(notDoneActivities)
 
   const [formData, setFormData] = useState({
     activity: '',

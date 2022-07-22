@@ -6,7 +6,7 @@ import  styles from './ActivityDetails.module.css'
 import * as profileService from '../../services/profileService'
 import * as activityService from '../../services/activityService'
 import CommentSection from '../../components/CommentSection/CommentSection'
-import ProfileApiActivities from '../../components/ProfileApiActivities/ProfileApiActivities'
+
 
 const ActivityDetails = ( {user} ) => {
   const [activityDetails, setActivityDetails] = useState({})
@@ -26,8 +26,7 @@ const ActivityDetails = ( {user} ) => {
     const fetchActivityDetails = async () => {
       const activityData = await getActivityDetails(key)
       const res = await activityService.findCommentsByKey(key)
-      // if (!res) {
-      // }
+
       setSavedActivity(res)
       console.log('res', res)
       setActivityDetails(activityData)
@@ -44,6 +43,9 @@ const ActivityDetails = ( {user} ) => {
     // setShow(true)
     console.log('activity', activity)
   }
+  console.log('price check')
+
+
 
   const buttonSubmit = async evt => {
     navigate('/')
@@ -76,7 +78,7 @@ const ActivityDetails = ( {user} ) => {
             <tr>
               <td className={styles.td}>{activityDetails.activity}</td>
               <td className={styles.td}>{activityDetails.type}</td>
-              <td className={styles.td}>${activityDetails.price}</td>
+              <td className={styles.td}>{activityDetails.price}</td>
             </tr>
             </tbody>
           </table>
