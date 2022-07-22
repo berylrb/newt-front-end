@@ -22,7 +22,7 @@ const Profile = ({user}) => {
   const [formData, setFormData] = useState({
     activity: '',
     type: '',
-    price: 0,
+    price: '',
     participants: 0
   })
 
