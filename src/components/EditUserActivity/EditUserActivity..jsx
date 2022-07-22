@@ -79,14 +79,14 @@ const EditUserActivity = ({activity}) => {
               </div>
               <div className={styles.inputContainer}>
                 <label htmlFor="activity-price" className={styles.label}>Price</label>
-                <input 
-                type="text" 
-                className="activity-price"
-                id="price-input"
-                name="price"
-                value={formData.price}
-                onChange={handleChange}
-                />
+                <select className={styles.selectPrice} name="price" id="price"onChange={handleChange}>
+                  <option value=''>Price</option>
+                  <option value="free">Free</option>
+                  <option value="$">$</option>
+                  <option value="$$">$$</option>
+                  <option value="$$$">$$$</option>
+                  <option value="$$$$">$$$$</option>
+                </select>
               </div>
                 <button
                   type="submit"
