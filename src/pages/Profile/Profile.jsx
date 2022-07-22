@@ -70,7 +70,7 @@ const Profile = ({user}) => {
     setFormData({
       activity: '',
       type: '',
-      price: 0
+      price: ''
     })
   }
 
@@ -180,13 +180,13 @@ const Profile = ({user}) => {
                 <div className={styles.activityProfileInput}>
                   <label htmlFor="activity-price">Price</label>
                   <select className={styles.selectPrice} name="price" id="price"onChange={handleChange}>
-              <option value=''>Price</option>
-              <option value="free">Free</option>
-              <option value="$">$</option>
-              <option value="$$">$$</option>
-              <option value="$$$">$$$</option>
-              <option value="$$$$">$$$$</option>
-            </select>
+                    <option value=''>Price</option>
+                    <option value="free">Free</option>
+                    <option value="$">$</option>
+                    <option value="$$">$$</option>
+                    <option value="$$$">$$$</option>
+                    <option value="$$$$">$$$$</option>
+                  </select>
                 </div>
                   <div className={styles.buttonDiv}>
                     <button 
