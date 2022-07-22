@@ -22,6 +22,7 @@ const ActivityDetails = ({ user }) => {
   console.log("this is the key", key)
 
 
+
   useEffect(() => {
     const fetchActivityDetails = async () => {
       const activityData = await getActivityDetails(key)
@@ -43,7 +44,7 @@ const ActivityDetails = ({ user }) => {
     // setShow(true)
     console.log('activity', activity)
   }
-  console.log('price check')
+
 
 
 
