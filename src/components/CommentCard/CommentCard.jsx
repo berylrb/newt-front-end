@@ -7,7 +7,7 @@ const CommentCard = (props) => {
 
   console.log('comment id', commentId, 'activity id', activityId)
 
-
+console.log()
 
 return (
   <>
