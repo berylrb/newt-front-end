@@ -21,8 +21,7 @@ const Profile = ({user}) => {
   const [formData, setFormData] = useState({
     activity: '',
     type: '',
-    price: 0,
-    participants: 0
+    price: '',
   })
 
   useEffect(() => {
@@ -69,7 +68,7 @@ const Profile = ({user}) => {
     setFormData({
       activity: '',
       type: '',
-      price: 0
+      price: ''
     })
   }
 
@@ -159,6 +158,7 @@ const Profile = ({user}) => {
                     name="activity"
                     value={formData.activity}
                     onChange={handleChange}
+                    required
                   />
                 </div>
                 <div className={styles.activityProfileInput}>
@@ -178,14 +178,14 @@ const Profile = ({user}) => {
                 </div>
                 <div className={styles.activityProfileInput}>
                   <label htmlFor="activity-price">Price</label>
-                  <input 
-                    type="text"
-                    className="activity-price"
-                    id="price-input"
-                    name="price"
-                    value={formData.price}
-                    onChange={handleChange}
-                  />
+                  <select className={styles.selectPrice} name="price" id="price"onChange={handleChange}>
+                    <option value=''>Price</option>
+                    <option value="0">Free</option>
+                    <option value="$">$</option>
+                    <option value="$$">$$</option>
+                    <option value="$$$">$$$</option>
+                    <option value="$$$$">$$$$</option>
+            </select>
                 </div>
                   <div className={styles.buttonDiv}>
                     <button 
