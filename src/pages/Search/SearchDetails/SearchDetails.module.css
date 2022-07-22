@@ -223,10 +223,9 @@ p {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  overflow-y: scroll;
   width: 100%;
   padding: 20px;
-  margin: 0 0 20px 0;
+  margin: 10px 0 20px 0;
 }
 
 
@@ -242,6 +241,7 @@ p {
   align-items: center;
   box-shadow: 12px 15px #ecff50, 12px 15px 0 2px black;
   margin: 30px;
+  overflow-y: scroll;
 }
 
 
