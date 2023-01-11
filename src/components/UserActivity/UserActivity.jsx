@@ -5,37 +5,41 @@ const UserActivity = (props) => {
   return (
     <>
       <div className={styles.userActivityDiv}>
-      <table className={styles.table}>
+        <table className={styles.table}>
+          <thead>
             <tr>
               <th className={styles.th}>ACTIVITY</th>
               <th className={styles.th}>TYPE</th>
               <th className={styles.th}>PRICE</th>
             </tr>
+          </thead>
+          <tbody>
             <tr>
               <td className={styles.td}>{props.activity.activity}</td>
               <td className={styles.td}>{props.activity.type}</td>
-              <td className={styles.td}>${props.activity.price}</td>
+              <td className={styles.td}>{props.activity.price}</td>
             </tr>
-          </table>
+          </tbody>
+        </table>
         {props.user?.profile === props.profile?._id ?
-        <>
-          <div className={styles.buttonHolder}>
-            <button className={styles.button6} onClick={() => props.handleDeleteUserActivity(props.activity._id)}>Delete</button>
-            <button className={styles.button6Edit}>
-              <Link
-                to="/edit"
-                state={props.activity}
-                className={styles.editLink}
-              > 
-                Edit
-              </Link>
-            </button>
-          </div>
-        </>
-        :
-        <>
-          <p> </p>
-        </>
+          <>
+            <div className={styles.buttonHolder}>
+              <button className={styles.button6} onClick={() => props.handleDeleteUserActivity(props.activity._id)}>Delete</button>
+              <button className={styles.button6Edit}>
+                <Link
+                  to="/edit"
+                  state={props.activity}
+                  className={styles.editLink}
+                >
+                  Edit
+                </Link>
+              </button>
+            </div>
+          </>
+          :
+          <>
+            <p> </p>
+          </>
         }
       </div>
     </>

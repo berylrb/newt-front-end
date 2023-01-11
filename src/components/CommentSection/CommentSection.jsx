@@ -29,6 +29,12 @@ const CommentSection = (props) => {
               />
               ))}
             </div>
+            <div className={styles.addCommentDiv}>
+            <AddComment
+                  savedActivity={props.savedActivity}
+                  setSavedActivity={props.setSavedActivity}
+                />
+            </div>
           </>
           :
           <>

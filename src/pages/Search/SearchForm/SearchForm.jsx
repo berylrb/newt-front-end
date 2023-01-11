@@ -10,7 +10,7 @@ const SearchForm = (props) => {
   const [formData, setFormData] = useState({
     type: '',
     participants: '',
-    price: ''
+    price: '',
   })
 
   const handleChange = evt => {
@@ -60,8 +60,11 @@ const SearchForm = (props) => {
           <div className={styles.selectSecondRow}>
             <select className={styles.selectPrice} name="price" id="price"onChange={handleChange}>
               <option value=''>Price</option>
-              <option value="0">Free</option>
-              <option value="">$</option>
+              <option value="free">Free</option>
+              <option value="$">$</option>
+              <option value="$$">$$</option>
+              <option value="$$$">$$$</option>
+              <option value="$$$$">$$$$</option>
             </select>
             {/* <button type="submit">Random</button> */}
             <button className={styles.button6} type="submit">Search</button>

@@ -15,7 +15,6 @@ import Search from './pages/Search/Search'
 import ActivityDetails from './pages/ActivityDetails/ActivityDetails'
 import SearchDetails from './pages/Search/SearchDetails/SearchDetails'
 import EditUserActivity from './components/EditUserActivity/EditUserActivity.'
-import ProfileApiActivities from './components/ProfileApiActivities/ProfileApiActivities'
 
 
 

@@ -222,15 +222,16 @@ p {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  overflow-y: scroll;
+
   width: 100%;
   padding: 20px;
-  margin: 0 0 20px 0;
+  margin: 10px 0 20px 0;
+  height: 80%;
 }
 
 .activityDetailsBottom {
   width: 45%;
-  height: 55%;
+  height: 65%;
   background-color: white;
   border: 2px solid black;
   display: flex;

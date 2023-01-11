@@ -1,7 +1,7 @@
 import { useState, useEffect} from 'react'
 import { Link } from 'react-router-dom'
 import { getActivityDetails } from '../../../services/bored-api'
-import { useLocation, useNavigate } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 import  styles from './SearchDetails.module.css'
 import * as profileService from '../../../services/profileService'
 import * as activityService from '../../../services/activityService'
@@ -63,7 +63,7 @@ const SearchDetails = ({user}) => {
               <tr>
                 <td className={styles.td}>{searchDetails.activity}</td>
                 <td className={styles.td}>{searchDetails.type}</td>
-                <td className={styles.td}>${searchDetails.price}</td>
+                <td className={styles.td}>{searchDetails.price}</td>
               </tr>
             </tbody>
           </table>
