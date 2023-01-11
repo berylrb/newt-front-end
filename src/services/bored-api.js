@@ -1,6 +1,6 @@
 const baseUrl = "https://bored-api-backend.onrender.com/api"
 
-
+ 
 export async function getSoloActivity() {
   const res = await fetch(`${baseUrl}/activity?participants=1`)
   const data = await res.json()
