@@ -64,6 +64,8 @@ const Profile = ({ user }) => {
     console.log(profile.activities?.filter((activity, i) => { return i !== idx }))
   }
 
+  
+
   const handleSubmit = evt => {
     evt.preventDefault()
     handleAddUserActivity(formData)
