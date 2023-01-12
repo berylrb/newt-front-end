@@ -70,6 +70,17 @@ h3 {
   object-fit: cover;
 }
 
+/* .profileAvatar:before {
+  content: url('../../assets/placeholder.jpg');
+  display: inline-block;
+  height: 200px;
+  width: 200px;
+  border-radius: 50%;
+  border: 2px solid black;
+  
+  object-fit: cover;
+} */
+
 
 
 .profilePageContents, .profilePageContentsOther {

@@ -5,6 +5,7 @@ import UserActivity from "../../components/UserActivity/UserActivity"
 import { show } from "../../services/profileService"
 import * as profileService from '../../services/profileService'
 import ProfileApiActivities from "../../components/ProfileApiActivities/ProfileApiActivities"
+import Placeholder from '../../assets/placeholder.jpg'
 
 
 const Profile = ({ user }) => {
@@ -25,6 +26,10 @@ const Profile = ({ user }) => {
     price: '',
     participants: 0
   })
+
+  const prof = profile?.photo
+  console.log(profile?.photo)
+
 
   useEffect(() => {
     const fetchProfile = async () => {
@@ -64,8 +69,6 @@ const Profile = ({ user }) => {
     console.log(profile.activities?.filter((activity, i) => { return i !== idx }))
   }
 
-  
-
   const handleSubmit = evt => {
     evt.preventDefault()
     handleAddUserActivity(formData)
@@ -93,7 +96,8 @@ const Profile = ({ user }) => {
               <>
                 <div className={styles.greetingAndPic}>
                   <div className={styles.profilePicDiv}>
-                    <img src={profile?.photo} alt="profile-avatar" className={styles.profileAvatar} />
+                    <img src={`${prof || Placeholder}`}
+                      alt="profile-avatar" className={styles.profileAvatar} />
                   </div>
                   <div className={styles.profileGreeting}>
                     <h4 className={styles.profNameh4}>{profile?.name}</h4>
@@ -231,7 +235,7 @@ const Profile = ({ user }) => {
 
                 <div className={styles.greetingAndPic}>
                   <div className={styles.profilePicDiv}>
-                    <img src={profile?.photo} alt="profile-avatar" className={styles.profileAvatar} />
+                    <img src={`${prof || Placeholder}`} alt="profile-avatar" className={styles.profileAvatar} />
                   </div>
                   <div className={styles.profileGreetingOther}>
                     <h4 className={styles.profNameh4}>{profile?.name}</h4>
