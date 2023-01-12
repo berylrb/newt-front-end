@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react'
 import * as profileService from '../../services/profileService'
 import  styles from './Profiles.module.css'
 import { Link } from 'react-router-dom'
+import Placeholder from '../../assets/placeholder.jpg'
 
 const Profiles = (props) => {
   const [profiles, setProfiles] = useState([])
@@ -33,7 +34,7 @@ const Profiles = (props) => {
                 <div key={profile._id}>
                   <div className={styles.profileCard}>
                     <div className={styles.profilePicDiv}>
-                      <img className={styles.profilePic} src={profile.photo} alt="profile-pic" profile={profile} />
+                      <img className={styles.profilePic} src={`${profile?.photo || Placeholder}`} alt="profile-pic" profile={profile} />
                     </div>
                     <div className={styles.profileNameDiv}>
                       <p className={styles.profNameP} key={profile._id} profile={profile}>{profile.name}</p>
